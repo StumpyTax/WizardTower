@@ -86,7 +86,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1521126402012588215}
-  speed: 0
+  speed: 0.3
   direction: {x: 0, y: 0}
   rb: {fileID: 0}
 --- !u!95 &1521126402012588215
