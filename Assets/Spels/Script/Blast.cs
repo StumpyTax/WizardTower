@@ -20,13 +20,12 @@ public class Blast : Spell
     {
         gameObject.AddComponent<Animator>();
         BlastField();
-        Destroy(gameObject);
     }
 
     private void BlastField()
     {
-        var casterX = caster.gameObject.transform.position.x;
-        var casterY = caster.gameObject.transform.position.y;
+        var casterX = casterPlayer.gameObject.transform.position.x;
+        var casterY = casterPlayer.gameObject.transform.position.y;
         for (var i = 0; i < blastWaves; i++)
         {
             var vector = (Mathf.PI * 2) / blastWaves;

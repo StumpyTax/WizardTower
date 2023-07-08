@@ -1,19 +1,25 @@
 using UnityEngine;
 
-public class Projectile : MonoBehaviour
+public class Projectile : Entity
 {
-    public float pushForce;
     public float speed;
     public float range;
+    private float _damage;
+    public float pushForce;
+    
     public Vector3 start;
     public Vector3 direction;
-    private float _damage;
     private Status[] _statuses;
 
     protected Rigidbody rb;
     private GameObject _gm;
     private Collider collider;
 
+    // public Projectile()
+    // {
+    //     tags.Add(Tags.Projectile);
+    // }
+    
 
     public void Start()
     {

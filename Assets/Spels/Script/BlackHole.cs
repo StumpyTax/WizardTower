@@ -10,13 +10,12 @@ public class BlackHole : Spell
     public float radius = 10;
     private SphereCollider _collider;
     
-    // Start is called before the first frame update
     void Start()
     {
         _collider = GetComponent<SphereCollider>();
         _collider.radius = radius;
 
-        transform.position = caster.transform.position;
+       transform.position = targetDir;
     }
 
     private void OnTriggerStay (Collider other)

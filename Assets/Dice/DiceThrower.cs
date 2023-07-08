@@ -5,18 +5,18 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
 
-[RequireComponent(typeof(Caster))]
+[RequireComponent(typeof(CasterPlayer))]
 public class DiceThrower : MonoBehaviour
 {
     public GameObject diceThrowGameObject;
 
-    private Caster _caster;
+    private CasterPlayer _casterPlayer;
     private DiceThrowScript _diceThrowScript;
     private PlayerInput _playerInput;
 
     private void Start()
     {
-        _caster = GetComponent<Caster>();
+        _casterPlayer = GetComponent<CasterPlayer>();
         diceThrowGameObject = Instantiate(diceThrowGameObject);
         _diceThrowScript = diceThrowGameObject.GetComponent<DiceThrowScript>();
         
@@ -47,7 +47,7 @@ public class DiceThrower : MonoBehaviour
                 await Task.Yield();
             }
             Debug.Log(_diceThrowScript.topEdge.GetComponent<Edge>().spell);
-            _caster.spells[0] = _diceThrowScript.topEdge.GetComponent<Edge>().spell;
+            _casterPlayer.spells[0] = _diceThrowScript.topEdge.GetComponent<Edge>().spell;
         }
     }
     IEnumerator ExampleCoroutine()

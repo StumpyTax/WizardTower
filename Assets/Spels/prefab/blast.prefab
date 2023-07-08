@@ -45,8 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   caster: {fileID: 0}
-  blastWaves: 12
-  speed: 40
+  blastWaves: 24
+  speed: 150
   indent: 1.2
-  range: 2
+  range: 10
   blastWave: {fileID: 2406603467124560515, guid: b01ffb555807bd4428fef8906042e26f, type: 3}
