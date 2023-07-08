@@ -7,6 +7,7 @@ TagManager:
   - Gate
   - Enemy
   - Transition
+  - SpawnPoint
   layers:
   - Default
   - TransparentFX

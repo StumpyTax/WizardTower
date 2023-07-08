@@ -4,7 +4,6 @@ using UnityEngine;
 public class GateController : MonoBehaviour
 {
     
-    public bool open=false;
 
     public void Finish()
     {
@@ -13,7 +12,7 @@ public class GateController : MonoBehaviour
      
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag=="Player" && GameManager.instance.roomIsClear)
+        if(collision.gameObject.tag=="Player" && GameManager.instance.roomIsClear && GameManager.instance.enterGate!=gameObject)
         {
             var transition=GameObject.FindGameObjectWithTag("Transition");
             if (transition != null)
