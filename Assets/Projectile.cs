@@ -1,10 +1,12 @@
 using UnityEngine;
 
-public class Projectile : MonoBehaviour
+public class Projectile : Entity
 {
-    public float pushForce;
     public float speed;
     public float range;
+    private float _damage;
+    public float pushForce;
+    
     public Vector3 start;
     public Vector3 direction;
     private Status[] _statuses;
@@ -13,6 +15,7 @@ public class Projectile : MonoBehaviour
     private GameObject _gm;
     private Collider collider;
     public Spell spell;
+
 
     public void Start()
     {

@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public abstract partial class Spell : MonoBehaviour
 {
@@ -10,4 +11,6 @@ public abstract partial class Spell : MonoBehaviour
     public float dmg;
     public Vector3 targetDir;
     public Caster caster;
+    public Caster casterPlayer;
+    public Vector3 targetDir;
 }
