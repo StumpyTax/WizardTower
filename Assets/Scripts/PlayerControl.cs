@@ -6,18 +6,17 @@ public class PlayerControl : MonoBehaviour
 {
   [SerializeField]
   public Animator animator;
-  public float speed;
+  public float speedStart = 10;
+  public float FrictionForce = 0.5f;
   [SerializeField]
-  private Vector2 direction;
+  private Vector3 direction;
   [SerializeField]
-  private Rigidbody2D rb;
-    // Start is called before the first frame update
+  private Rigidbody rb;
     void Start()
     {
-        rb=GetComponent<Rigidbody2D>();
+        rb=GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
     void Update()
     {
       direction.x=Input.GetAxisRaw("Horizontal");
@@ -28,6 +27,35 @@ public class PlayerControl : MonoBehaviour
     }
     void FixedUpdate() 
     {
-      rb.MovePosition(rb.position+direction*speed);
+      MovementLogic();
+      FrictionLogic();
     }
+
+    private void MovementLogic()
+    {
+      float moveHorizontal = Input.GetAxis("Horizontal");
+
+      float moveVertical = Input.GetAxis("Vertical");
+  
+      Vector3 movement = new Vector3(moveHorizontal, moveVertical, 0f);
+
+      var velocityVector = new Vector3(moveHorizontal * speedStart, moveVertical * speedStart, 0f);
+      rb.velocity += velocityVector;
+    }
+
+    private void FrictionLogic()
+    {
+      var velocity = rb.velocity;
+      var frictionVector = velocity * -FrictionForce;
+      velocity += frictionVector;
+      rb.velocity = velocity;
+    }
+    
+    // private void SpeedBound()
+    // {
+    //   if (rb.velocity.magnitude > speedMax)
+    //   {
+    //     rb.velocity = rb.velocity.normalized * speedMax;
+    //   }
+    //}
 }
