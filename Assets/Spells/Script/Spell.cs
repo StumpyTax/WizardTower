@@ -7,5 +7,7 @@ public abstract partial class Spell : MonoBehaviour
     private String _description;
     private Sprite _icon;
 
+    public float dmg;
+    public Vector3 targetDir;
     public Caster caster;
 }

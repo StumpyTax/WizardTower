@@ -8,12 +8,12 @@ using Unity.Mathematics;
 using UnityEditor;
 using System.Linq;
 using System;
+using Unity.VisualScripting;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance=null;
     public GameObject player;
-    public GameObject enterGate = null;
 
     public int floor = 1;
     [SerializeField]private List<SceneAsset> f1_rooms=new List<SceneAsset>();
@@ -66,7 +66,7 @@ public class GameManager : MonoBehaviour
         var spawnPoints = GameObject.FindGameObjectsWithTag("SpawnPoint");
         var random = new Unity.Mathematics.Random(1851936439U);
         var point = spawnPoints[random.NextInt(spawnPoints.Length)];
-        enterGate = point.GetComponentInParent<GameObject>();
+        point.GetComponentInParent<GateController>().enterGate=true;
         Instantiate(player, point.transform.position,Quaternion.identity);
 
         

@@ -1,14 +1,16 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 
 public class Caster : MonoBehaviour
 {
     public Spell[] spells;
     private PlayerInput _playerInput;
-
+    
     public void Start()
     {
         _playerInput = new PlayerInput();
@@ -31,7 +33,14 @@ public class Caster : MonoBehaviour
     private void Cast(Spell spell)
     {
         spell.caster = this;
+        spell.targetDir = getMousePosition()-transform.position;
         Instantiate(spell);
+    }
+    public Vector3 getMousePosition()
+    {
+        Vector3 mousePos = Input.mousePosition;
+        mousePos.z = Camera.main.nearClipPlane;
+        return Camera.main.ScreenToWorldPoint(mousePos);
     }
 
     // private void Cast(InputAction.CallbackContext action)

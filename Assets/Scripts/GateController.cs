@@ -1,18 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 public class GateController : MonoBehaviour
 {
-    
+    public bool enterGate=false;
 
     public void Finish()
     {
 /*        anim.SetActive(true);
 */    }
      
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag=="Player" && GameManager.instance.roomIsClear && GameManager.instance.enterGate!=gameObject)
+        if(collision.gameObject.tag=="Player" && GameManager.instance.roomIsClear && !enterGate)
         {
             var transition=GameObject.FindGameObjectWithTag("Transition");
             if (transition != null)

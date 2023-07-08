@@ -4,17 +4,15 @@ using UnityEngine;
 
 public class PlayerControl : MonoBehaviour
 {
-  [SerializeField]
   public Animator animator;
   public float speedStart = 10;
   public float FrictionForce = 0.5f;
-  [SerializeField]
-  private Vector3 direction;
-  [SerializeField]
-  private Rigidbody rb;
+  [SerializeField]private Vector3 direction;
+  [SerializeField]private Rigidbody rb;
     void Start()
     {
         rb=GetComponent<Rigidbody>();
+        speedStart = GetComponent<Entity>().ms;
     }
 
     void Update()

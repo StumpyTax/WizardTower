@@ -8,6 +8,10 @@ TagManager:
   - Enemy
   - Transition
   - SpawnPoint
+  - enemy
+  - Edge
+  - Wall
+  - Spell
   layers:
   - Default
   - TransparentFX

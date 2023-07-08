@@ -7,13 +7,12 @@ public class Projectile : MonoBehaviour
     public float range;
     public Vector3 start;
     public Vector3 direction;
-    private float _damage;
     private Status[] _statuses;
 
     protected Rigidbody rb;
     private GameObject _gm;
     private Collider collider;
-
+    public Spell spell;
 
     public void Start()
     {
