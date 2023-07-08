@@ -1,4 +1,6 @@
 using System.Collections;
+using System.Threading.Tasks;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
@@ -9,14 +11,14 @@ public class DiceThrower : MonoBehaviour
     public GameObject diceThrowGameObject;
 
     private Caster _caster;
-    private DiceThrowScript _diceScript;
+    private DiceThrowScript _diceThrowScript;
     private PlayerInput _playerInput;
 
     private void Start()
     {
         _caster = GetComponent<Caster>();
         diceThrowGameObject = Instantiate(diceThrowGameObject);
-        _diceScript = diceThrowGameObject.GetComponent<DiceThrowScript>();
+        _diceThrowScript = diceThrowGameObject.GetComponent<DiceThrowScript>();
         
         _playerInput = new PlayerInput();
         _playerInput.Player.Enable();
@@ -34,12 +36,22 @@ public class DiceThrower : MonoBehaviour
     //     Debug.Log(_diceScript.TopEdge.name);
     // }
     
-    private void Roll(InputAction.CallbackContext action)
+    private async void Roll(InputAction.CallbackContext action)
     {
         if (action.performed)
         {
-            _diceScript.ThrowDice();
-            //StartCoroutine(_diceScript.RollCoroutine());
+            _diceThrowScript.ThrowDice();
+            while (!_diceThrowScript.isEdgeValid())
+            {
+                Debug.Log("await");
+                await Task.Yield();
+            }
+            Debug.Log(_diceThrowScript.topEdge.GetComponent<Edge>().spell);
+            _caster.spells[0] = _diceThrowScript.topEdge.GetComponent<Edge>().spell;
         }
+    }
+    IEnumerator ExampleCoroutine()
+    {
+        yield return new WaitForSeconds(10000f);
     }
 }
