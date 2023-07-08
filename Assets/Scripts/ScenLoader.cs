@@ -8,6 +8,7 @@ public class ScenLoader : MonoBehaviour
     {
         GameManager.instance.NextRoom();
     }
+    
     // Update is called once per frame
     void Update()
     {
