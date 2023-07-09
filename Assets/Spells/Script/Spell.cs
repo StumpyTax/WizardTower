@@ -1,8 +1,9 @@
 using System;
 using UnityEngine;
 using UnityEngine.Serialization;
+using Random = Unity.Mathematics.Random;
 
-public abstract partial class Spell : MonoBehaviour
+public class Spell : MonoBehaviour
 {
     private String _name;
     private String _description;
@@ -11,4 +12,13 @@ public abstract partial class Spell : MonoBehaviour
 
     public float dmg;
     public Entity casterEntity;
+
+    public float CalculateDamage()
+    {
+        return dmg * casterEntity.mastery * CalculateCrit();
+    }
+    private float CalculateCrit()
+    {
+        return 1;
+    }
 }

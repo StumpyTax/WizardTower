@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 6203440274483056640}
   - component: {fileID: 6203440274483056641}
   - component: {fileID: 6203440274483056642}
+  - component: {fileID: 3447754086957037445}
+  - component: {fileID: 978606150863351981}
   m_Layer: 0
   m_Name: TestMob
   m_TagString: Enemy
@@ -33,7 +35,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -65,7 +67,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 120
   m_CollisionDetection: 0
 --- !u!65 &6203440274483056640
 BoxCollider:
@@ -84,7 +86,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -148,3 +150,39 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3447754086957037445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6203440274483056652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9622dbf5605e1a44898615ab337ab00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spells:
+  - {fileID: 8958739219701735123, guid: bad2c93a667fc264fb1232052cabdf5a, type: 3}
+  direction: {x: 0, y: 0, z: 0}
+  entity: {fileID: 0}
+  attackRange: 2
+  attackTriggerRange: 1
+  _attackTrigger: {fileID: 6504002156584673631, guid: ffd4f15d7c4791d4aa05d443183fbb39, type: 3}
+--- !u!114 &978606150863351981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6203440274483056652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da41251a282c2e542818dcc3712b9f7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mastery: 0
+  movementSpeed: 400
+  critChance: 0
+  player: {fileID: 0}
+  FrictionForce: 0.8

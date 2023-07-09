@@ -1,24 +1,13 @@
-﻿using System;
-using System.Collections;
-using UnityEngine;
-[RequireComponent(typeof(Entity))]
+﻿using UnityEngine;
+[RequireComponent(typeof(Enemy))]
 
 public class CasterEnemy : Caster
 {
-    private void Start()
+    public Enemy entity;
+    public void Start()
     {
-        entity = GetComponent<Entity>();
-        StartCoroutine(CastPlasmaField());
-    }
-    
-
-    public IEnumerator CastPlasmaField()
-    {
-        while (true)
-        {
-            Cast(spells[0]);
-            yield return new WaitForSeconds(10f);
-        }
+        entity = GetComponent<Enemy>();
+        //StartCoroutine(CastPlasmaField());
     }
 
     public override void Cast(Spell spell)

@@ -4,6 +4,8 @@ using UnityEngine;
 [RequireComponent(typeof(Entity))]
 public class CasterPlayer : Caster
 {
+    public Entity entity;
+    
     private PlayerInput _playerInput;
     private Spell _spell;
     public void Start()
