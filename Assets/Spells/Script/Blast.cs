@@ -20,6 +20,7 @@ public class Blast : Spell
     {
         gameObject.AddComponent<Animator>();
         BlastField();
+        Destroy(gameObject);
     }
 
     private void BlastField()

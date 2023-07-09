@@ -18,7 +18,7 @@ public class FireBallProjectile : Projectile
     
     void Update()
     {
-        if (_end.magnitude < transform.position.magnitude)
+        if (_end.magnitude < (transform.position-start).magnitude)
             Destroy(gameObject);
     }
     private void OnTriggerEnter(Collider other)

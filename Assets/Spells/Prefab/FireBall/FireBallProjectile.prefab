@@ -43,11 +43,19 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4267316020594419624}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 1
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 1.21
-  m_Center: {x: 0, y: 0, z: 0}
+  serializedVersion: 3
+  m_Radius: 0.4
+  m_Center: {x: -0.019598722, y: 0, z: 0}
 --- !u!54 &5982681571823091359
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -55,10 +63,21 @@ Rigidbody:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4267316020594419624}
-  serializedVersion: 2
+  serializedVersion: 4
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -76,9 +95,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0c54b6b6dfc762438ba585bf769e2b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pushForce: 0
+  hp: 0
+  mastery: 0
+  movementSpeed: 0
+  critChance: 0
   speed: 100
   range: 10
+  pushForce: 0
   start: {x: -34.009686, y: 1.1201848, z: 0}
   direction: {x: -0.0782447, y: 0.08433044, z: -0.993361}
   spell: {fileID: 0}
@@ -108,7 +131,7 @@ Transform:
   m_GameObject: {fileID: 8975815398559663131}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.052, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4075673862586048080}
