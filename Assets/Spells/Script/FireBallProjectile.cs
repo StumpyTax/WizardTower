@@ -34,8 +34,8 @@ public class FireBallProjectile : Projectile
                 if (Random.value <= casterStats.critChance)
                     damage *= 2;
                 Debug.Log(damage);
-                victim.hp -= damage;
-                victim.DamageTaken();
+                victim.Hp -= damage;
+                victim.OnDamageTaken();
             }
         }
         if(other.tag!="Player" && other.tag!="Spell")

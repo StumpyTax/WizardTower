@@ -3,6 +3,8 @@ using UnityEngine;
 [RequireComponent(typeof(Entity))]
 public class CasterPlayer : Caster
 {
+    public Entity entity;
+    
     private PlayerInput _playerInput;
 
     public void Start()
