@@ -18,16 +18,15 @@ public class FireBall : Spell
         projectile.spell=this;
         projectile.range = range;
         projectile.speed = speed;
-        projectile.direction = targetDir.normalized;
+        projectile.direction = targetDir - casterEntity.transform.position;
+        projectile.direction = projectile.direction.normalized;
         Fire();
         Destroy(gameObject);
     }
     public void Fire()
     {
-        projectile.start = targetDir.normalized+caster.transform.position;
-/*        projectile.start.Scale(new Vector3(indent, indent, 1));
-*/        projectile.start.z = 0f;
-        Debug.Log(caster.getMousePosition());
+        projectile.start = targetDir.normalized * indent + casterEntity.transform.position;
+        projectile.start.z = 0f;
         Instantiate(projectile,projectile.start,
             Quaternion.Euler(0f,0f,0f));
     }

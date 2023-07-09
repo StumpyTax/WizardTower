@@ -44,11 +44,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc6bb3392fda35e4880b5aba368075e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetDir: {x: -15.095445, y: 15.633289, z: -19.700012}
   dmg: 1
-  targetDir: {x: -6.827586, y: -1.0862069, z: -19.567505}
   caster: {fileID: 0}
-  speed: 100
+  speed: 1
   cd: 0
-  range: 10
+  range: 10000
   indent: 1
   projectile: {fileID: 4736617081273855461, guid: 748b6a831087ce248883367f1bc9e5ea, type: 3}

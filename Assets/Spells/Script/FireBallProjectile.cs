@@ -11,14 +11,14 @@ public class FireBallProjectile : Projectile
     {
         rb=GetComponent<Rigidbody>();
 
-        rb.AddForce(direction*speed);
-        _end = start * range;
+        rb.AddForce(direction*speed, ForceMode.VelocityChange);
+        _end = direction * range;
 
     }
     
     void Update()
     {
-        if (start.x >= _end.x && start.y >= _end.y)
+        if (_end.magnitude < transform.position.magnitude)
             Destroy(gameObject);
     }
     private void OnTriggerEnter(Collider other)
@@ -28,7 +28,7 @@ public class FireBallProjectile : Projectile
             var victim = other.GetComponent<Entity>();
             if (victim != null)
             {
-                var casterStats = spell.caster.GetComponent<Entity>();
+                var casterStats = spell.casterEntity.GetComponent<Entity>();
                 var damage= casterStats.mastery * spell.dmg;
 
                 if (Random.value <= casterStats.critChance)

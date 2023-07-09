@@ -1,8 +1,10 @@
 using UnityEngine;
-
-public class enemy : MonoBehaviour
+[RequireComponent(typeof(Rigidbody))]
+public class Enemy : Entity
 {
+    public Entity player;
     public float FrictionForce = 0.80f;
+    
     
     private Rigidbody _rb;
     void Start()
@@ -14,6 +16,7 @@ public class enemy : MonoBehaviour
     {
         Friction();
     }
+    
     
     private void Friction()
     {

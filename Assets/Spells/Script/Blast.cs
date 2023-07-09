@@ -24,8 +24,8 @@ public class Blast : Spell
 
     private void BlastField()
     {
-        var casterX = casterPlayer.gameObject.transform.position.x;
-        var casterY = casterPlayer.gameObject.transform.position.y;
+        var casterX = casterEntity.gameObject.transform.position.x;
+        var casterY = casterEntity.gameObject.transform.position.y;
         for (var i = 0; i < blastWaves; i++)
         {
             var vector = (Mathf.PI * 2) / blastWaves;

@@ -18,7 +18,7 @@ public class PlasmaField : Spell
 
     private void Update()
     {
-        transform.position = casterPlayer.transform.position;
+        transform.position = casterEntity.transform.position;
     }
 
     public IEnumerator Spreading()
@@ -42,5 +42,6 @@ public class PlasmaField : Spell
         }
 
         transform.localScale = Vector3.zero;
+        Destroy(gameObject);
     }
 }

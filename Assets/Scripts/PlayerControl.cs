@@ -12,7 +12,7 @@ public class PlayerControl : MonoBehaviour
     void Start()
     {
         rb=GetComponent<Rigidbody>();
-        speedStart = GetComponent<Entity>().ms;
+        speedStart = GetComponent<Entity>().movementSpeed;
     }
 
     void Update()
