@@ -18,8 +18,8 @@ public class FireBall : Spell
         projectile.spell=this;
         projectile.range = range;
         projectile.speed = speed;
-        projectile.direction = targetDir - casterEntity.transform.position;
-        projectile.direction = projectile.direction.normalized;
+        projectile.direction = (targetDir - casterEntity.transform.position).normalized;
+       
         Fire();
         Destroy(gameObject);
     }

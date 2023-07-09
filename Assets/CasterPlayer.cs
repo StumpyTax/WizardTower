@@ -1,3 +1,4 @@
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 [RequireComponent(typeof(Entity))]
@@ -6,7 +7,7 @@ public class CasterPlayer : Caster
     public Entity entity;
     
     private PlayerInput _playerInput;
-
+    private Spell _spell;
     public void Start()
     {
         entity = GetComponent<Entity>();
@@ -17,14 +18,21 @@ public class CasterPlayer : Caster
         _playerInput.Player.cast_spell_2.performed += x =>  Cast(spells[1]);
     }
 
+    public void OnCastEnd()
+    {
+        GetComponent<Animator>().SetBool("Cast", false);
+        _spell.casterEntity = entity;
+        _spell.targetDir = GetMousePosition();
+        _spell.targetDir.z = 1;
+        Instantiate(_spell);
+    }
     public override void Cast(Spell spell)
     {
-        spell.casterEntity = entity;
-        spell.targetDir = GetMousePosition();
-        Instantiate(spell);
+        _spell = spell;
+        GetComponent<Animator>().SetBool("Cast", true);
     }
 
-    private Vector3 GetMousePosition()
+    public static Vector3 GetMousePosition()
     {
         Vector3 mousePos = Input.mousePosition;
         mousePos.z = Camera.main.nearClipPlane;

@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -121,7 +121,280 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: run front-export_0
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 34
+        width: 58
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 073ea5106aef0ae4881803e30a1b0474
+      internalID: 135870526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: run front-export_1
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 34
+        width: 54
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b01ca45b8b6d8234ba49805061561dc3
+      internalID: 1710414582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: run front-export_2
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 32
+        width: 58
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 608738105c10ffe41b87d50f6af95618
+      internalID: 1851604096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: run front-export_3
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 32
+        width: 58
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 800f0e19dbb750c48bf1afff44b1f73e
+      internalID: -1698463727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: run front-export_4
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 32
+        width: 52
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8955b3cdbad977940a709bc3b5c0d100
+      internalID: -1487685072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: run front-export_5
+      rect:
+        serializedVersion: 2
+        x: 692
+        y: 32
+        width: 50
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 877d63b108829744e9ca1bf92d20458d
+      internalID: -801337284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: run front-export_6
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 32
+        width: 54
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6fa4cf768d567d43a5cd80ef2ab61b2
+      internalID: 1327487093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: run front-export_7
+      rect:
+        serializedVersion: 2
+        x: 948
+        y: 36
+        width: 54
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7132c7e900dd29446adeed719fa98f2d
+      internalID: 1931191180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: run front-export_8
+      rect:
+        serializedVersion: 2
+        x: 1076
+        y: 36
+        width: 54
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b08a9613cfa29d4bbeaaabc126a5ea2
+      internalID: -677909609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: run front-export_9
+      rect:
+        serializedVersion: 2
+        x: 1206
+        y: 32
+        width: 54
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 652d9e0f57cd8c24abd40f4e939e8e6d
+      internalID: -425030232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: run front-export_10
+      rect:
+        serializedVersion: 2
+        x: 1334
+        y: 32
+        width: 54
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0d55b56ecb63964dbf2e9a1df57d3eb
+      internalID: -879218730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: run front-export_11
+      rect:
+        serializedVersion: 2
+        x: 1462
+        y: 32
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1a40c9e3fa2d4b41a548d37fb3f9f40
+      internalID: -1111871697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: run front-export_12
+      rect:
+        serializedVersion: 2
+        x: 1590
+        y: 32
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b63df8e25da50eb4ea43b9364eaa94a0
+      internalID: 1140502344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +405,20 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      run front-export_0: 135870526
+      run front-export_1: 1710414582
+      run front-export_10: -879218730
+      run front-export_11: -1111871697
+      run front-export_12: 1140502344
+      run front-export_2: 1851604096
+      run front-export_3: -1698463727
+      run front-export_4: -1487685072
+      run front-export_5: -801337284
+      run front-export_6: 1327487093
+      run front-export_7: 1931191180
+      run front-export_8: -677909609
+      run front-export_9: -425030232
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: IdleRight
+  m_Name: CastLeft
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,11 +21,13 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 1811750476, guid: abb85d6705101fa409e306637e6a5f40, type: 3}
+      value: {fileID: 448322881, guid: 74af353d9b5465f4eb6ecee7f3db7d8c, type: 3}
+    - time: 0.083333336
+      value: {fileID: 920488898, guid: 74af353d9b5465f4eb6ecee7f3db7d8c, type: 3}
     - time: 0.16666667
-      value: {fileID: 1502380424, guid: abb85d6705101fa409e306637e6a5f40, type: 3}
-    - time: 0.33333334
-      value: {fileID: 1811750476, guid: abb85d6705101fa409e306637e6a5f40, type: 3}
+      value: {fileID: 2076085620, guid: 74af353d9b5465f4eb6ecee7f3db7d8c, type: 3}
+    - time: 0.25
+      value: {fileID: 448322881, guid: 74af353d9b5465f4eb6ecee7f3db7d8c, type: 3}
     attribute: m_Sprite
     path: SpriteObject
     classID: 212
@@ -48,15 +50,16 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 1811750476, guid: abb85d6705101fa409e306637e6a5f40, type: 3}
-    - {fileID: 1502380424, guid: abb85d6705101fa409e306637e6a5f40, type: 3}
-    - {fileID: 1811750476, guid: abb85d6705101fa409e306637e6a5f40, type: 3}
+    - {fileID: 448322881, guid: 74af353d9b5465f4eb6ecee7f3db7d8c, type: 3}
+    - {fileID: 920488898, guid: 74af353d9b5465f4eb6ecee7f3db7d8c, type: 3}
+    - {fileID: 2076085620, guid: 74af353d9b5465f4eb6ecee7f3db7d8c, type: 3}
+    - {fileID: 448322881, guid: 74af353d9b5465f4eb6ecee7f3db7d8c, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.35000002
+    m_StopTime: 0.26666668
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -76,8 +79,8 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0
-    functionName: 
+  - time: 0.25
+    functionName: OnCastEnd
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
