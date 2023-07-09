@@ -65,7 +65,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1521126402012588205}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: ece51f1e1d563924d97bd70d0d00e311, type: 2}
   m_CullingMode: 0
@@ -198,7 +198,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3df9f5c2db276a5489e699816436c38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 100
   mastery: 30
   movementSpeed: 0
   critChance: 0.3

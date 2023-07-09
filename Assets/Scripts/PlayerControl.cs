@@ -1,18 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
-public class PlayerControl : MonoBehaviour
+public class PlayerControl : Entity
 {
   public Animator animator;
-  public float speedStart = 10;
   public float FrictionForce = 0.5f;
   [SerializeField]private Vector3 direction;
   [SerializeField]private Rigidbody rb;
     void Start()
     {
-        rb=GetComponent<Rigidbody>();
-        speedStart = GetComponent<Entity>().movementSpeed;
+      rb=GetComponent<Rigidbody>();
+        movementSpeed = GetComponent<Entity>().movementSpeed;
+
+        OnDeath += () => { animator.Play("Death"); };
     }
 
     void Update()
@@ -27,8 +29,8 @@ public class PlayerControl : MonoBehaviour
     {
       MovementLogic();
       FrictionLogic();
+      rb.MovePosition(rb.position+direction*movementSpeed);
     }
-
     private void MovementLogic()
     {
       float moveHorizontal = Input.GetAxis("Horizontal");
@@ -37,7 +39,7 @@ public class PlayerControl : MonoBehaviour
   
       Vector3 movement = new Vector3(moveHorizontal, moveVertical, 0f);
 
-      var velocityVector = new Vector3(moveHorizontal * speedStart, moveVertical * speedStart, 0f);
+      var velocityVector = new Vector3(moveHorizontal * movementSpeed, moveVertical * movementSpeed, 0f);
       rb.velocity += velocityVector;
     }
 
@@ -48,12 +50,4 @@ public class PlayerControl : MonoBehaviour
       velocity += frictionVector;
       rb.velocity = velocity;
     }
-    
-    // private void SpeedBound()
-    // {
-    //   if (rb.velocity.magnitude > speedMax)
-    //   {
-    //     rb.velocity = rb.velocity.normalized * speedMax;
-    //   }
-    //}
 }

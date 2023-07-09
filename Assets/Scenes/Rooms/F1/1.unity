@@ -550,6 +550,14 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 3447754086957037445, guid: 63955121e3b535c4885f7bcb0369fea2, type: 3}
+      propertyPath: spells.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3447754086957037445, guid: 63955121e3b535c4885f7bcb0369fea2, type: 3}
+      propertyPath: spells.Array.data[0]
+      value: 
+      objectReference: {fileID: 8958739219701735123, guid: bad2c93a667fc264fb1232052cabdf5a, type: 3}
     - target: {fileID: 6203440274483056640, guid: 63955121e3b535c4885f7bcb0369fea2, type: 3}
       propertyPath: m_IsTrigger
       value: 1

@@ -3,6 +3,4 @@
 public class Status : MonoBehaviour
 {
     private Sprite icon;
-    
-    
 }
