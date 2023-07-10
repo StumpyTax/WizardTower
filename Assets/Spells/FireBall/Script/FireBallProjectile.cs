@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Random = UnityEngine.Random;
 using UnityEngine;
+using Unity.VisualScripting;
 
 public class FireBallProjectile : Projectile
 {
@@ -35,7 +36,9 @@ public class FireBallProjectile : Projectile
                     damage *= 2;
                 Debug.Log(damage);
                 victim.Hp -= damage;
-                victim.OnDamageTaken();
+                /*                victim.OnDamageTaken();
+                */
+                SetStatuses(victim);
             }
         }
         if(other.tag!="Player" && other.tag!="Spell")

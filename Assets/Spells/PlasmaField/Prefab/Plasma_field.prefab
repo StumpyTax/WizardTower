@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7490063484308813638}
   m_Layer: 0
   m_Name: Plasma_field
-  m_TagString: Untagged
+  m_TagString: Spell
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46,8 +46,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09af1831b52e7c84392b0c57e081547f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  casterPlayer: {fileID: 0}
+  dmg: 0
   targetDir: {x: 0, y: 0, z: 0}
+  casterEntity: {fileID: 0}
+  statuses: []
   speed: 1
   range: 2
 --- !u!135 &3971922561750884555

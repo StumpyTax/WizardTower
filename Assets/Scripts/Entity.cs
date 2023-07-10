@@ -1,9 +1,12 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Entity : MonoBehaviour
 {
-    private float _hp;
+    public List<Status> _statuses;
+    [SerializeField]private float _hp;
+   
     public float Hp
     {
         get => _hp;
@@ -17,8 +20,9 @@ public class Entity : MonoBehaviour
                     OnDeath.Invoke();
                     return;
                 }
-                OnDamageTaken.Invoke();
-            }
+/*                OnDamageTaken.Invoke();
+ *              
+*/          }
             if (value > _hp)
             {
                 _hp = value;

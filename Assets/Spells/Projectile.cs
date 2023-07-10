@@ -4,18 +4,26 @@ public class Projectile : Entity
 {
     public float speed;
     public float range;
-    private float _damage;
     public float pushForce;
     
     public Vector3 start;
     public Vector3 direction;
-    private Status[] _statuses;
 
     protected Rigidbody rb;
     private GameObject _gm;
     private Collider collider;
     public Spell spell;
 
+   
+    public void SetStatuses(Entity victim)
+    {
+        foreach (var status in spell.statuses)
+        {
+            status.target = victim;
+            var statusGameObj = Instantiate(status);
+/*            victim._statuses.Add(statusGameObj);
+*/        }
+    }
 
     public void Start()
     {

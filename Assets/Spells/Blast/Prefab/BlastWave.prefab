@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2406603467124560515}
   m_Layer: 0
   m_Name: BlastWave
-  m_TagString: Untagged
+  m_TagString: Spell
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -169,8 +169,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c4013249e30ffa4aba95dd5ec2fd316, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pushForce: 0
+  _statuses: []
+  mastery: 0
+  movementSpeed: 0
+  critChance: 0
   speed: 150
   range: 10
+  pushForce: 0
   start: {x: -30.868681, y: 7.059455, z: 0}
   direction: {x: -0.25881958, y: 0.9659257, z: 0}
+  spell: {fileID: 0}
