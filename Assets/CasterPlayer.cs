@@ -23,7 +23,7 @@ public class CasterPlayer : Caster
         GetComponent<Animator>().SetBool("Cast", false);
         _spell.casterEntity = entity;
         _spell.targetDir = GetMousePosition();
-        _spell.targetDir.z = 1;
+        _spell.targetDir.z = 0;
         Instantiate(_spell);
     }
     public override void Cast(Spell spell)
