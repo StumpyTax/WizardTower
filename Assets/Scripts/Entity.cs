@@ -1,14 +1,20 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Entity : MonoBehaviour
 {
-    private float _hp;
+    [SerializeField] private float _hp;
+
     public float Hp
     {
         get => _hp;
-        set 
+        set
         {
+            Debug.Log(Hp);
             if (value < _hp)
             {
                 _hp = value;
@@ -17,8 +23,11 @@ public class Entity : MonoBehaviour
                     OnDeath.Invoke();
                     return;
                 }
-                OnDamageTaken.Invoke();
+/*                OnDamageTaken.Invoke();
+ *              
+*/
             }
+
             if (value > _hp)
             {
                 _hp = value;
@@ -26,7 +35,7 @@ public class Entity : MonoBehaviour
             }
         }
     }
-    
+
     public int mastery;
     public float movementSpeed;
     public float critChance;
@@ -34,4 +43,28 @@ public class Entity : MonoBehaviour
     public Action OnHeal;
     public Action OnDeath;
     public Action OnDamageTaken;
+
+
+    private List<Status> _statuses = new List<Status>();
+    public void AddNewStatus(Status status)
+    {
+        Debug.Log("new status");
+        status = Instantiate(status);
+        status.Init();
+        status.OnEnd += (entity) => _statuses.Remove(status);
+        _statuses.Add(status);
+        status.OnGet.Invoke(this);
+    }
+    public void AddNewStatuses(IEnumerable<Status> statuses)
+    {
+        foreach (var status in statuses)
+        {
+            AddNewStatus(status);
+        }
+    }
+
+    public Status[] GetStatuses()
+    {
+        return _statuses.ToArray();
+    }
 }

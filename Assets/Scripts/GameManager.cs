@@ -4,7 +4,7 @@ using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEditor.Purchasing;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using Unity.Mathematics;
+using Random=UnityEngine.Random;
 using UnityEditor;
 using System.Linq;
 using System;
@@ -64,12 +64,13 @@ public class GameManager : MonoBehaviour
     private void PlayerPosition()
     {
         var spawnPoints = GameObject.FindGameObjectsWithTag("SpawnPoint");
-        var random = new Unity.Mathematics.Random(1851936439U);
-        var point = spawnPoints[random.NextInt(spawnPoints.Length)];
-        point.GetComponentInParent<GateController>().enterGate=true;
+        var point = spawnPoints[Random.Range(0, spawnPoints.Length)];
+        var gate=point.GetComponentInParent<GateController>();
+        if (gate != null)
+        {
+            gate.enterGate = true;
+        }
         Instantiate(player, point.transform.position,Quaternion.identity);
-
-        
     }
 
     void Awake()

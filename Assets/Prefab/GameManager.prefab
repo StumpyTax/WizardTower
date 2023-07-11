@@ -47,8 +47,11 @@ MonoBehaviour:
   player: {fileID: 1521126402012588205, guid: 9c646bc970c816142aac5e35e2f62ec9, type: 3}
   floor: 1
   f1_rooms:
-  - {fileID: 102900000, guid: 2f091361224bd314fb855b6baf3a98ae, type: 3}
-  - {fileID: 102900000, guid: 2cda990e2423bbf4892e6590ba056729, type: 3}
-  - {fileID: 102900000, guid: 2cda990e2423bbf4892e6590ba056729, type: 3}
+  - {fileID: 102900000, guid: d84657d0142a14647ae11cd9ae215d37, type: 3}
+  - {fileID: 102900000, guid: ab3c05c94d12a944a98b34e51e85b157, type: 3}
+  - {fileID: 102900000, guid: 837fc09377b26794787b21830f4d0547, type: 3}
+  - {fileID: 102900000, guid: ea079f2f443701846b8e2c60e29c5705, type: 3}
+  - {fileID: 102900000, guid: 9d9a85d4e20bd0e4db26958ebd86ca47, type: 3}
+  - {fileID: 102900000, guid: 4aa7015213715974db3af79586de6caf, type: 3}
   floorSize: 3
   roomIsClear: 1

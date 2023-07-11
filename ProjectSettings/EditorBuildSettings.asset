@@ -9,6 +9,27 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/Rooms/F1/1.unity
+    path: Assets/Scenes/Rooms/F1/1_Test.unity
     guid: 2f091361224bd314fb855b6baf3a98ae
+  - enabled: 1
+    path: Assets/Scenes/Rooms/F1/1.unity
+    guid: d84657d0142a14647ae11cd9ae215d37
+  - enabled: 1
+    path: Assets/Scenes/Rooms/F1/2.unity
+    guid: ab3c05c94d12a944a98b34e51e85b157
+  - enabled: 1
+    path: Assets/Scenes/Rooms/F1/3.unity
+    guid: 837fc09377b26794787b21830f4d0547
+  - enabled: 1
+    path: Assets/Scenes/Rooms/F1/4.unity
+    guid: ea079f2f443701846b8e2c60e29c5705
+  - enabled: 1
+    path: Assets/Scenes/Rooms/F1/5.unity
+    guid: 9d9a85d4e20bd0e4db26958ebd86ca47
+  - enabled: 1
+    path: Assets/Scenes/Rooms/F1/8.unity
+    guid: 4aa7015213715974db3af79586de6caf
+  - enabled: 1
+    path: Assets/Scenes/Rooms/F1/Start.unity
+    guid: b5d1391d57154be4c807dd80eb49c58f
   m_configObjects: {}

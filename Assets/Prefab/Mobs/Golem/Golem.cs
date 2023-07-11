@@ -3,10 +3,14 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(Collider))]
-public class Golem : CasterEnemy
+[RequireComponent(typeof(MovementControl))]
+public class Golem : Enemy
 {
     public float attackRange;
     public float attackTriggerRange;
+
+    private Caster _caster;
+    private MovementControl _movementControl;
 
 
     public GameObject _attackTrigger;
@@ -18,8 +22,6 @@ public class Golem : CasterEnemy
 
     public void Start()
     {
-        base.Start();
-        entity.Start();
         _attackTrigger = Instantiate(_attackTrigger, gameObject.transform, false);
         _attackTrigger.name = "triggerRange";
         var script = _attackTrigger.GetComponent<AttackTrigger>();
@@ -34,29 +36,20 @@ public class Golem : CasterEnemy
             Debug.Log("where are you?");
             isEnemyClose = false;
         };
-        
-        // _attackRange = Instantiate(_attackRange, gameObject.transform, false);
-        // _attackRange.name = "attackRange";
-        // script = _attackRange.GetComponent<AttackTrigger>();
-        // script.radius = attackRange;
-        // script.OnEnter += () =>
-        // {
-        //     isEnemyInRange = true;
-        // };
-        // script.OnExit += () =>
-        // {
-        //     isEnemyInRange = false;
-        // };
+        _caster = GetComponent<Caster>();
+        _movementControl = GetComponent<MovementControl>();
     }
 
     public void Update()
     {
-        entity.Update();
+        _movementControl.FixedUpdate();
         if (isReady)
             if (isEnemyClose)
                 Attack();
             else
-                entity.GoTo(entity.player.transform.position);
+                _movementControl.MoveTo(
+                    _movementControl.GetMoveVector(
+                        transform.position, player.transform.position));
     }
 
     public void Attack()
@@ -68,7 +61,7 @@ public class Golem : CasterEnemy
     {
         isReady = false;
         yield return new WaitForSeconds(1f);
-        Cast(spells[0]);
+        _caster.Cast(_caster.spells[0]);
         isReady = true;
     }
 }

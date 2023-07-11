@@ -1,8 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class PlayerControl : Entity
 {
@@ -44,7 +40,6 @@ public class PlayerControl : Entity
     {
       MovementLogic();
       FrictionLogic();
-      rb.MovePosition(rb.position+direction*movementSpeed);
       animator.SetFloat("Speed", rb.velocity.magnitude);
     }
     private void MovementLogic()
