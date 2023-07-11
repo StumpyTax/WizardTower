@@ -19,6 +19,9 @@ public class Fire : Status
         curDur += Time.fixedDeltaTime;
 
         if (curDur >= duration)
+        {
+            target._statuses.Remove(id);
             Destroy(gameObject);
+        }
     }
 }

@@ -20,9 +20,15 @@ public class Projectile : Entity
         foreach (var status in spell.statuses)
         {
             status.target = victim;
-            var statusGameObj = Instantiate(status);
-/*            victim._statuses.Add(statusGameObj);
-*/        }
+            /*            victim._statuses.Add(statusGameObj);
+             *          
+            */
+            if (victim._statuses.ContainsKey(status.id))
+                victim._statuses[status.id].curDur = 0;
+            else
+                victim._statuses[status.id]= Instantiate(status);
+
+        }
     }
 
     public void Start()

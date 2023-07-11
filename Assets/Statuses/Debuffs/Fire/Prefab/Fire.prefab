@@ -44,8 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77e7a55213970334ebe58e4d1c5ee4c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 1
   _icon: {fileID: 0}
   _duration: 10
+  curDur: 0
   dmgInSec: 1
   HealInSec: 0
   target: {fileID: 0}

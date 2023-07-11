@@ -41,7 +41,7 @@ public class FireBallProjectile : Projectile
                 SetStatuses(victim);
             }
         }
-        if(other.tag!="Player" && other.tag!="Spell")
+        if(other.tag!="Player" && other.tag!="Spell" && other.tag != "Floor")
             Destroy(gameObject);
     }
 }

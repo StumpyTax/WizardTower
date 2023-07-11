@@ -66,7 +66,11 @@ public class GameManager : MonoBehaviour
         var spawnPoints = GameObject.FindGameObjectsWithTag("SpawnPoint");
         var random = new Unity.Mathematics.Random(1851936439U);
         var point = spawnPoints[random.NextInt(spawnPoints.Length)];
-        point.GetComponentInParent<GateController>().enterGate=true;
+        var gate=point.GetComponentInParent<GateController>();
+        if (gate != null)
+        {
+            gate.enterGate = true;
+        }
         Instantiate(player, point.transform.position,Quaternion.identity);
 
         

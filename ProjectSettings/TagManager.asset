@@ -11,15 +11,16 @@ TagManager:
   - Edge
   - Wall
   - Spell
+  - Floor
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Floor
   - Water
   - UI
-  - 
-  - 
+  - Walls
+  - Objects
   - 
   - 
   - 

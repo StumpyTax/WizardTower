@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Entity : MonoBehaviour
 {
-    public List<Status> _statuses;
+    public Dictionary<int, Status> _statuses=new Dictionary<int, Status>();
+
     [SerializeField]private float _hp;
    
     public float Hp
