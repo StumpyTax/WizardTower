@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -18,16 +19,17 @@ public class FireBall : Spell
         projectile.spell=this;
         projectile.range = range;
         projectile.speed = speed;
-        projectile.direction = (targetDir - casterEntity.transform.position).normalized;
-       
+        projectile.direction = (targetDir - casterEntity.transform.position);
+        projectile.direction.z = 0;
+        projectile.direction = projectile.direction.normalized;
         Fire();
         Destroy(gameObject);
     }
     public void Fire()
     {
         projectile.start = casterEntity.transform.position + projectile.direction * indent;
-        Debug.Log(CasterPlayer.GetMousePosition());
         projectile.start.z = 0f;
+        Debug.Log(projectile.direction);
         Instantiate(projectile,projectile.start,
             Quaternion.Euler(0f,0f,0f));
     }
