@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 197728129713133950}
   - component: {fileID: 197728129713133949}
   - component: {fileID: 1724519312505089697}
-  m_Layer: 0
+  - component: {fileID: -96093691617333292}
+  m_Layer: 6
   m_Name: GateDown
   m_TagString: Gate
   m_Icon: {fileID: 0}
@@ -26,8 +27,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 197728129713133948}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2651217694874108787}
@@ -63,12 +64,25 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 0.5, z: 1}
+  m_Center: {x: 0, y: 0.75, z: 0}
+--- !u!114 &-96093691617333292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 197728129713133948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41800b7a6d8ac66419f18b0ccd997a1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isStatic: 1
 --- !u!1 &8152930589447915750
 GameObject:
   m_ObjectHideFlags: 0
@@ -79,8 +93,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5422866930827716071}
   - component: {fileID: 3312256970167619530}
-  m_Layer: 0
-  m_Name: 16x16_186
+  m_Layer: 6
+  m_Name: SpriteObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -209,7 +223,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'SpawnPoint '
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 5961975614144109898, guid: 9c5460dcafba4fe4396729565a1a7539, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 2099471307732583751, guid: 9c5460dcafba4fe4396729565a1a7539, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

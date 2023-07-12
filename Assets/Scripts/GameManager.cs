@@ -32,11 +32,11 @@ public class GameManager : MonoBehaviour
                     break; 
                 }
         }
-        var random = new Unity.Mathematics.Random(1);
+       
 
         for (int i = 0; i < floorSize; i++)
         {
-            var room = rooms[random.NextInt(rooms.Count)].name;
+            var room = rooms[Random.Range(0,rooms.Count)].name;
             roomsQueue.Enqueue(room);
             Debug.Log(room);
         }

@@ -8,7 +8,7 @@ public class GateController : MonoBehaviour
 /*        anim.SetActive(true);
 */    }
      
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider collision)
     {
         if(collision.gameObject.tag=="Player" && GameManager.instance.roomIsClear && !enterGate)
         {

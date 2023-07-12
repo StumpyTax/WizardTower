@@ -29,11 +29,13 @@ public class PlasmaField : Spell
         float speedFixed = Time.deltaTime * speed;
         var radius = transform.localScale;
         var scale = Vector3.one * range;
+        scale.z = 1;
         _animator.Play("release");
         while (radius.magnitude < scale.magnitude)
         {
             speedFixed = Time.deltaTime * speed;
             radius += Vector3.one * speedFixed;
+            radius.z = 1;
             transform.localScale = radius;
             yield return null;
         }
@@ -41,6 +43,7 @@ public class PlasmaField : Spell
         {
             speedFixed = Time.deltaTime * speed;
             radius -= Vector3.one * speedFixed;
+            radius.z = 1;
             transform.localScale = radius;
             yield return null;
         }
