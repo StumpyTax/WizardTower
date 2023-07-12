@@ -1,5 +1,14 @@
+using System;
 using UnityEngine;
-public class Enemy : Entity
+[RequireComponent(typeof(Entity))]
+public class Enemy : MonoBehaviour
 {
+    public Entity entity;
     public Player player;
+
+    private void Start()
+    {
+        entity = GetComponent<Entity>();
+        entity.team = "enemy";
+    }
 }

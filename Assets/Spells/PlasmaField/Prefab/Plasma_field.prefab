@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dmg: 0
-  targetDir: {x: -0.06376207, y: 2.2285137, z: 0}
+  targetDir: {x: 0.09077299, y: -1.2575369, z: 0}
   casterEntity: {fileID: 0}
   statuses: []
   speed: 4
@@ -115,7 +115,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: -1179311097, guid: f5439af3794893b4cac65a9d0697bcd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

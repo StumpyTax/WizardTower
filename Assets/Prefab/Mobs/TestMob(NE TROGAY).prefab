@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 889776287485673549}
   - component: {fileID: 5344904457037794524}
   - component: {fileID: 7386190553803476038}
+  - component: {fileID: 7526996188583786680}
   m_Layer: 0
   m_Name: TestMob(NE TROGAY)
   m_TagString: Enemy
@@ -133,7 +134,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!114 &7386190553803476038
 MonoBehaviour:
@@ -147,10 +148,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da41251a282c2e542818dcc3712b9f7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _statuses: []
-  _hp: 100
+  entity: {fileID: 7526996188583786680}
+  player: {fileID: 0}
+--- !u!114 &7526996188583786680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5195472996393119212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3df9f5c2db276a5489e699816436c38b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hp: 0
   mastery: 0
   movementSpeed: 0
   critChance: 0
-  player: {fileID: 0}
-  FrictionForce: 0.8
+  team: 

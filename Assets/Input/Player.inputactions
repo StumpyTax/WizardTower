@@ -67,6 +67,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "pick_up",
+                    "type": "Button",
+                    "id": "0ab4ff4b-3261-4cf2-b241-7db8d578dac2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -144,6 +153,45 @@
                     "processors": "",
                     "groups": "",
                     "action": "right",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "32e599df-e6f8-43fe-ad01-946f17fce06a",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "pick_up",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "DiceChoose",
+            "id": "9fa2e8c8-b044-4f1f-a224-c0587f496423",
+            "actions": [
+                {
+                    "name": "confirm",
+                    "type": "Button",
+                    "id": "0ae30314-08ef-4cee-b702-7fe41cba24d9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "820b9e6d-f6c7-4cf4-8bf1-a556ed6fb96f",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "confirm",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -1,19 +1,30 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
-public class Player : Entity
+[RequireComponent(typeof(Entity))]
+public class Player : MonoBehaviour
 {
+    public Entity entity;
     private Caster caster;
     private MovementControl _control;
     private PlayerInput _playerInput;
+    private DiceThrower _diceThrower;
+    private UIManager _uiManager;
 
     private void Start()
     {
-        caster = GetComponent<Caster>();
-        _control = GetComponent<MovementControl>();
-        
+        entity = GetComponent<Entity>();
+        entity.team = "player";
+        _uiManager = GameObject.FindWithTag("UIManager").GetComponent<UIManager>();
         
         _playerInput = new PlayerInput();
-        _playerInput.Enable();
+        _playerInput.Player.Enable();
+        
+        caster = GetComponent<Caster>();
+        _control = GetComponent<MovementControl>();
+        _diceThrower = GetComponent<DiceThrower>();
+        _diceThrower.playerInput = _playerInput;
+        
         _playerInput.Player.cast_spell_1.performed += x =>
         {
             caster.direction = GetMousePosition();
@@ -24,11 +35,14 @@ public class Player : Entity
             caster.direction = GetMousePosition();
             caster.Cast(caster.spells[1]);
         };
+        _playerInput.Player.pick_up.performed += PickUp;
+        _playerInput.Player.roll_dice.performed += _diceThrower.Roll;
     }
 
     public void FixedUpdate()
     {
-        _control.MoveTo(PlayerMoveDirection());
+        if (_playerInput.Player.enabled)
+            _control.MoveTo(PlayerMoveDirection());
     }
 
     private Vector3 PlayerMoveDirection()
@@ -44,5 +58,13 @@ public class Player : Entity
         Vector3 mousePos = Input.mousePosition;
         mousePos.z = Camera.main.nearClipPlane;
         return Camera.main.ScreenToWorldPoint(mousePos);
+    }
+
+    public void PickUp(InputAction.CallbackContext callbackContext)
+    {
+        _diceThrower.Choose();
+        _playerInput.Player.Disable();
+        _playerInput.DiceChoose.Enable();
+        _uiManager.ShowDiceChooseWindow();
     }
 }

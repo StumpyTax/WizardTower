@@ -28,7 +28,7 @@ public class FireBall : Spell
     public void Fire()
     {
         projectile.start = casterEntity.transform.position + projectile.direction * indent;
-        projectile.start.z = 0f;
+        projectile.start.z = casterEntity.transform.position.z;
         Debug.Log(projectile.direction);
         Instantiate(projectile,projectile.start,
             Quaternion.Euler(0f,0f,0f));

@@ -3,13 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using Random = UnityEngine.Random;
 using UnityEngine;
-using Unity.VisualScripting;
 
 public class FireBallProjectile : Projectile
 {
     private Vector3 _end;
     void Start()
     {
+        statuses = new List<Status>();
+        statuses.Add(new Fire());
         rb=GetComponent<Rigidbody>();
 
         rb.AddForce(direction*speed, ForceMode.VelocityChange);
@@ -22,19 +23,23 @@ public class FireBallProjectile : Projectile
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Enemy")
+        Entity entity;
+        if (other.TryGetComponent<Entity>(out entity))
         {
-            var victim = other.GetComponent<Entity>();
-            if (victim != null)
+            if (entity.team != this.spell.casterEntity.team)
             {
-                var casterStats = spell.casterEntity.GetComponent<Entity>();
-                var damage= spell.CalculateDamage();
+                var victim = other.GetComponent<Entity>();
+                if (victim != null)
+                {
+                    var casterStats = spell.casterEntity.GetComponent<Entity>();
+                    var damage= spell.CalculateDamage();
 
-                victim.Hp -= damage;
-                victim.AddNewStatuses(statuses);
+                    victim.Hp -= damage;
+                    victim.AddNewStatuses(statuses);
+                }
             }
         }
-        if(other.tag!="Player" && other.tag!="Spell" && other.tag != "Floor")
+        if(other.tag == "Wall")
             Destroy(gameObject);
     }
 }
