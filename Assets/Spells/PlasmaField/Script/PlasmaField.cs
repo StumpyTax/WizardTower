@@ -11,8 +11,11 @@ public class PlasmaField : Spell
     public float speed;
     public float range;
 
+    private Animator _animator;
+
     private void Start()
     {
+        _animator = GetComponent<Animator>();
          StartCoroutine(Spreading());
     }
 
@@ -26,6 +29,7 @@ public class PlasmaField : Spell
         float speedFixed = Time.deltaTime * speed;
         var radius = transform.localScale;
         var scale = Vector3.one * range;
+        _animator.Play("release");
         while (radius.magnitude < scale.magnitude)
         {
             speedFixed = Time.deltaTime * speed;

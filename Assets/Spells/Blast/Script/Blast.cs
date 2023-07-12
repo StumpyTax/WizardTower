@@ -30,13 +30,13 @@ public class Blast : Spell
         for (var i = 0; i < blastWaves; i++)
         {
             var vector = (Mathf.PI * 2) / blastWaves;
-            var vector2 = new Vector3(Mathf.Sin(i * vector) + casterX, Mathf.Cos(i * vector) + casterY, 0);
+            var vector2 = new Vector3(Mathf.Sin(i * vector) + casterX, Mathf.Cos(i * vector) + casterY, casterEntity.transform.position.z);
             blastWave.start = vector2;
 
 
             blastWave.direction = new Vector3(blastWave.start.x - casterX, blastWave.start.y - casterY, 0f);
             
-            blastWave.start.Scale(new Vector3(indent, indent, 0f));
+            blastWave.start.Scale(new Vector3(indent, indent, 1));
 
 
             blastWave.range = range;

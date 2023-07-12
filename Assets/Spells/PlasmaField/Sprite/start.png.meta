@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a0a67cc4f8bce1a42a4b23cf927c7e4a
+guid: a0c5321fe87ae314a8f97e6e4f699698
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -121,112 +121,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: attack left-export_0
-      rect:
-        serializedVersion: 2
-        x: 54
-        y: 32
-        width: 42
-        height: 68
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3b8e651116f479749ac97aa527889ac2
-      internalID: 160597017
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: attack left-export_1
-      rect:
-        serializedVersion: 2
-        x: 174
-        y: 32
-        width: 48
-        height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 823181323f54f2342a8b223635a7174d
-      internalID: 2082956842
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: attack left-export_2
-      rect:
-        serializedVersion: 2
-        x: 305
-        y: 32
-        width: 54
-        height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c763344559bc25541a4f93a2221363b4
-      internalID: -1133766154
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: attack left-export_3
-      rect:
-        serializedVersion: 2
-        x: 434
-        y: 32
-        width: 40
-        height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 474a88d482182b049b9b58b31ce98f99
-      internalID: 896099552
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: attack left-export_4
-      rect:
-        serializedVersion: 2
-        x: 568
-        y: 32
-        width: 22
-        height: 66
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 68fb799a4c452754195e0894c2cf0330
-      internalID: -375719589
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -237,12 +132,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      attack left-export_0: 160597017
-      attack left-export_1: 2082956842
-      attack left-export_2: -1133766154
-      attack left-export_3: 896099552
-      attack left-export_4: -375719589
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

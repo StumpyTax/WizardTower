@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Fire : Status
@@ -22,5 +21,13 @@ public class Fire : Status
             curDur += intervalBetweenTicks + Time.deltaTime;
         }
         OnEnd.Invoke(entity);
+    }
+    
+    public void Fire()
+    {
+        projectile.start = casterEntity.transform.position + projectile.direction * indent;
+        projectile.start.z = 0f;
+        Instantiate(projectile, projectile.start,
+            Quaternion.Euler(0f,0f,0f));
     }
 }

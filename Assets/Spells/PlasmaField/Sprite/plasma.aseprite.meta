@@ -1,0 +1,472 @@
+fileFormatVersion: 2
+guid: 6067d7121d4faab41b36be5d458de432
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: plasma_Frame_0
+    originalName: 
+    pivot: {x: 0.5, y: -7.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 112
+      y: 144
+      width: 2
+      height: 4
+    spriteID: 67031c4624e96cc41b50dbb8918215c6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 112, y: 144}
+  - name: plasma_Frame_1
+    originalName: 
+    pivot: {x: 0.5, y: -2.7}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 112
+      y: 108
+      width: 10
+      height: 10
+    spriteID: 0e362fa516d401346929da7ab8a809ea
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 112, y: 108}
+  - name: plasma_Frame_2
+    originalName: 
+    pivot: {x: 0.5, y: -0.23255813}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 61
+      y: 57
+      width: 46
+      height: 43
+    spriteID: c153599be9218674383988c2b51b1466
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 61, y: 57}
+  - name: plasma_Frame_3
+    originalName: 
+    pivot: {x: 0.5102041, y: -0.19565217}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 49
+      height: 46
+    spriteID: aaf72f415efb8db419f9e1973e476e6a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: plasma_Frame_4
+    originalName: 
+    pivot: {x: 0.5102041, y: -0.22222222}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 58
+      width: 49
+      height: 45
+    spriteID: 9bcc8ee097c9fe14babb695d15454580
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 58}
+  - name: plasma_Frame_5
+    originalName: 
+    pivot: {x: 0.5217391, y: -0.23913044}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 165
+      width: 46
+      height: 46
+    spriteID: 2001177c9ae5e9e4183b920cfcf01e90
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 165}
+  - name: plasma_Frame_6
+    originalName: 
+    pivot: {x: 0.5531915, y: -0.23913044}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 111
+      width: 47
+      height: 46
+    spriteID: 2270f438259c537479c2c18bda4e8aae
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 111}
+  - name: plasma_Frame_7
+    originalName: 
+    pivot: {x: 0.5116279, y: -0.23913044}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 61
+      y: 108
+      width: 43
+      height: 46
+    spriteID: eb5f1d6adb0827f4d901ab7f480d9464
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 61, y: 108}
+  - name: plasma_Frame_8
+    originalName: 
+    pivot: {x: 0.5217391, y: -0.24444444}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 61
+      y: 4
+      width: 46
+      height: 45
+    spriteID: c28a7d553771bf74eb2ff1c8010d3b71
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 61, y: 4}
+  - name: plasma_Frame_9
+    originalName: 
+    pivot: {x: 0.4871795, y: -0.3888889}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 61
+      y: 162
+      width: 39
+      height: 36
+    spriteID: 883e47d2331d21447a735033a6ec9aeb
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 61, y: 162}
+  - name: plasma_Frame_10
+    originalName: 
+    pivot: {x: 0.5, y: -2.7}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 112
+      y: 126
+      width: 10
+      height: 10
+    spriteID: 9b572e4c5d0e9dc4faf4094b5567efbe
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 112, y: 126}
+  - name: plasma_Frame_11
+    originalName: 
+    pivot: {x: 0.5, y: -7.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 122
+      y: 144
+      width: 2
+      height: 4
+    spriteID: 0dcbef6c5a307274aaae6100541d0b80
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 122, y: 144}
+  spriteSheetImportData: []
+  asepriteLayers:
+  - layerIndex: 0
+    guid: 429394880
+    name: plasma
+    layerFlags: 0
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: plasma_Frame_0
+      frameIndex: 0
+      cellRect:
+        x: 31
+        y: 30
+        width: 2
+        height: 4
+      spriteId: 67031c4624e96cc41b50dbb8918215c6
+    - name: plasma_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 27
+        y: 27
+        width: 10
+        height: 10
+      spriteId: 0e362fa516d401346929da7ab8a809ea
+    - name: plasma_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 9
+        y: 10
+        width: 46
+        height: 43
+      spriteId: c153599be9218674383988c2b51b1466
+    - name: plasma_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 7
+        y: 9
+        width: 49
+        height: 46
+      spriteId: aaf72f415efb8db419f9e1973e476e6a
+    - name: plasma_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 7
+        y: 10
+        width: 49
+        height: 45
+      spriteId: 9bcc8ee097c9fe14babb695d15454580
+    - name: plasma_Frame_5
+      frameIndex: 5
+      cellRect:
+        x: 8
+        y: 11
+        width: 46
+        height: 46
+      spriteId: 2001177c9ae5e9e4183b920cfcf01e90
+    - name: plasma_Frame_6
+      frameIndex: 6
+      cellRect:
+        x: 6
+        y: 11
+        width: 47
+        height: 46
+      spriteId: 2270f438259c537479c2c18bda4e8aae
+    - name: plasma_Frame_7
+      frameIndex: 7
+      cellRect:
+        x: 10
+        y: 11
+        width: 43
+        height: 46
+      spriteId: eb5f1d6adb0827f4d901ab7f480d9464
+    - name: plasma_Frame_8
+      frameIndex: 8
+      cellRect:
+        x: 8
+        y: 11
+        width: 46
+        height: 45
+      spriteId: c28a7d553771bf74eb2ff1c8010d3b71
+    - name: plasma_Frame_9
+      frameIndex: 9
+      cellRect:
+        x: 13
+        y: 14
+        width: 39
+        height: 36
+      spriteId: 883e47d2331d21447a735033a6ec9aeb
+    - name: plasma_Frame_10
+      frameIndex: 10
+      cellRect:
+        x: 27
+        y: 27
+        width: 10
+        height: 10
+      spriteId: 9b572e4c5d0e9dc4faf4094b5567efbe
+    - name: plasma_Frame_11
+      frameIndex: 11
+      cellRect:
+        x: 31
+        y: 30
+        width: 2
+        height: 4
+      spriteId: 0dcbef6c5a307274aaae6100541d0b80
+    linkedCells: []
+    parentIndex: -1
+  platformSettings: []
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 64, y: 64}

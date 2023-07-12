@@ -1,9 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class Entity : MonoBehaviour
 {
@@ -62,7 +60,6 @@ public class Entity : MonoBehaviour
             AddNewStatus(status);
         }
     }
-
     public Status[] GetStatuses()
     {
         return _statuses.ToArray();
