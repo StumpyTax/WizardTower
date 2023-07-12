@@ -1,24 +1,31 @@
 using System;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public abstract class Status : MonoBehaviour
 {
-    public int id;
-    [SerializeField]private Sprite _icon;
-    [SerializeField]private float _duration;
+    private Sprite _icon;
+    private float _duration;
     public float duration { get { return _duration; }}
     public float curDur;
 
     public float dmgInTick;
-    public float HealInTick;
+    public float healInTick;
     public float intervalBetweenTicks;
     
-    public Entity target;
 
     public Action<Entity> OnGet;
     public Action<Entity> OnTick;
     public Action<Entity> OnEnd;
 
+
+    public Status(float _duration, float dmgInTick, float healInTick, float intervalBetweenTicks)
+    {
+        this._duration = _duration;
+        this.dmgInTick = dmgInTick;
+        this.healInTick = healInTick;
+        this.intervalBetweenTicks = intervalBetweenTicks;
+    }
     public abstract void Init();
     // {
     //     target= GetComponent<Entity>();

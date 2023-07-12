@@ -11,10 +11,14 @@ public class DiceThrowScript : MonoBehaviour
 {
     public GameObject dice;
     public GameObject camera;
-    public GameObject topEdge;
+
+    public GameObject topEdge()
+    {
+        return _dice.GetTopEdge();
+    }
 
     private Rigidbody _diceRb;
-    private DiceScript _diceScript;
+    private Dice _dice;
 
     public void Awake()
     {
@@ -24,7 +28,7 @@ public class DiceThrowScript : MonoBehaviour
         camera.GetComponent<CameraTrack>().trackedO = dice;
 
         _diceRb = dice.GetComponent<Rigidbody>();
-        _diceScript = dice.GetComponent<DiceScript>();
+        _dice = dice.GetComponent<Dice>();
     }
 
     public void Start()
@@ -35,16 +39,13 @@ public class DiceThrowScript : MonoBehaviour
 
     public void ThrowDice()
     {
-        topEdge = null;
         SetDiceAtStartPosition();
-        _diceRb.constraints = RigidbodyConstraints.FreezePosition;
-        _diceScript.ThrowDice();
+        _dice.ThrowDice();
         _diceRb.constraints = RigidbodyConstraints.None;
     }
-
     public bool isEdgeValid()
     {
-        bool result = _diceScript.isEdgeValid();
+        bool result = _dice.isEdgeValid();
         // IEnumerator ExampleCoroutine()
         // {
         //     yield return new WaitForSecondsRealtime(0.5f);
@@ -86,9 +87,10 @@ public class DiceThrowScript : MonoBehaviour
         var torqueRandomZ = Random.Range(-_diceRb.maxAngularVelocity, _diceRb.maxAngularVelocity);
         _diceRb.angularVelocity = new Vector3(torqueRandomX, torqueRandomY, torqueRandomZ);
     }
-    private void SetDiceAtStartPosition()
+    public void SetDiceAtStartPosition()
     {
         _diceRb.transform.localPosition = new Vector3(0, 0, -3f);
+        _diceRb.constraints = RigidbodyConstraints.FreezePosition;
     }
 
     private void Friction(float frictionForce)

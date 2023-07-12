@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
     public int floorSize=10;
     private Queue<string> roomsQueue = new Queue<string>();
     public bool roomIsClear = true;
-
+    
     private void GenerateLvlQueue()
     {
         List<SceneAsset> rooms=new List<SceneAsset>();

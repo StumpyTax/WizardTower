@@ -18,9 +18,7 @@ public class MovementControl : MonoBehaviour
     void Start()
     {
         entity = GetComponent<Entity>();
-        animator = GetComponent<Animator>();
-        if (animator is MissingComponentException)
-            animator = null;
+        if (TryGetComponent<Animator>(out animator))
         rb=GetComponent<Rigidbody>();
         entity.OnDeath += () => { animator.Play("Death"); };
     }

@@ -5,38 +5,31 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
 
-[RequireComponent(typeof(CasterPlayer))]
 public class DiceThrower : MonoBehaviour
 {
     public GameObject diceThrowGameObject;
+    public PlayerInput playerInput;
 
-    private CasterPlayer _casterPlayer;
+    private Caster _caster;
     private DiceThrowScript _diceThrowScript;
-    private PlayerInput _playerInput;
+    private DiceChoose _diceChoose;
 
     private void Start()
     {
-        _casterPlayer = GetComponent<CasterPlayer>();
+        _caster = GetComponent<Caster>();
         diceThrowGameObject = Instantiate(diceThrowGameObject);
         _diceThrowScript = diceThrowGameObject.GetComponent<DiceThrowScript>();
-        
-        _playerInput = new PlayerInput();
-        _playerInput.Player.Enable();
-        _playerInput.Player.roll_dice.performed += Roll;
+        _diceChoose = diceThrowGameObject.GetComponentInChildren<DiceChoose>();
 
+        playerInput.DiceChoose.confirm.performed += x => _diceChoose.Confirm();
     }
-
-    // private IEnumerator Roll()
-    // {
-    //     _diceScript.ThrowDice();
-    //     while (!_diceScript.isRolled)
-    //     {
-    //         yield return null;
-    //     } 
-    //     Debug.Log(_diceScript.TopEdge.name);
-    // }
+    public void Choose()
+    {
+        _diceThrowScript.enabled = false;
+        _diceChoose.enabled = true;
+    }
     
-    private async void Roll(InputAction.CallbackContext action)
+    public async void Roll(InputAction.CallbackContext action)
     {
         if (action.performed)
         {
@@ -46,12 +39,8 @@ public class DiceThrower : MonoBehaviour
                 Debug.Log("await");
                 await Task.Yield();
             }
-            Debug.Log(_diceThrowScript.topEdge.GetComponent<Edge>().spell);
-            _casterPlayer.spells[0] = _diceThrowScript.topEdge.GetComponent<Edge>().spell;
+            Debug.Log(_diceThrowScript.topEdge().GetComponent<Edge>().spell);
+            _caster.spells[0] = _diceThrowScript.topEdge().GetComponent<Edge>().spell;
         }
-    }
-    IEnumerator ExampleCoroutine()
-    {
-        yield return new WaitForSeconds(10000f);
     }
 }

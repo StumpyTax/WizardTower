@@ -25,7 +25,7 @@ public class EnemiesWave : MonoBehaviour
     {
         enemy = Instantiate(enemy);
         enemy.transform.position = transform.position;
-        enemy.OnDeath += () =>
+        enemy.entity.OnDeath += () =>
         {
             enemies.Remove(enemy);
             if (enemies.Count == 0) OnEnemiesDead.Invoke();

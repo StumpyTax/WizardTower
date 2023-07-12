@@ -12,6 +12,8 @@ TagManager:
   - Wall
   - Spell
   - Floor
+  - SpawnPoint Enemy
+  - UIManager
   layers:
   - Default
   - TransparentFX

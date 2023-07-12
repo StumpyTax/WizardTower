@@ -42,12 +42,13 @@ public class Entity : MonoBehaviour
     public Action OnDeath;
     public Action OnDamageTaken;
 
+    public string team;
+
 
     private List<Status> _statuses = new List<Status>();
     public void AddNewStatus(Status status)
     {
         Debug.Log("new status");
-        status = Instantiate(status);
         status.Init();
         status.OnEnd += (entity) => _statuses.Remove(status);
         _statuses.Add(status);

@@ -89,6 +89,15 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""pick_up"",
+                    ""type"": ""Button"",
+                    ""id"": ""0ab4ff4b-3261-4cf2-b241-7db8d578dac2"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -168,6 +177,45 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""action"": ""right"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""32e599df-e6f8-43fe-ad01-946f17fce06a"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""pick_up"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""DiceChoose"",
+            ""id"": ""9fa2e8c8-b044-4f1f-a224-c0587f496423"",
+            ""actions"": [
+                {
+                    ""name"": ""confirm"",
+                    ""type"": ""Button"",
+                    ""id"": ""0ae30314-08ef-4cee-b702-7fe41cba24d9"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""820b9e6d-f6c7-4cf4-8bf1-a556ed6fb96f"",
+                    ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""confirm"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -183,6 +231,10 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         m_Player_down = m_Player.FindAction("down", throwIfNotFound: true);
         m_Player_left = m_Player.FindAction("left", throwIfNotFound: true);
         m_Player_right = m_Player.FindAction("right", throwIfNotFound: true);
+        m_Player_pick_up = m_Player.FindAction("pick_up", throwIfNotFound: true);
+        // DiceChoose
+        m_DiceChoose = asset.FindActionMap("DiceChoose", throwIfNotFound: true);
+        m_DiceChoose_confirm = m_DiceChoose.FindAction("confirm", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -251,6 +303,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_down;
     private readonly InputAction m_Player_left;
     private readonly InputAction m_Player_right;
+    private readonly InputAction m_Player_pick_up;
     public struct PlayerActions
     {
         private @PlayerInput m_Wrapper;
@@ -262,6 +315,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         public InputAction @down => m_Wrapper.m_Player_down;
         public InputAction @left => m_Wrapper.m_Player_left;
         public InputAction @right => m_Wrapper.m_Player_right;
+        public InputAction @pick_up => m_Wrapper.m_Player_pick_up;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -292,6 +346,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @right.started += instance.OnRight;
             @right.performed += instance.OnRight;
             @right.canceled += instance.OnRight;
+            @pick_up.started += instance.OnPick_up;
+            @pick_up.performed += instance.OnPick_up;
+            @pick_up.canceled += instance.OnPick_up;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -317,6 +374,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @right.started -= instance.OnRight;
             @right.performed -= instance.OnRight;
             @right.canceled -= instance.OnRight;
+            @pick_up.started -= instance.OnPick_up;
+            @pick_up.performed -= instance.OnPick_up;
+            @pick_up.canceled -= instance.OnPick_up;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -334,6 +394,52 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         }
     }
     public PlayerActions @Player => new PlayerActions(this);
+
+    // DiceChoose
+    private readonly InputActionMap m_DiceChoose;
+    private List<IDiceChooseActions> m_DiceChooseActionsCallbackInterfaces = new List<IDiceChooseActions>();
+    private readonly InputAction m_DiceChoose_confirm;
+    public struct DiceChooseActions
+    {
+        private @PlayerInput m_Wrapper;
+        public DiceChooseActions(@PlayerInput wrapper) { m_Wrapper = wrapper; }
+        public InputAction @confirm => m_Wrapper.m_DiceChoose_confirm;
+        public InputActionMap Get() { return m_Wrapper.m_DiceChoose; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(DiceChooseActions set) { return set.Get(); }
+        public void AddCallbacks(IDiceChooseActions instance)
+        {
+            if (instance == null || m_Wrapper.m_DiceChooseActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_DiceChooseActionsCallbackInterfaces.Add(instance);
+            @confirm.started += instance.OnConfirm;
+            @confirm.performed += instance.OnConfirm;
+            @confirm.canceled += instance.OnConfirm;
+        }
+
+        private void UnregisterCallbacks(IDiceChooseActions instance)
+        {
+            @confirm.started -= instance.OnConfirm;
+            @confirm.performed -= instance.OnConfirm;
+            @confirm.canceled -= instance.OnConfirm;
+        }
+
+        public void RemoveCallbacks(IDiceChooseActions instance)
+        {
+            if (m_Wrapper.m_DiceChooseActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IDiceChooseActions instance)
+        {
+            foreach (var item in m_Wrapper.m_DiceChooseActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_DiceChooseActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public DiceChooseActions @DiceChoose => new DiceChooseActions(this);
     public interface IPlayerActions
     {
         void OnCast_spell_1(InputAction.CallbackContext context);
@@ -343,5 +449,10 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         void OnDown(InputAction.CallbackContext context);
         void OnLeft(InputAction.CallbackContext context);
         void OnRight(InputAction.CallbackContext context);
+        void OnPick_up(InputAction.CallbackContext context);
+    }
+    public interface IDiceChooseActions
+    {
+        void OnConfirm(InputAction.CallbackContext context);
     }
 }
