@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -5,11 +7,17 @@ using UnityEngine.InputSystem;
 public class Player : MonoBehaviour
 {
     public Entity entity;
+
     private Caster caster;
     private MovementControl _control;
     private PlayerInput _playerInput;
     private DiceThrower _diceThrower;
     private UIManager _uiManager;
+    private Animator _animator;
+    private SpriteRenderer _rend;
+    private Material _defMat;
+    private Material _blinkMat;
+
 
     private void Start()
     {
@@ -37,11 +45,37 @@ public class Player : MonoBehaviour
         };
         _playerInput.Player.pick_up.performed += PickUp;
         _playerInput.Player.roll_dice.performed += _diceThrower.Roll;
+
+        _animator = GetComponent<Animator>();
+        _rend = GetComponentInChildren<SpriteRenderer>();
+        _defMat = _rend.material;
+        _blinkMat = Resources.Load("Blink", typeof(Material)) as Material;
+
+        entity.OnDeath += OnDeath;
+        entity.OnDamageTaken += OnDamageTaken;
+    }
+    private void OnDeath() 
+    {
+        entity.isStunned = true;
+        _animator.SetTrigger("Death");
+    }
+    private void Death()
+    {
+        Destroy(gameObject);
+    }
+ 
+    private void OnDamageTaken()
+    {
+        _rend.material = _blinkMat;
+    }
+    private void OnDmgTakenEnd()
+    {
+
     }
 
     public void FixedUpdate()
     {
-        if (_playerInput.Player.enabled)
+        if (_playerInput.Player.enabled && !entity.isStunned)
             _control.MoveTo(PlayerMoveDirection());
     }
 
