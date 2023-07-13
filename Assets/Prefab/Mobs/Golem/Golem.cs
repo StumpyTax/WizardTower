@@ -13,7 +13,7 @@ public class Golem : Enemy
 
     public GameObject _attackTrigger;
     //public GameObject _attackRange;
-
+    private Animator _animator;
     private bool isReady = true;
     private bool isEnemyClose;
     private bool isEnemyInRange;
@@ -41,10 +41,23 @@ public class Golem : Enemy
     public void Awake()
     {
         base.Start();
+        _animator = GetComponent<Animator>();
+        entity.OnDeath += () => _animator.SetTrigger("Death");
     }
-
+    private void Death()
+    {
+        Destroy(gameObject);
+    }
     public void Update()
     {
+        var dir = player.transform.position - transform.position;
+        dir.z = 0;
+        dir=dir.normalized;
+        if (dir.x >= 0)
+            _animator.SetFloat("Horizontal",1);
+        else
+            _animator.SetFloat("Horizontal", -1);
+
         _movementControl.FixedUpdate();
         if (isReady)
             if (isEnemyClose)
@@ -53,18 +66,21 @@ public class Golem : Enemy
                 _movementControl.MoveTo(
                     _movementControl.GetMoveVector(
                         transform.position, player.transform.position));
+        
+
     }
 
     public void Attack()
     {
-        StartCoroutine(AttackRoutine());
+        _animator.SetTrigger("Attack");
+        /*
+        StartCoroutine(AttackRoutine());*/
     }
 
-    private IEnumerator AttackRoutine()
+    private void /*IEnumerator*/ AttackRoutine()
     {
-        isReady = false;
-        yield return new WaitForSeconds(1f);
+/*        isReady = false;
+        yield return new WaitForSeconds(1f);*/
         _caster.Cast(_caster.spells[0]);
-        isReady = true;
     }
 }

@@ -31,7 +31,7 @@ public class Spell : MonoBehaviour
 
     public bool isReady()
     {
-        return curCooldown < 0;
+        return curCooldown <= 0;
     }
     public float CalculateDamage()
     {
