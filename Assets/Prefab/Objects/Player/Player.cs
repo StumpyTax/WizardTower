@@ -69,6 +69,11 @@ public class Player : MonoBehaviour
     private void OnDamageTaken()
     {
         _rend.material = _blinkMat;
+        Invoke("ResetMaterial", 0.3f);
+    }
+    private void ResetMaterial()
+    {
+        _rend.material = _defMat;
     }
     private void OnDmgTakenEnd()
     {

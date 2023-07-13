@@ -16,10 +16,14 @@ public class FireBallProjectile : Projectile
         rb.AddForce(direction*speed, ForceMode.VelocityChange);
         _end = direction * range;
     }
+    public void OutOfMaxRange()
+    {
+        Destroy(gameObject);
+    }
     void Update()
     {
-        if (_end.magnitude < (transform.position-start).magnitude)
-            Destroy(gameObject);
+        if (_end.magnitude < (transform.position - start).magnitude)
+            GetComponent<Animator>().SetTrigger("MaxRange");
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -39,7 +43,12 @@ public class FireBallProjectile : Projectile
                 }
             }
         }
-        if(other.tag == "Wall")
-            Destroy(gameObject);
+        if (other.tag == "Wall" && spell.casterEntity.tag != other.tag)
+            rb.velocity= Vector3.zero;
+            GetComponent<Animator>().SetTrigger("Hit");
+    }
+    public void OnHitEnd()
+    {
+        Destroy(gameObject);
     }
 }

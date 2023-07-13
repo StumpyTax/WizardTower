@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -7673108002932816544}
   - component: {fileID: -8174836373144575380}
   - component: {fileID: 2406603467124560515}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BlastWave
   m_TagString: Spell
   m_Icon: {fileID: 0}
@@ -169,13 +169,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c4013249e30ffa4aba95dd5ec2fd316, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _statuses: []
-  mastery: 0
-  movementSpeed: 0
-  critChance: 0
   speed: 150
   range: 10
   pushForce: 0
-  start: {x: -30.868681, y: 7.059455, z: 0}
-  direction: {x: -0.25881958, y: 0.9659257, z: 0}
+  start: {x: -2.7015095, y: 7.4821453, z: -0.00000011920928}
+  direction: {x: -0.25881875, y: 0.9659257, z: 0}
   spell: {fileID: 0}
+  statuses: []

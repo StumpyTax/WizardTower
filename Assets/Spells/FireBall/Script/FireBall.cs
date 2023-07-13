@@ -29,8 +29,8 @@ public class FireBall : Spell
     {
         projectile.start = casterEntity.transform.position + projectile.direction * indent;
         projectile.start.z = casterEntity.transform.position.z;
-        Debug.Log(projectile.direction);
+        float angle = Mathf.Atan2(projectile.direction.y,projectile.direction.x)*180/Mathf.PI;
         Instantiate(projectile,projectile.start,
-            Quaternion.Euler(0f,0f,0f));
+            Quaternion.Euler(0f,0f,angle-90));
     }
 }

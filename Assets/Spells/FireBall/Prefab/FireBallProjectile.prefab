@@ -12,7 +12,9 @@ GameObject:
   - component: {fileID: 4676053712266998208}
   - component: {fileID: 5982681571823091359}
   - component: {fileID: 4736617081273855461}
-  m_Layer: 0
+  - component: {fileID: 7951472379867151486}
+  - component: {fileID: 1577116521782484954}
+  m_Layer: 8
   m_Name: FireBallProjectile
   m_TagString: Spell
   m_Icon: {fileID: 0}
@@ -27,8 +29,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4267316020594419624}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8590338782625706157}
@@ -54,8 +56,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.4
-  m_Center: {x: -0.019598722, y: 0, z: 0}
+  m_Radius: 0.13
+  m_Center: {x: 0, y: 0.06, z: 0}
 --- !u!54 &5982681571823091359
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -81,7 +83,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 120
+  m_Constraints: 48
   m_CollisionDetection: 0
 --- !u!114 &4736617081273855461
 MonoBehaviour:
@@ -98,11 +100,45 @@ MonoBehaviour:
   speed: 10
   range: 5
   pushForce: 0
-  start: {x: 0.6460054, y: 0.60051, z: 0}
-  direction: {x: 0.22853129, y: 0.8055712, z: -0.54665214}
+  start: {x: 10.762197, y: 1.3837632, z: -0.00000012546576}
+  direction: {x: 0.9998971, y: -0.014342772, z: 0}
   spell: {fileID: 0}
   statuses:
   - {fileID: 2548204954759030217, guid: 2c3f39d0609d85e4bbd10ecc09556342, type: 3}
+--- !u!95 &7951472379867151486
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4267316020594419624}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 528e1605b5883ae438b2afb72b34893f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1577116521782484954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4267316020594419624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41800b7a6d8ac66419f18b0ccd997a1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isStatic: 0
 --- !u!1 &8975815398559663131
 GameObject:
   m_ObjectHideFlags: 0
@@ -176,7 +212,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2694b83c986a94445a84f7adaeec1160, type: 3}
+  m_Sprite: {fileID: 531617380, guid: 7879e00dd4f295945a3917e9c9a8a1e6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

@@ -27,11 +27,7 @@ public abstract class Status : MonoBehaviour
         this.intervalBetweenTicks = intervalBetweenTicks;
     }
     public abstract void Init();
-    // {
-    //     target= GetComponent<Entity>();
-    //     if (target == null)
-    //         Destroy(gameObject);
-    // }
+    
     //Надо как-то сделать проверку в этом классе на то равен target null
     //или нет, чтобы не ебать себе мозги по этому поводу при каждом создани
     //статуса

@@ -28,10 +28,15 @@ public class BlastWave : Projectile
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other != null && other.tag == "enemy")
+        if (other.tag == "Enemy")
         {
             var rb = other.GetComponent<Rigidbody>();
+            other.GetComponent<Entity>().Hp -= spell.CalculateDamage();
             rb.AddForce(direction * pushForce);
+        }
+        if (other.tag == "Wall")
+        {
+            Destroy (gameObject);
         }
     }
 }

@@ -8,8 +8,10 @@ public class BlackHole : Spell
     
     public float gravity = 2;
     public float radius = 10;
+    public float duration=5;
+
     private SphereCollider _collider;
-    
+    private float _curDur=0;
     void Start()
     {
         _collider = GetComponent<SphereCollider>();
@@ -17,10 +19,21 @@ public class BlackHole : Spell
 
        transform.position = targetDir;
     }
+    public void FixedUpdate()
+    {
+        if (_curDur < duration)
+            _curDur += Time.fixedDeltaTime;
+        else
+            GetComponent<Animator>().SetTrigger("End");
+    }
+    public void OnEnd()
+    {
+        Destroy(gameObject);
+    }
 
     private void OnTriggerStay (Collider other)
     {
-        if (other.attachedRigidbody)
+        if (other.attachedRigidbody && other.tag!="Player")
         {
             Vector3 difference = new Vector3(
                 gameObject.transform.position.x - other.gameObject.transform.position.x, 

@@ -72,7 +72,6 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
-        PlayerPosition();
         if (instance == null)
             instance = this;
         else if (instance != this)
@@ -80,6 +79,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+        PlayerPosition();
         DontDestroyOnLoad(gameObject);
         DontDestroyOnLoad(curPlayer);
         GenerateLvlQueue();
