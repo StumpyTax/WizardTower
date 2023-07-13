@@ -57,6 +57,6 @@ MonoBehaviour:
   - {fileID: 2548204954759030217, guid: 2c3f39d0609d85e4bbd10ecc09556342, type: 3}
   speed: 10
   cd: 0
-  range: 5
+  range: 10
   indent: 2
   projectile: {fileID: 4736617081273855461, guid: 748b6a831087ce248883367f1bc9e5ea, type: 3}

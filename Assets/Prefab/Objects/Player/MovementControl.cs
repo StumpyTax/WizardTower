@@ -22,7 +22,6 @@ public class MovementControl : MonoBehaviour
         entity = GetComponent<Entity>();
         if (TryGetComponent<Animator>(out animator))
         rb=GetComponent<Rigidbody>();
-        entity.OnDeath += () => { animator.Play("Death"); };
     }
 
     void Update()

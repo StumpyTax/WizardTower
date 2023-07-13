@@ -8,12 +8,12 @@ using UnityEngine;
 public class Mage : Enemy
 {
     public float attackRange;
-public float attackTriggerRange;
+    public float attackTriggerRange;
 
 
     public GameObject _attackTrigger;
     //public GameObject _attackRange;
-
+    private Animator _animator;
     private bool isReady = true;
     private bool isEnemyClose;
     private bool isEnemyInRange;
@@ -36,6 +36,8 @@ public float attackTriggerRange;
         };
         _caster = GetComponent<Caster>();
         _movementControl = GetComponent<MovementControl>();
+        _animator=GetComponent<Animator>();
+        entity.OnDeath += OnDeath;
     }
 
     public void Update()
@@ -48,15 +50,19 @@ public float attackTriggerRange;
 
     public void Attack()
     {
-        StartCoroutine(AttackRoutine());
+        _animator.SetTrigger("Attack");   
     }
-
-    private IEnumerator AttackRoutine()
+    private void AttackRoutine()
     {
-        isReady = false;
-        yield return new WaitForSeconds(1f);
         _caster.direction = player.GetComponent<CapsuleCollider>().bounds.center;
         _caster.Cast(_caster.spells[0]);
-        isReady = true;
+    }
+    private void OnDeath()
+    {
+        _animator.SetTrigger("Death");
+    }
+    private void Death()
+    {
+        Destroy(gameObject);
     }
 }
