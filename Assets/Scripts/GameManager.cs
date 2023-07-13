@@ -9,6 +9,7 @@ using UnityEditor;
 using System.Linq;
 using System;
 using Unity.VisualScripting;
+using Unity.Collections;
 
 public class GameManager : MonoBehaviour
 {
@@ -16,14 +17,15 @@ public class GameManager : MonoBehaviour
     public GameObject player;
 
     public int floor = 1;
-    [SerializeField]private List<SceneAsset> f1_rooms=new List<SceneAsset>();
+    [SerializeField] private string f1End;
+    [SerializeField]private List<string> f1_rooms =new List<string>();
     public int floorSize=10;
     private Queue<string> roomsQueue = new Queue<string>();
     public bool roomIsClear = true;
     
     private void GenerateLvlQueue()
     {
-        List<SceneAsset> rooms=new List<SceneAsset>();
+        List<string> rooms=new List<string>();
         switch (floor)
         {
             case 1: 
@@ -36,7 +38,7 @@ public class GameManager : MonoBehaviour
 
         for (int i = 0; i < floorSize; i++)
         {
-            var room = rooms[Random.Range(0,rooms.Count)].name;
+            var room = rooms[Random.Range(0,rooms.Count)];
             roomsQueue.Enqueue(room);
             Debug.Log(room);
         }
@@ -47,7 +49,7 @@ public class GameManager : MonoBehaviour
         if (roomsQueue.Count > 0)
             res = roomsQueue.Dequeue();
         else
-            res = null;
+            res = f1End;
 
         return res;
     }

@@ -21,9 +21,7 @@ public class Entity : MonoBehaviour
                     OnDeath.Invoke();
                     return;
                 }
-/*                OnDamageTaken.Invoke();
- *              
-*/
+                OnDamageTaken.Invoke();   
             }
 
             if (value > _hp)
@@ -43,7 +41,6 @@ public class Entity : MonoBehaviour
     public Action OnDamageTaken;
 
     public string team;
-
 
     private List<Status> _statuses = new List<Status>();
     public void AddNewStatus(Status status)

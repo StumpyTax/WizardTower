@@ -152,10 +152,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91aafeeccbe849c47a8b5e9fd51a1e56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisMultiplayerX: 1
-  axisMultiplayerY: 1
+  newEdge: {fileID: 0}
   FrictionForce: 2
-  Edges: []
+  lerpSpeed: 300
 --- !u!1 &2458791118421051514
 GameObject:
   m_ObjectHideFlags: 0
@@ -266,7 +265,6 @@ GameObject:
   - component: {fileID: 9015219100867688029}
   - component: {fileID: 7738848188675415706}
   - component: {fileID: 4079933730938563722}
-  - component: {fileID: 5526979712927940609}
   m_Layer: 0
   m_Name: ' Edge_1'
   m_TagString: Edge
@@ -398,7 +396,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5526979712927940609}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: print, Assembly-CSharp
         m_MethodName: printMessage
         m_Mode: 1
@@ -410,18 +408,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &5526979712927940609
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2560175261069856635}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a3890426f8604249bc6295477b94b6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5033143682285074142
 GameObject:
   m_ObjectHideFlags: 0
@@ -808,6 +794,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8663468805909236366}
+  - component: {fileID: 6439980607951976651}
   m_Layer: 0
   m_Name: DiceChoose
   m_TagString: Untagged
@@ -830,8 +817,23 @@ Transform:
   - {fileID: 427984709367931189}
   - {fileID: 5183179966646586698}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6439980607951976651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7590472020883620840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91aafeeccbe849c47a8b5e9fd51a1e56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newEdge: {fileID: 0}
+  FrictionForce: 0.05
+  lerpSpeed: 300
 --- !u!1 &8539454603110960397
 GameObject:
   m_ObjectHideFlags: 0

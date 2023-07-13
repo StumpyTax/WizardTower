@@ -15,9 +15,10 @@ public class SpriteOrderSorter : MonoBehaviour
 
     public void LateUpdate()
     {
-        var _center = GetComponent<Collider>();
-
-        _rend.sortingOrder = (int)(0 - (_center.bounds.center.y*10));
+        var _center = GetComponent<Collider>().bounds.center;
+        if (gameObject.tag == "Gate")
+            _center = transform.position;
+        _rend.sortingOrder = (int)(0 - (_center.y*10));
         if (isStatic)
             Destroy(this);
     }
