@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using Unity.VisualScripting.Dependencies.NCalc;
 using UnityEditor;
@@ -14,15 +15,15 @@ public class EnemiesWave : MonoBehaviour
     public Action OnEnemiesDead;
     public void StartWave()
     {
-        var i = 0;
-        foreach (var enemy in enemies)
+        for (int i = 0; i < enemies.Count; i++)
         {
-            SpawnEnemy(enemy, spawnPoints[i]);
-            i++;
+            enemies[i] = SpawnEnemy(enemies[i], spawnPoints[i]);
         }
+
+        player.caster.enemies = enemies.Select(x => x.entity).ToList();
     }
 
-    private void SpawnEnemy(Enemy enemy, Transform transform)
+    private Enemy SpawnEnemy(Enemy enemy, Transform transform)
     {
         enemy = Instantiate(enemy);
         enemy.transform.position = transform.position;
@@ -33,5 +34,6 @@ public class EnemiesWave : MonoBehaviour
             enemies.Remove(enemy);
             if (enemies.Count == 0) OnEnemiesDead.Invoke();
         };
+        return enemy;
     }
 }

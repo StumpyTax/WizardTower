@@ -132,7 +132,6 @@ public class Player : MonoBehaviour
 
     public void PickUp(InputAction.CallbackContext callbackContext)
     {
-        rangeTrigger.GetComponent<RangeTrigger>().Update();
         Debug.Log(edge);
         if (edge == null)
         {

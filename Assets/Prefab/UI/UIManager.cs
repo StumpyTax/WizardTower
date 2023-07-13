@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
+    public GameObject spell1Window;
+    public GameObject spell2Window;
+    public GameObject devourWindow;
     public GameObject diceMiniWindow;
+
     public GameObject diceChooseWindow;
 
     public void ShowDiceChooseWindow()

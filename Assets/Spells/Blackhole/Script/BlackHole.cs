@@ -44,7 +44,9 @@ public class BlackHole : Spell
             gravityDirection = gravityDirection * radius;
             Vector3 gravityVector = (gravityDirection - difference) * gravity;
             gravityVector.Scale(new Vector3(1,1,0));
-            other.attachedRigidbody.AddForce(gravityVector, ForceMode.Acceleration);
+            Rigidbody rb;
+            if (other.TryGetComponent<Rigidbody>(out rb))
+                rb.AddForce(gravityVector, ForceMode.Acceleration);
             Debug.Log(gravityVector);
         }
     }

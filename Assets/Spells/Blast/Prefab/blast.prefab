@@ -44,9 +44,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9c36b8f78ddb0c43afb2e8023491307, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dmg: 0
-  targetDir: {x: 2.6112201, y: 6.908408, z: 0}
+  dmg: 0.6
+  cooldown: 11
+  curCooldown: 0
+  targetDir: {x: 0.85431504, y: -2.050424, z: 0}
   casterEntity: {fileID: 0}
+  targetEntity: {fileID: 0}
   statuses: []
   blastWaves: 24
   speed: 150

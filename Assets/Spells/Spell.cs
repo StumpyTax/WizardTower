@@ -17,6 +17,9 @@ public class Spell : MonoBehaviour
     public Vector3 targetDir;
     public Entity casterEntity;
     public Entity targetEntity;
+
+    public List<Entity> targets;
+    
     public List<Status> statuses;
 
     public async void Cooldown()
@@ -31,7 +34,7 @@ public class Spell : MonoBehaviour
 
     public bool isReady()
     {
-        return curCooldown < 0;
+        return curCooldown <= 0;
     }
     public float CalculateDamage()
     {

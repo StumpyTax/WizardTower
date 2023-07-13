@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3812118305743220128
+--- !u!1 &6911654172173757818
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,51 +8,50 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6782337707277478449}
-  - component: {fileID: 1955623938784442498}
+  - component: {fileID: 2814159246742251996}
+  - component: {fileID: 5520600695835699019}
   m_Layer: 0
-  m_Name: IceBlast
+  m_Name: Cataclysm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6782337707277478449
+--- !u!4 &2814159246742251996
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3812118305743220128}
+  m_GameObject: {fileID: 6911654172173757818}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1955623938784442498
+--- !u!114 &5520600695835699019
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3812118305743220128}
+  m_GameObject: {fileID: 6911654172173757818}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0270999d4a9b6140b5514202f1a1019, type: 3}
+  m_Script: {fileID: 11500000, guid: 407b17e912d7e0644b101c5f401a36a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dmg: 0
   cooldown: 0
   curCooldown: 0
-  targetDir: {x: 0, y: 0, z: 0}
+  targetDir: {x: 5.279258, y: 0.4317701, z: 0}
   casterEntity: {fileID: 0}
   targetEntity: {fileID: 0}
+  targets:
+  - {fileID: 0}
+  - {fileID: 0}
   statuses: []
-  speed: 0
-  cd: 0
-  range: 0
-  indent: 0
-  projectile: {fileID: -3494586276501715814, guid: 618d30996c76fd7469d435891e9fdfa9, type: 3}
+  SunStrike: {fileID: 4363751846701509598, guid: c81832f9484a4f04db95271b996fc2f3, type: 3}

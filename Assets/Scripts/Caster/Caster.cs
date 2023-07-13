@@ -1,5 +1,5 @@
 using System;
-using Unity.VisualScripting;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Caster : MonoBehaviour
@@ -9,6 +9,7 @@ public class Caster : MonoBehaviour
 
     public Spell[] spells;
     public Vector3 direction;
+    public List<Entity> enemies;
     public Entity casterEntity;
 
     public bool isEnable = true;
@@ -21,6 +22,7 @@ public class Caster : MonoBehaviour
     {
         GetComponent<Animator>().SetBool("Cast", false);
         _spell.casterEntity = casterEntity;
+        _spell.targets = enemies;
         _spell.targetDir = direction;
         _spell.targetDir.z = 0;
 
@@ -29,7 +31,11 @@ public class Caster : MonoBehaviour
     }
     public void Cast(Spell spell)
     {
-        if (!isEnable || !spell.isReady()) return;
+        if (!isEnable || !spell.isReady())
+        {
+            Debug.Log(spell.curCooldown);
+            return;
+        }
         _spell = spell;
         GetComponent<Animator>().SetBool("Cast", true);
         OnCastEnd();

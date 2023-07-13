@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 4075673862586048080}
   - component: {fileID: 4676053712266998208}
   - component: {fileID: 5982681571823091359}
-  - component: {fileID: 4736617081273855461}
   - component: {fileID: 7951472379867151486}
   - component: {fileID: 1577116521782484954}
+  - component: {fileID: -3494586276501715814}
   m_Layer: 8
   m_Name: IceBlastProjectile
   m_TagString: Spell
@@ -85,26 +85,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 48
   m_CollisionDetection: 0
---- !u!114 &4736617081273855461
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4267316020594419624}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0c54b6b6dfc762438ba585bf769e2b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 10
-  range: 5
-  pushForce: 0
-  start: {x: 10.762197, y: 1.3837632, z: -0.00000012546576}
-  direction: {x: 0.9998971, y: -0.014342772, z: 0}
-  spell: {fileID: 0}
-  statuses:
-  - {fileID: 2548204954759030217, guid: 2c3f39d0609d85e4bbd10ecc09556342, type: 3}
 --- !u!95 &7951472379867151486
 Animator:
   serializedVersion: 5
@@ -139,6 +119,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isStatic: 0
+--- !u!114 &-3494586276501715814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4267316020594419624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7648c0525d65abb4ba61034f2b44e3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  range: 0
+  pushForce: 0
+  start: {x: 0, y: 0, z: 0}
+  direction: {x: 0, y: 0, z: 0}
+  spell: {fileID: 0}
+  statuses: []
 --- !u!1 &8975815398559663131
 GameObject:
   m_ObjectHideFlags: 0

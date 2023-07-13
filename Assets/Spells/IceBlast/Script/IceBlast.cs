@@ -12,7 +12,7 @@ public class IceBlast : Spell
     public float indent;
     
  /*   public GameObject debbuf;*/
-    public FireBallProjectile projectile;
+    public IceBlastProjectile projectile;
 
     private void Start()
     {

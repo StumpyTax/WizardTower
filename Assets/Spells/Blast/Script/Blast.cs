@@ -29,6 +29,7 @@ public class Blast : Spell
         var casterY = casterEntity.gameObject.transform.position.y;
         for (var i = 0; i < blastWaves; i++)
         {
+            blastWave.spell=this;
             var vector = (Mathf.PI * 2) / blastWaves;
             var vector2 = new Vector3(Mathf.Sin(i * vector) + casterX, Mathf.Cos(i * vector) + casterY, casterEntity.transform.position.z);
             blastWave.start = vector2;

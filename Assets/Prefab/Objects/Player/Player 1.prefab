@@ -256,7 +256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3df9f5c2db276a5489e699816436c38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hp: 100
+  _hp: 1000
   mastery: 30
   movementSpeed: 10
   critChance: 0.02
