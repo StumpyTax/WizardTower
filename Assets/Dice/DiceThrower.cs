@@ -11,20 +11,21 @@ public class DiceThrower : MonoBehaviour
     public PlayerInput playerInput;
 
     private Caster _caster;
-    private DiceThrowScript _diceThrowScript;
-    private DiceChoose _diceChoose;
+    public DiceThrowScript _diceThrowScript { get; private set; }
+    public DiceChoose _diceChoose { get; private set; }
 
     private void Start()
     {
         _caster = GetComponent<Caster>();
-        diceThrowGameObject = Instantiate(diceThrowGameObject);
+            diceThrowGameObject = Instantiate(diceThrowGameObject);
         _diceThrowScript = diceThrowGameObject.GetComponent<DiceThrowScript>();
         _diceChoose = diceThrowGameObject.GetComponentInChildren<DiceChoose>();
 
         playerInput.DiceChoose.confirm.performed += x => _diceChoose.Confirm();
     }
-    public void Choose()
+    public void Choose(Edge edge)
     {
+        _diceChoose.newEdge = edge.GameObject();
         _diceThrowScript.enabled = false;
         _diceChoose.enabled = true;
     }

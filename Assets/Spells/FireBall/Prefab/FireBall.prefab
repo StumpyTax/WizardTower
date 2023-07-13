@@ -45,8 +45,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dmg: 0
+  cooldown: 10
+  curCooldown: 0
   targetDir: {x: -16.660975, y: -14.053616, z: 0}
   casterEntity: {fileID: 0}
+  targetEntity: {fileID: 0}
   statuses:
   - {fileID: 2548204954759030217, guid: 2c3f39d0609d85e4bbd10ecc09556342, type: 3}
   speed: 10

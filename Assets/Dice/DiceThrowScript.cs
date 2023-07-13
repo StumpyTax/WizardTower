@@ -46,26 +46,8 @@ public class DiceThrowScript : MonoBehaviour
     public bool isEdgeValid()
     {
         bool result = _dice.isEdgeValid();
-        // IEnumerator ExampleCoroutine()
-        // {
-        //     yield return new WaitForSecondsRealtime(0.5f);
-        //     result = _diceScript.isEdgeValid();
-        //     Debug.Log("result in routin" + result);
-        // }
-        //
-        // StartCoroutine(ExampleCoroutine());
-        // Debug.Log(result);
         return result;
     }
-        // public IEnumerator WaitDiceStop()
-        // {
-        //     while (!_diceScript.isEdgeValid())
-        //     {
-        //         yield return null;
-        //     }
-        //
-        //     topEdge = _diceScript.GetTopEdge();
-        // }
         
     private void RollDice()
     {
@@ -78,15 +60,5 @@ public class DiceThrowScript : MonoBehaviour
     {
         _diceRb.transform.localPosition = new Vector3(0, 0, -3f);
         _diceRb.constraints = RigidbodyConstraints.FreezePosition;
-    }
-
-    private void Friction(float frictionForce)
-    {
-        _diceRb.angularVelocity = _diceRb.angularVelocity - (_diceRb.angularVelocity * frictionForce);
-    }
-    
-    private void Friction(Vector3 frictionForce)
-    {
-        _diceRb.angularVelocity = _diceRb.angularVelocity - frictionForce;
     }
 }

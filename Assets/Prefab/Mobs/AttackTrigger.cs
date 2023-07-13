@@ -8,9 +8,9 @@ public class AttackTrigger : MonoBehaviour
 {
     public float radius;
     
-    public Action OnEnter;
-    public Action OnStay;
-    public Action OnExit;
+    public Action<Collider> OnEnter;
+    public Action<Collider> OnStay;
+    public Action<Collider> OnExit;
 
 
     private SphereCollider _collider;
@@ -22,16 +22,16 @@ public class AttackTrigger : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if (OnEnter is not null && other.tag == "Player") OnEnter.Invoke();
+        if (OnEnter is not null && other.tag == "Player") OnEnter.Invoke(other);
     }
     
     public void OnTriggerStay(Collider other)
     {
-        if (OnStay is not null && other.tag == "Player") OnStay.Invoke();
+        if (OnStay is not null && other.tag == "Player") OnStay.Invoke(other);
     }
     
     public void OnTriggerExit(Collider other)
     {
-        if (OnExit is not null && other.tag == "Player") OnExit.Invoke();
+        if (OnExit is not null && other.tag == "Player") OnExit.Invoke(other);
     }
 }

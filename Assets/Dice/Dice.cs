@@ -100,6 +100,7 @@ public class Dice : MonoBehaviour
         newEdge.transform.localPosition = oldEdge.transform.localPosition;
         newEdge.transform.localScale = oldEdge.transform.lossyScale;
         newEdge.transform.eulerAngles = oldEdge.transform.eulerAngles;
+        _topEdge = newEdge;
         Destroy(oldEdge);
         edges[index] = newEdge;
     }

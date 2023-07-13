@@ -224,6 +224,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entity: {fileID: 0}
   player: {fileID: 0}
+  edges:
+  - {fileID: 777138256941889330, guid: b81b24d3de5b81d47928912a1a7515f6, type: 3}
   attackRange: 0
   attackTriggerRange: 4
   _attackTrigger: {fileID: 6504002156584673631, guid: 799ab8986322641489f40767a0d41a6f, type: 3}
@@ -243,4 +245,5 @@ MonoBehaviour:
   mastery: 0
   movementSpeed: 0
   critChance: 0
+  isStunned: 0
   team: 

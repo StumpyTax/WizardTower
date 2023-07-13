@@ -24,12 +24,12 @@ public float attackTriggerRange;
         _attackTrigger.name = "triggerRange";
         var script = _attackTrigger.GetComponent<AttackTrigger>();
         script.radius = attackTriggerRange;
-        script.OnStay += () =>
+        script.OnStay += (Collider) =>
         {
             Debug.Log("Hello");
             isEnemyClose = true;
         };
-        script.OnExit += () =>
+        script.OnExit += (Collider) =>
         {
             Debug.Log("where are you?");
             isEnemyClose = false;
