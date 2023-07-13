@@ -30,7 +30,7 @@ public class RoomManager : MonoBehaviour
         }
 
         CurrentWave().spawnPoints = enemySpawnPoints;
-        CurrentWave().player = _gameManager.player.GetComponent<Player>();
+        CurrentWave().player = _gameManager.curPlayer.GetComponent<Player>();
         CurrentWave().StartWave();
         CurrentWave().OnEnemiesDead += () => SpawnNextWave();
     }

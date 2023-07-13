@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance=null;
     public GameObject player;
-    private GameObject curPlayer;
+    public GameObject curPlayer;
     public int floor = 1;
     [SerializeField] private string f1End;
     [SerializeField]private List<string> f1_rooms =new List<string>();
