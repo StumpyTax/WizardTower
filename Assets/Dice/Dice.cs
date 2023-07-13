@@ -81,6 +81,7 @@ public class Dice : MonoBehaviour
             {
                 if (edge != _topEdge)
                 {
+                    if (OnTopEdgeChange != null)
                     OnTopEdgeChange.Invoke(_topEdge, edge);
                 }
                 _topEdge = edge;

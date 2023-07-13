@@ -46,9 +46,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2dd76745070dbc42887e418bd624945, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetDir: {x: 0, y: 0, z: 0}
   dmg: 10
+  targetDir: {x: 0, y: 0, z: 0}
   casterEntity: {fileID: 0}
+  statuses: []
 --- !u!135 &1048981087503484576
 SphereCollider:
   m_ObjectHideFlags: 0

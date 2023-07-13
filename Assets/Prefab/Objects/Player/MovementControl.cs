@@ -13,10 +13,12 @@ public class MovementControl : MonoBehaviour
     public float FrictionForce = 0.5f;
     public Animator animator;
 
+    public bool isEnable;
     [SerializeField]private Rigidbody rb;
 
     void Start()
     {
+        isEnable = true;
         entity = GetComponent<Entity>();
         if (TryGetComponent<Animator>(out animator))
         rb=GetComponent<Rigidbody>();
@@ -54,6 +56,7 @@ public class MovementControl : MonoBehaviour
     
     public void MoveTo(Vector3 pointFromEntity)
     {
+        if (!isEnable) return;
         pointFromEntity = pointFromEntity.normalized;
         float moveHorizontal = pointFromEntity.x;
         float moveVertical = pointFromEntity.y;

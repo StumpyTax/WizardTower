@@ -5,8 +5,11 @@ public class Enemy : MonoBehaviour
 {
     public Entity entity;
     public Player player;
+    
+    public Caster _caster { get; protected set; }
+    public MovementControl _movementControl { get; protected set; }
 
-    private void Start()
+    public void Start()
     {
         entity = GetComponent<Entity>();
         entity.team = "enemy";

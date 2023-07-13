@@ -8,6 +8,7 @@ using UnityEngine;
 
 public class EnemiesWave : MonoBehaviour
 {
+    public Player player;
     [SerializeField] public List<Enemy> enemies;
     [SerializeField] public List<Transform> spawnPoints;
     public Action OnEnemiesDead;
@@ -25,6 +26,8 @@ public class EnemiesWave : MonoBehaviour
     {
         enemy = Instantiate(enemy);
         enemy.transform.position = transform.position;
+        enemy.Start();
+        enemy.player = player;
         enemy.entity.OnDeath += () =>
         {
             enemies.Remove(enemy);

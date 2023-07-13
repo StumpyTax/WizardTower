@@ -1,5 +1,4 @@
 using System;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class Caster : MonoBehaviour
@@ -11,8 +10,10 @@ public class Caster : MonoBehaviour
     public Vector3 direction;
     public Entity casterEntity;
 
+    public bool isEnable = true;
     public void Start()
     {
+        isEnable = true;
         casterEntity = GetComponent<Entity>();
     }
     public void OnCastEnd()
@@ -26,8 +27,10 @@ public class Caster : MonoBehaviour
     }
     public void Cast(Spell spell)
     {
+        if (!isEnable) return;
         _spell = spell;
         GetComponent<Animator>().SetBool("Cast", true);
+        OnCastEnd();
     }
   
 }

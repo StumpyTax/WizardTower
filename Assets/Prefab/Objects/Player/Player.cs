@@ -5,8 +5,8 @@ using UnityEngine.InputSystem;
 public class Player : MonoBehaviour
 {
     public Entity entity;
-    private Caster caster;
-    private MovementControl _control;
+    public Caster caster { get; private set; }
+    public MovementControl movementControl { get; private set; }
     private PlayerInput _playerInput;
     private DiceThrower _diceThrower;
     private UIManager _uiManager;
@@ -21,7 +21,9 @@ public class Player : MonoBehaviour
         _playerInput.Player.Enable();
         
         caster = GetComponent<Caster>();
-        _control = GetComponent<MovementControl>();
+        caster.isEnable = true;
+        movementControl = GetComponent<MovementControl>();
+        movementControl.isEnable = true;
         _diceThrower = GetComponent<DiceThrower>();
         _diceThrower.playerInput = _playerInput;
         
@@ -42,7 +44,7 @@ public class Player : MonoBehaviour
     public void FixedUpdate()
     {
         if (_playerInput.Player.enabled)
-            _control.MoveTo(PlayerMoveDirection());
+            movementControl.MoveTo(PlayerMoveDirection());
     }
 
     private Vector3 PlayerMoveDirection()

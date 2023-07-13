@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 7795079975518402255}
   - component: {fileID: -6129344301651171603}
   - component: {fileID: 6461680215679657114}
+  - component: {fileID: 6949336468567467851}
   m_Layer: 0
   m_Name: Mage
   m_TagString: Enemy
@@ -66,10 +67,10 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 120
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!65 &6203440274483056640
 BoxCollider:
@@ -141,12 +142,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 30
-  m_Sprite: {fileID: 21300000, guid: e92527f6d0fe45342ab542b47346d45f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0ccc508108fa6ed4fa11b4a467d7f609, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.9, y: 2.22}
+  m_Size: {x: 0.64, y: 0.64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -169,6 +170,7 @@ MonoBehaviour:
   angleLeft: 60
   FrictionForce: 0.5
   animator: {fileID: 0}
+  isEnable: 0
   rb: {fileID: 0}
 --- !u!95 &7795079975518402255
 Animator:
@@ -207,6 +209,7 @@ MonoBehaviour:
   - {fileID: 728575910756043774, guid: e08d57875ff23184ba445db364cdb39a, type: 3}
   direction: {x: 0, y: 0, z: 0}
   casterEntity: {fileID: 0}
+  isEnable: 0
 --- !u!114 &6461680215679657114
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -219,11 +222,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bf15edfab1b4ee47a18eee3d4547a4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  entity: {fileID: 0}
+  player: {fileID: 0}
+  attackRange: 0
+  attackTriggerRange: 4
+  _attackTrigger: {fileID: 6504002156584673631, guid: 799ab8986322641489f40767a0d41a6f, type: 3}
+--- !u!114 &6949336468567467851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6203440274483056652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3df9f5c2db276a5489e699816436c38b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   _hp: 0
   mastery: 0
   movementSpeed: 0
   critChance: 0
-  player: {fileID: 0}
-  attackRange: 0
-  attackTriggerRange: 0
-  _attackTrigger: {fileID: 6504002156584673631, guid: 799ab8986322641489f40767a0d41a6f, type: 3}
+  team: 

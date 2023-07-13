@@ -1,15 +1,7 @@
-using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting.Antlr3.Runtime.Tree;
-using UnityEditor.Purchasing;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Random=UnityEngine.Random;
-using UnityEditor;
-using System.Linq;
-using System;
-using Unity.VisualScripting;
-using Unity.Collections;
 
 public class GameManager : MonoBehaviour
 {
@@ -72,7 +64,7 @@ public class GameManager : MonoBehaviour
         {
             gate.enterGate = true;
         }
-        Instantiate(player, point.transform.position,Quaternion.identity);
+        player = Instantiate(player, point.transform.position,Quaternion.identity);
     }
 
     void Awake()

@@ -1,9 +1,6 @@
 using System;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
-using UnityEngine.Rendering;
-using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 public class Spell : MonoBehaviour
@@ -15,7 +12,7 @@ public class Spell : MonoBehaviour
     public float dmg;
     public Vector3 targetDir;
     public Entity casterEntity;
-    public Status[] statuses;
+    public List<Status> statuses;
 
     public float CalculateDamage()
     {

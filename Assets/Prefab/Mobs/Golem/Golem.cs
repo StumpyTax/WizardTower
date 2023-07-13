@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -8,9 +9,6 @@ public class Golem : Enemy
 {
     public float attackRange;
     public float attackTriggerRange;
-
-    private Caster _caster;
-    private MovementControl _movementControl;
 
 
     public GameObject _attackTrigger;
@@ -38,6 +36,11 @@ public class Golem : Enemy
         };
         _caster = GetComponent<Caster>();
         _movementControl = GetComponent<MovementControl>();
+    }
+
+    public void Awake()
+    {
+        base.Start();
     }
 
     public void Update()

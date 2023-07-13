@@ -8,10 +8,7 @@ using UnityEngine;
 public class Mage : Enemy
 {
     public float attackRange;
-    public float attackTriggerRange;
-
-    private Caster _caster;
-    private MovementControl _movementControl;
+public float attackTriggerRange;
 
 
     public GameObject _attackTrigger;

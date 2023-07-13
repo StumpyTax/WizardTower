@@ -66,20 +66,7 @@ public class DiceThrowScript : MonoBehaviour
         //
         //     topEdge = _diceScript.GetTopEdge();
         // }
-
-    public IEnumerator RollCoroutine()
-    {
-        float timeForStop = 2f;
-        RollDice();
-        var vector = _diceRb.angularVelocity;
-        var k = vector / timeForStop;
-        for (float t = timeForStop; t > 0; t -= Time.deltaTime)
-        {
-            _diceRb.angularVelocity = t * k;
-            yield return null;
-        }
-        _diceRb.angularVelocity = Vector3.zero;
-    }
+        
     private void RollDice()
     {
         var torqueRandomX = Random.Range(-_diceRb.maxAngularVelocity, _diceRb.maxAngularVelocity);

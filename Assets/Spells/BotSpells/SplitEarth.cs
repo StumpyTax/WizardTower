@@ -5,6 +5,7 @@ public class SplitEarth : Spell
 {
     private void Start()
     {
+        statuses.Add(new Stun());
         transform.position = casterEntity.transform.position;
         StartCoroutine(DestroyRoutine());
     }
@@ -15,6 +16,7 @@ public class SplitEarth : Spell
         {
             var victim = other.GetComponent<Entity>();
             victim.Hp -= CalculateDamage();
+            victim.AddNewStatuses(statuses);
         }
     }
 

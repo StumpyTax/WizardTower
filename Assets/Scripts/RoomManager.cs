@@ -7,11 +7,9 @@ using UnityEngine;
 public class RoomManager : MonoBehaviour
 {
     [SerializeField]
-    public SceneAsset roomScene;
-    [SerializeField]
     public List<EnemiesWave> enemiesWaves;
-
     private List<Transform> enemySpawnPoints;
+    private GameManager _gameManager;
 
 
     public Action OnWavesEnd;
@@ -32,12 +30,14 @@ public class RoomManager : MonoBehaviour
         }
 
         CurrentWave().spawnPoints = enemySpawnPoints;
+        CurrentWave().player = _gameManager.player.GetComponent<Player>();
         CurrentWave().StartWave();
         CurrentWave().OnEnemiesDead += () => SpawnNextWave();
     }
 
     private void Start()
     {
+        _gameManager = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
         enemySpawnPoints = new List<Transform>();
         for (var i = 0; i < transform.childCount; i++)
         {

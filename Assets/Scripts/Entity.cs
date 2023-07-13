@@ -21,6 +21,7 @@ public class Entity : MonoBehaviour
                     OnDeath.Invoke();
                     return;
                 }
+                if (OnDamageTaken != null)
                 OnDamageTaken.Invoke();   
             }
 
