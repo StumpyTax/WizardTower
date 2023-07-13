@@ -40,6 +40,7 @@ public class DiceThrower : MonoBehaviour
                 await Task.Yield();
             }
             Debug.Log(_diceThrowScript.topEdge().GetComponent<Edge>().spell);
+            _caster.spells[1] = _caster.spells[0];
             _caster.spells[0] = _diceThrowScript.topEdge().GetComponent<Edge>().spell;
         }
     }
