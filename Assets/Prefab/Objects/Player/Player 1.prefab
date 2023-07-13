@@ -255,6 +255,7 @@ MonoBehaviour:
   mastery: 30
   movementSpeed: 10
   critChance: 0.02
+  isStunned: 0
   team: 
 --- !u!1 &1521126402640143594
 GameObject:

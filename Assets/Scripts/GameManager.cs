@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance=null;
     public GameObject player;
-
+    private GameObject curPlayer;
     public int floor = 1;
     [SerializeField] private string f1End;
     [SerializeField]private List<string> f1_rooms =new List<string>();
@@ -64,7 +64,10 @@ public class GameManager : MonoBehaviour
         {
             gate.enterGate = true;
         }
-        player = Instantiate(player, point.transform.position,Quaternion.identity);
+
+        if(curPlayer==null)
+            curPlayer=Instantiate(player, point.transform.position,Quaternion.identity);
+        
     }
 
     void Awake()
@@ -78,6 +81,7 @@ public class GameManager : MonoBehaviour
             return;
         }
         DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(curPlayer);
         GenerateLvlQueue();
     }
     private void Update()

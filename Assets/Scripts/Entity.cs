@@ -36,6 +36,7 @@ public class Entity : MonoBehaviour
     public int mastery;
     public float movementSpeed;
     public float critChance;
+    public bool isStunned;
 
     public Action OnHeal;
     public Action OnDeath;
