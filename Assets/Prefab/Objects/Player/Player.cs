@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,6 +7,13 @@ public class Player : MonoBehaviour
     public Entity entity;
     public Caster caster { get; private set; }
     public MovementControl movementControl { get; private set; }
+    public float pickUpRange;
+    public GameObject rangeTrigger;
+
+    public Devour devour;
+    private EdgeCracked edge = null;
+
+
 
     private PlayerInput _playerInput;
     private DiceThrower _diceThrower;
@@ -45,8 +50,32 @@ public class Player : MonoBehaviour
             caster.direction = GetMousePosition();
             caster.Cast(caster.spells[1]);
         };
-        _playerInput.Player.pick_up.performed += PickUp;
+            _playerInput.Player.pick_up.performed += PickUp;
         _playerInput.Player.roll_dice.performed += _diceThrower.Roll;
+
+        _playerInput.DiceChoose.confirm.performed += x =>
+        {
+            _diceThrower._diceChoose.enabled = false;
+            _diceThrower._diceThrowScript.enabled = true;
+            _playerInput.Player.Enable();
+            _playerInput.DiceChoose.Disable();
+            _uiManager.HideDiceChooseWindow();
+        };
+        
+        var collider = rangeTrigger.GetComponent<RangeTrigger>();
+        collider.radius = pickUpRange;
+        rangeTrigger = Instantiate(rangeTrigger, gameObject.transform, false);
+        collider = rangeTrigger.GetComponent<RangeTrigger>();
+        collider.OnStay += (collider) =>
+        {
+            EdgeCracked edge;
+            if (collider.TryGetComponent<EdgeCracked>(out edge))
+                this.edge = edge;
+        };
+        collider.OnExit += (collider) =>
+        {
+            edge = null;
+        };
 
         _animator = GetComponent<Animator>();
         _rend = GetComponentInChildren<SpriteRenderer>();
@@ -98,9 +127,19 @@ public class Player : MonoBehaviour
 
     public void PickUp(InputAction.CallbackContext callbackContext)
     {
-        _diceThrower.Choose();
+        rangeTrigger.GetComponent<RangeTrigger>().Update();
+        Debug.Log(edge);
+        if (edge == null)
+        {
+            return;
+        }
+        Destroy(edge.gameObject);
+        _diceThrower.Choose(edge.edge);
+        _diceThrower._diceChoose.enabled = true;
+        _diceThrower._diceThrowScript.enabled = false;
         _playerInput.Player.Disable();
         _playerInput.DiceChoose.Enable();
         _uiManager.ShowDiceChooseWindow();
+        edge = null;
     }
 }

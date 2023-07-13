@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class DiceChoose : MonoBehaviour
@@ -17,6 +18,11 @@ public class DiceChoose : MonoBehaviour
         _dice = GetComponent<Dice>();
         _rb = GetComponent<Rigidbody>();
         _dice.SetDiceAtStartPosition();
+    }
+
+    private void OnEnable()
+    {
+        Start();
         _dice.OnTopEdgeChange = (o, o1) =>
         {
             var color = UnityEngine.Color.yellow;
@@ -24,6 +30,11 @@ public class DiceChoose : MonoBehaviour
             o.GetComponent<SpriteRenderer>().color = Color.white;
             o1.GetComponent<SpriteRenderer>().color = Color.yellow;
         };
+    }
+
+    private void OnDisable()
+    {
+        _dice.OnTopEdgeChange = null;
     }
 
     public void Update()
@@ -35,6 +46,7 @@ public class DiceChoose : MonoBehaviour
     public void Confirm()
     {
         _dice.ChangeEdge(_dice.GetTopEdge(), newEdge);
+        newEdge = null;
     }
 
     public void Rotate(Vector3 vector3)

@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Caster : MonoBehaviour
@@ -24,10 +25,11 @@ public class Caster : MonoBehaviour
         _spell.targetDir.z = 0;
 
         Instantiate(_spell);
+        _spell.Cooldown();
     }
     public void Cast(Spell spell)
     {
-        if (!isEnable) return;
+        if (!isEnable || !spell.isReady()) return;
         _spell = spell;
         GetComponent<Animator>().SetBool("Cast", true);
         OnCastEnd();

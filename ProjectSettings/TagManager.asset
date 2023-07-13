@@ -15,6 +15,7 @@ TagManager:
   - SpawnPoint Enemy
   - UIManager
   - GameManager
+  - item
   layers:
   - Default
   - TransparentFX

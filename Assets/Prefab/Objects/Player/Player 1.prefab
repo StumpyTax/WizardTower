@@ -178,6 +178,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entity: {fileID: 0}
+  pickUpRange: 1
+  rangeTrigger: {fileID: 5037496766079324694, guid: dbbf5c643dcad43479b526ee4906d037, type: 3}
+  devour: {fileID: -3201135122281929436, guid: 59f490c3e29a5bc4091ff4023a11a6ec, type: 3}
 --- !u!114 &-5482528712974708280
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,6 +198,7 @@ MonoBehaviour:
   angleLeft: 60
   FrictionForce: 0.5
   animator: {fileID: 0}
+  isEnable: 0
   rb: {fileID: 0}
 --- !u!114 &-1566699854417921961
 MonoBehaviour:
@@ -213,6 +217,7 @@ MonoBehaviour:
   - {fileID: 6341736361840769663, guid: f7c335557c5574a4289aba007574cb1c, type: 3}
   direction: {x: 0, y: 0, z: 0}
   casterEntity: {fileID: 0}
+  isEnable: 1
 --- !u!114 &4720037083900073233
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -98,3 +98,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spell: {fileID: 2478729896124531830, guid: 5b2db305654320a449bd1e510792308b, type: 3}
+  edgeItem: {fileID: 8037582439298235511, guid: b22d502e4ce87014fb3842fecf446cf6, type: 3}
