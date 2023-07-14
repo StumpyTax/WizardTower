@@ -207,12 +207,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99da7135e2ff1684c9f2d854bad98941, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  icon: {fileID: 1714050081, guid: c1ddd509a2608894bbecb478cf62a79d, type: 3}
   dmg: 0
   cooldown: 11
   curCooldown: 0
   targetDir: {x: 9.708199, y: 1.3110379, z: 0}
   casterEntity: {fileID: 0}
   targetEntity: {fileID: 0}
+  targets: []
   statuses: []
   gravity: 50
   radius: 10

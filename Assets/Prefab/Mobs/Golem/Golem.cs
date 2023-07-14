@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
-[RequireComponent(typeof(Collider))]
+[RequireComponent(typeof(SphereCollider))]
 [RequireComponent(typeof(MovementControl))]
 public class Golem : Enemy
 {

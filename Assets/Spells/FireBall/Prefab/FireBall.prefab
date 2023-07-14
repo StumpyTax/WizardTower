@@ -44,15 +44,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc6bb3392fda35e4880b5aba368075e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  icon: {fileID: -1464609444, guid: c1ddd509a2608894bbecb478cf62a79d, type: 3}
   dmg: 0
   cooldown: 10
   curCooldown: 0
-  targetDir: {x: -5.7304816, y: -2.346599, z: 0}
+  targetDir: {x: 23.42, y: 20.64, z: 0}
   casterEntity: {fileID: 0}
   targetEntity: {fileID: 0}
-  targets:
-  - {fileID: 0}
-  - {fileID: 0}
+  targets: []
   statuses:
   - {fileID: 2548204954759030217, guid: 2c3f39d0609d85e4bbd10ecc09556342, type: 3}
   speed: 10
