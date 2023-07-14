@@ -38,7 +38,6 @@ public class Caster : MonoBehaviour
         }
         _spell = spell;
         GetComponent<Animator>().SetBool("Cast", true);
-        OnCastEnd();
     }
   
 }

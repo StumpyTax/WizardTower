@@ -1,6 +1,8 @@
 using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 using Image = UnityEngine.UI.Image;
 
 [RequireComponent(typeof(Entity))]
@@ -103,7 +105,7 @@ public class Player : MonoBehaviour
     }
     private void Death()
     {
-        Destroy(gameObject);
+        Scene.ToMainMenu();
     }
  
     private void OnDamageTaken()

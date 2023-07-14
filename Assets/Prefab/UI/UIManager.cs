@@ -22,7 +22,7 @@ public class UIManager : MonoBehaviour
     
 
     public GameObject diceChooseWindow;
-
+     
     public void Start()
     {
         Spell1WindowImage = spell1Window.GetComponent<Image>();

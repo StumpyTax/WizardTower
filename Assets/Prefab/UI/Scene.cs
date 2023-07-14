@@ -3,10 +3,14 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 
-public class Scen : MonoBehaviour
+public class Scene : MonoBehaviour
 {
-    public void ToMainMenu()
+    public static void ToMainMenu()
     {
+        
+        GameManager.instance.curPlayer=null;
+        Destroy(GameObject.FindGameObjectWithTag("Player"));
+        Destroy(GameManager.instance);
         SceneManager.LoadScene("MainMenu");
     }
 

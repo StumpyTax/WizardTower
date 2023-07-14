@@ -10,7 +10,7 @@ public class HpBar : MonoBehaviour
     
     void Start()
     {
-        gameManager = GameObject.FindGameObjectWithTag("GameController")
+        gameManager = GameManager.instance
             .GetComponent<GameManager>();
 
     }

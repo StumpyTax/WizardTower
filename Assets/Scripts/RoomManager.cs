@@ -37,7 +37,7 @@ public class RoomManager : MonoBehaviour
 
     private void Start()
     {
-        _gameManager = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
+        _gameManager = GameManager.instance;
         enemySpawnPoints = new List<Transform>();
         for (var i = 0; i < transform.childCount; i++)
         {
