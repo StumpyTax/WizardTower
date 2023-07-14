@@ -44,12 +44,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0270999d4a9b6140b5514202f1a1019, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  icon: {fileID: 164025166, guid: c1ddd509a2608894bbecb478cf62a79d, type: 3}
   dmg: 0
   cooldown: 0
   curCooldown: 0
   targetDir: {x: 0, y: 0, z: 0}
   casterEntity: {fileID: 0}
   targetEntity: {fileID: 0}
+  targets: []
   statuses: []
   speed: 0
   cd: 0

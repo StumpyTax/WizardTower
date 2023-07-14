@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6203440274483056646}
   - component: {fileID: 6203440274483056647}
-  - component: {fileID: 6203440274483056640}
+  - component: {fileID: 6973871665405151130}
   - component: {fileID: 6203440274483056641}
   - component: {fileID: 3447754086957037445}
   - component: {fileID: 6357199722416304619}
@@ -152,8 +152,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!65 &6203440274483056640
-BoxCollider:
+--- !u!135 &6973871665405151130
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -171,7 +171,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!222 &6203440274483056641
 CanvasRenderer:
@@ -254,6 +254,7 @@ MonoBehaviour:
   spells:
   - {fileID: 8958739219701735123, guid: bad2c93a667fc264fb1232052cabdf5a, type: 3}
   direction: {x: 0, y: 0, z: 0}
+  enemies: []
   casterEntity: {fileID: 0}
   isEnable: 0
 --- !u!114 &6949336468567467851
@@ -270,7 +271,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _hp: 0
   mastery: 0
-  movementSpeed: 0
+  movementSpeed: 2
   critChance: 0
   isStunned: 0
   team: 

@@ -8,7 +8,7 @@ public class Spell : MonoBehaviour
 {
     private String _name;
     private String _description;
-    private Sprite _icon;
+    public Sprite icon;
 
     public float dmg;
     public float cooldown;

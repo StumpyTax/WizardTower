@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Threading.Tasks;
 using Unity.VisualScripting;
@@ -7,6 +8,8 @@ using UnityEngine.Serialization;
 
 public class DiceThrower : MonoBehaviour
 {
+    public Action<Spell, Spell> OnSpellsChanged;
+    
     public GameObject diceThrowGameObject;
     public PlayerInput playerInput;
     private Caster _caster;
@@ -16,7 +19,7 @@ public class DiceThrower : MonoBehaviour
     private void Start()
     {
         _caster = GetComponent<Caster>();
-            diceThrowGameObject = Instantiate(diceThrowGameObject);
+        diceThrowGameObject = Instantiate(diceThrowGameObject);
         _diceThrowScript = diceThrowGameObject.GetComponent<DiceThrowScript>();
         _diceChoose = diceThrowGameObject.GetComponentInChildren<DiceChoose>();
 
@@ -42,6 +45,7 @@ public class DiceThrower : MonoBehaviour
             Debug.Log(_diceThrowScript.topEdge().GetComponent<Edge>().spell);
             _caster.spells[1] = _caster.spells[0];
             _caster.spells[0] = _diceThrowScript.topEdge().GetComponent<Edge>().spell;
+            OnSpellsChanged.Invoke(_caster.spells[0], _caster.spells[1]);
         }
     }
 }

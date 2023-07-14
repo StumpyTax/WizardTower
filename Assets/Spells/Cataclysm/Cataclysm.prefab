@@ -44,8 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 407b17e912d7e0644b101c5f401a36a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dmg: 0
-  cooldown: 0
+  icon: {fileID: 664066701, guid: c1ddd509a2608894bbecb478cf62a79d, type: 3}
+  dmg: 2
+  cooldown: 20
   curCooldown: 0
   targetDir: {x: 5.279258, y: 0.4317701, z: 0}
   casterEntity: {fileID: 0}

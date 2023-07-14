@@ -1,5 +1,7 @@
+using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Image = UnityEngine.UI.Image;
 
 [RequireComponent(typeof(Entity))]
 public class Player : MonoBehaviour
@@ -84,6 +86,11 @@ public class Player : MonoBehaviour
 
         entity.OnDeath += OnDeath;
         entity.OnDamageTaken += OnDamageTaken;
+        
+
+        
+        SpellShowUIContract();
+        _diceThrower.OnSpellsChanged.Invoke(caster.spells[0], caster.spells[1]);
     }
     private void OnDeath() 
     {
@@ -145,5 +152,14 @@ public class Player : MonoBehaviour
         _playerInput.DiceChoose.Enable();
         _uiManager.ShowDiceChooseWindow();
         edge = null;
+    }
+
+    private void SpellShowUIContract()
+    {
+        _diceThrower.OnSpellsChanged += (spell1, spell2) =>
+        {
+            _uiManager.spell1 = spell1;
+            _uiManager.spell2 = spell2;
+        };
     }
 }

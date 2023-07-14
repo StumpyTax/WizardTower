@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &-3201135122281929436
 MonoBehaviour:
@@ -44,8 +44,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1d077ee64764d75927aaf619964c208, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  icon: {fileID: 0}
   dmg: 0
+  cooldown: 20
+  curCooldown: 0
   targetDir: {x: 0, y: 0, z: 0}
-  targetEntity: {fileID: 0}
   casterEntity: {fileID: 0}
+  targetEntity: {fileID: 0}
+  targets: []
   statuses: []
