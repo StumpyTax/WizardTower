@@ -44,8 +44,10 @@ public class IceBlastProjectile : Projectile
             }
         }
         if (other.tag == "Wall" && spell.casterEntity.tag != other.tag)
-            rb.velocity= Vector3.zero;
+        {
+            rb.velocity = Vector3.zero;
             GetComponent<Animator>().SetTrigger("Hit");
+        }
     }
     public void OnHitEnd()
     {
