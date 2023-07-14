@@ -181,6 +181,7 @@ MonoBehaviour:
   pickUpRange: 1
   rangeTrigger: {fileID: 5037496766079324694, guid: dbbf5c643dcad43479b526ee4906d037, type: 3}
   devour: {fileID: -3201135122281929436, guid: 59f490c3e29a5bc4091ff4023a11a6ec, type: 3}
+  uiManager: {fileID: 0}
 --- !u!114 &-5482528712974708280
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,9 +214,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spells:
-  - {fileID: 6341736361840769663, guid: f7c335557c5574a4289aba007574cb1c, type: 3}
-  - {fileID: 6341736361840769663, guid: f7c335557c5574a4289aba007574cb1c, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
   direction: {x: 0, y: 0, z: 0}
+  enemies: []
   casterEntity: {fileID: 0}
   isEnable: 1
 --- !u!114 &4720037083900073233
@@ -256,7 +258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3df9f5c2db276a5489e699816436c38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hp: 1000
+  maxHp: 100
   mastery: 30
   movementSpeed: 10
   critChance: 0.02

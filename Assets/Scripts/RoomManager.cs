@@ -17,7 +17,9 @@ public class RoomManager : MonoBehaviour
 
     private EnemiesWave CurrentWave()
     {
-        return enemiesWaves[_currentWaveIndex];
+        if (_currentWaveIndex >= 0 && enemiesWaves.Count > _currentWaveIndex)
+            return enemiesWaves[_currentWaveIndex];
+        return null;
     }
 
     private void SpawnNextWave()
@@ -37,7 +39,7 @@ public class RoomManager : MonoBehaviour
 
     private void Start()
     {
-        _gameManager = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
+        _gameManager = GameManager.instance;
         enemySpawnPoints = new List<Transform>();
         for (var i = 0; i < transform.childCount; i++)
         {

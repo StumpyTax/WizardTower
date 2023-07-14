@@ -1024,6 +1024,7 @@ MonoBehaviour:
   Spell2WindowImage: {fileID: 0}
   devourWindow: {fileID: 4700675376015922692}
   diceMiniWindow: {fileID: 7516159545165926892}
+  menu: {fileID: 0}
   diceChooseWindow: {fileID: 8758477869122104219}
 --- !u!1 &8640378574030578723
 GameObject:

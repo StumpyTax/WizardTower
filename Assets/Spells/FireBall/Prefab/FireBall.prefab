@@ -48,7 +48,7 @@ MonoBehaviour:
   dmg: 0
   cooldown: 10
   curCooldown: 0
-  targetDir: {x: 23.42, y: 20.64, z: 0}
+  targetDir: {x: -7.2339034, y: 7.111693, z: 0}
   casterEntity: {fileID: 0}
   targetEntity: {fileID: 0}
   targets: []

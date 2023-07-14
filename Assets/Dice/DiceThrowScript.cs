@@ -22,6 +22,8 @@ public class DiceThrowScript : MonoBehaviour
 
     public void Awake()
     {
+        DontDestroyOnLoad(gameObject);
+
         dice = Instantiate(dice, gameObject.transform, true);
 
         camera = Instantiate(camera, gameObject.transform, true);

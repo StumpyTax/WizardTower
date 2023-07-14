@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Stun : Status
 {
-    public Stun() : base(2, 0, 0, 0)
+    public Stun(float duration) : base(duration, 0, 0, 0)
     {
     }
 

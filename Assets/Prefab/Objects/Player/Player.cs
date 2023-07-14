@@ -1,6 +1,7 @@
 using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 using Image = UnityEngine.UI.Image;
 
 [RequireComponent(typeof(Entity))]
@@ -19,7 +20,7 @@ public class Player : MonoBehaviour
 
     private PlayerInput _playerInput;
     private DiceThrower _diceThrower;
-    private UIManager _uiManager;
+    public UIManager uiManager;
     private Animator _animator;
     private SpriteRenderer _rend;
     private Material _defMat;
@@ -30,7 +31,7 @@ public class Player : MonoBehaviour
     {
         entity = GetComponent<Entity>();
         entity.team = "player";
-        _uiManager = GameObject.FindWithTag("UIManager").GetComponent<UIManager>();
+        uiManager = GameObject.FindWithTag("UIManager").GetComponent<UIManager>();
         
         _playerInput = new PlayerInput();
         _playerInput.Player.Enable();
@@ -54,7 +55,7 @@ public class Player : MonoBehaviour
         };
         _playerInput.Player.Pause.performed += x =>
         {
-            _uiManager.ShowMenu();
+            uiManager.ShowMenu();
         };
             _playerInput.Player.pick_up.performed += PickUp;
         _playerInput.Player.roll_dice.performed += _diceThrower.Roll;
@@ -65,7 +66,7 @@ public class Player : MonoBehaviour
             _diceThrower._diceThrowScript.enabled = true;
             _playerInput.Player.Enable();
             _playerInput.DiceChoose.Disable();
-            _uiManager.HideDiceChooseWindow();
+            uiManager.HideDiceChooseWindow();
         };
         
         var collider = rangeTrigger.GetComponent<RangeTrigger>();
@@ -154,7 +155,7 @@ public class Player : MonoBehaviour
         _diceThrower._diceThrowScript.enabled = false;
         _playerInput.Player.Disable();
         _playerInput.DiceChoose.Enable();
-        _uiManager.ShowDiceChooseWindow();
+        uiManager.ShowDiceChooseWindow();
         edge = null;
     }
 
@@ -162,8 +163,8 @@ public class Player : MonoBehaviour
     {
         _diceThrower.OnSpellsChanged += (spell1, spell2) =>
         {
-            _uiManager.spell1 = spell1;
-            _uiManager.spell2 = spell2;
+            uiManager.spell1 = spell1;
+            uiManager.spell2 = spell2;
         };
     }
 }

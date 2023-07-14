@@ -6,7 +6,7 @@ public class LoadTrigger : MonoBehaviour
 {
     private void Start()
     {
-        var gameManager = GameObject.FindGameObjectWithTag("GameController");
+        var gameManager = GameObject.FindGameObjectWithTag("GameManager");
         gameManager.GetComponent<GameManager>().PlayerPosition();
     }
 }

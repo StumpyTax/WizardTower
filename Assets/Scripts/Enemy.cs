@@ -30,6 +30,8 @@ public class Enemy : MonoBehaviour
     public void OnMouseDown()
     {
         player.devour.targetEntity = entity;
+        player.devour.casterEntity = player.entity;
+        player.devour = Instantiate(player.devour);
         player.devour.Start();
     }
 }

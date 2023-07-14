@@ -31,6 +31,14 @@ public class UIManager : MonoBehaviour
         Spell2WindowImage.type = Image.Type.Filled;
         Spell1WindowImage.fillMethod = Image.FillMethod.Vertical;
         Spell2WindowImage.fillMethod = Image.FillMethod.Vertical;
+        
+        var player = GameManager.instance
+            .GetComponent<GameManager>()
+            .curPlayer
+            .GetComponent<Player>();
+        player.uiManager = this;
+        spell1 = player.caster.spells[0];
+        spell2 = player.caster.spells[1];
     }
 
     public void Update()

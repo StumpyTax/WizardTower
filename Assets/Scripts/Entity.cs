@@ -20,7 +20,8 @@ public class Entity : MonoBehaviour
                 _hp = value;
                 if (_hp <= 0)
                 {
-                    OnDeath.Invoke();
+                    if (OnDeath != null) 
+                        OnDeath.Invoke();
                     return;
                 }
                 if (OnDamageTaken != null)
@@ -30,7 +31,8 @@ public class Entity : MonoBehaviour
             if (value > _hp)
             {
                 _hp = value;
-                OnHeal.Invoke();
+                if (OnHeal != null)
+                    OnHeal.Invoke();
             }
         }
     }
@@ -55,7 +57,11 @@ public class Entity : MonoBehaviour
     {
         Debug.Log("new status");
         status.Init();
-        status.OnEnd += (entity) => _statuses.Remove(status);
+        status.OnEnd += (entity) =>
+        {
+            Debug.Log("removed");
+            _statuses.Remove(status);
+        };
         _statuses.Add(status);
         status.OnGet.Invoke(this);
     }

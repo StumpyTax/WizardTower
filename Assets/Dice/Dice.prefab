@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spell: {fileID: 0}
+  edgeItem: {fileID: 0}
 --- !u!1 &5051482796931234274
 GameObject:
   m_ObjectHideFlags: 0
@@ -258,7 +259,7 @@ MonoBehaviour:
   - {fileID: 7184655436175104547, guid: b81b24d3de5b81d47928912a1a7515f6, type: 3}
   - {fileID: 7184655436175104547, guid: 8f162c9eddb0bd54e836bc23a2e83bbe, type: 3}
   - {fileID: 7184655436175104547, guid: 8e1947d7e4a2754458cfe896dfb6bfc0, type: 3}
-  - {fileID: 7184655436175104547, guid: c19e992e2feccfa4081459197012cfaf, type: 3}
+  - {fileID: 7184655436175104547, guid: 3079cc2989174c84e8857476ac5e7d79, type: 3}
   - {fileID: 7184655436175104547, guid: 9420d3eb6228cd0438d90845ce959e32, type: 3}
 --- !u!114 &6182069284218542356
 MonoBehaviour:
@@ -272,6 +273,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91aafeeccbe849c47a8b5e9fd51a1e56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  newEdge: {fileID: 0}
   FrictionForce: 0.5
   lerpSpeed: 300
 --- !u!1 &5627106088941730112
@@ -372,6 +374,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spell: {fileID: 0}
+  edgeItem: {fileID: 0}
 --- !u!1 &7301431490386062558
 GameObject:
   m_ObjectHideFlags: 0
@@ -470,6 +473,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spell: {fileID: 0}
+  edgeItem: {fileID: 0}
 --- !u!1 &7968133192214602930
 GameObject:
   m_ObjectHideFlags: 0
@@ -568,6 +572,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spell: {fileID: 0}
+  edgeItem: {fileID: 0}
 --- !u!1 &9104362923862197468
 GameObject:
   m_ObjectHideFlags: 0
@@ -666,6 +671,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spell: {fileID: 0}
+  edgeItem: {fileID: 0}
 --- !u!1001 &8810799146772693943
 PrefabInstance:
   m_ObjectHideFlags: 0
