@@ -55,7 +55,7 @@ public class GameManager : MonoBehaviour
             SceneManager.LoadScene(nextSceneName);
         }
     }
-    private void PlayerPosition()
+    public void PlayerPosition()
     {
         var spawnPoints = GameObject.FindGameObjectsWithTag("SpawnPoint");
         var point = spawnPoints[Random.Range(0, spawnPoints.Length)];
@@ -67,7 +67,8 @@ public class GameManager : MonoBehaviour
 
         if(curPlayer==null)
             curPlayer=Instantiate(player, point.transform.position,Quaternion.identity);
-        
+        else
+            curPlayer.transform.position=point.transform.position;
     }
 
     void Awake()

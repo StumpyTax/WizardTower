@@ -14,6 +14,7 @@ public class Enemy : MonoBehaviour
     public void Start()
     {
         entity = GetComponent<Entity>();
+        entity.Hp = entity.maxHp;
         entity.team = "enemy";
     }
     public void dropEdge()

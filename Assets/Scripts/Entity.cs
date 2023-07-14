@@ -2,10 +2,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.EventSystems.EventTrigger;
 
 public class Entity : MonoBehaviour
 {
-    [SerializeField] private float _hp;
+    public float maxHp=100;
+    private float _hp;
 
     public float Hp
     {
@@ -45,6 +47,10 @@ public class Entity : MonoBehaviour
     public string team;
 
     private List<Status> _statuses = new List<Status>();
+    private void Start()
+    {
+        _hp = maxHp;
+    }
     public void AddNewStatus(Status status)
     {
         Debug.Log("new status");

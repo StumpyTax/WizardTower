@@ -8,6 +8,7 @@ public class UIManager : MonoBehaviour
     public GameObject spell2Window;
     public GameObject devourWindow;
     public GameObject diceMiniWindow;
+    public GameObject menu;
 
     public GameObject diceChooseWindow;
 
@@ -21,5 +22,9 @@ public class UIManager : MonoBehaviour
     {
         diceMiniWindow.SetActive(true);
         diceChooseWindow.SetActive(false);
+    }
+    public void ShowMenu()
+    {
+        menu.SetActive(true);
     }
 }

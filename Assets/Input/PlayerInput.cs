@@ -98,6 +98,15 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""7aa11f86-88f2-4018-8bd8-52c84390641a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -188,6 +197,17 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""action"": ""pick_up"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3ac5be77-a3f7-4cfa-8be7-c0e3dd2bfb39"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -232,6 +252,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         m_Player_left = m_Player.FindAction("left", throwIfNotFound: true);
         m_Player_right = m_Player.FindAction("right", throwIfNotFound: true);
         m_Player_pick_up = m_Player.FindAction("pick_up", throwIfNotFound: true);
+        m_Player_Pause = m_Player.FindAction("Pause", throwIfNotFound: true);
         // DiceChoose
         m_DiceChoose = asset.FindActionMap("DiceChoose", throwIfNotFound: true);
         m_DiceChoose_confirm = m_DiceChoose.FindAction("confirm", throwIfNotFound: true);
@@ -304,6 +325,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_left;
     private readonly InputAction m_Player_right;
     private readonly InputAction m_Player_pick_up;
+    private readonly InputAction m_Player_Pause;
     public struct PlayerActions
     {
         private @PlayerInput m_Wrapper;
@@ -316,6 +338,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         public InputAction @left => m_Wrapper.m_Player_left;
         public InputAction @right => m_Wrapper.m_Player_right;
         public InputAction @pick_up => m_Wrapper.m_Player_pick_up;
+        public InputAction @Pause => m_Wrapper.m_Player_Pause;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -349,6 +372,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @pick_up.started += instance.OnPick_up;
             @pick_up.performed += instance.OnPick_up;
             @pick_up.canceled += instance.OnPick_up;
+            @Pause.started += instance.OnPause;
+            @Pause.performed += instance.OnPause;
+            @Pause.canceled += instance.OnPause;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -377,6 +403,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @pick_up.started -= instance.OnPick_up;
             @pick_up.performed -= instance.OnPick_up;
             @pick_up.canceled -= instance.OnPick_up;
+            @Pause.started -= instance.OnPause;
+            @Pause.performed -= instance.OnPause;
+            @Pause.canceled -= instance.OnPause;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -450,6 +479,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         void OnLeft(InputAction.CallbackContext context);
         void OnRight(InputAction.CallbackContext context);
         void OnPick_up(InputAction.CallbackContext context);
+        void OnPause(InputAction.CallbackContext context);
     }
     public interface IDiceChooseActions
     {

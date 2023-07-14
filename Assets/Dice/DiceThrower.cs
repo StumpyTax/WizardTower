@@ -16,7 +16,8 @@ public class DiceThrower : MonoBehaviour
     private void Start()
     {
         _caster = GetComponent<Caster>();
-            diceThrowGameObject = Instantiate(diceThrowGameObject);
+        diceThrowGameObject = Instantiate(diceThrowGameObject);
+        DontDestroyOnLoad(diceThrowGameObject);
         _diceThrowScript = diceThrowGameObject.GetComponent<DiceThrowScript>();
         _diceChoose = diceThrowGameObject.GetComponentInChildren<DiceChoose>();
 

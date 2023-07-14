@@ -50,6 +50,10 @@ public class Player : MonoBehaviour
             caster.direction = GetMousePosition();
             caster.Cast(caster.spells[1]);
         };
+        _playerInput.Player.Pause.performed += x =>
+        {
+            _uiManager.ShowMenu();
+        };
             _playerInput.Player.pick_up.performed += PickUp;
         _playerInput.Player.roll_dice.performed += _diceThrower.Roll;
 
