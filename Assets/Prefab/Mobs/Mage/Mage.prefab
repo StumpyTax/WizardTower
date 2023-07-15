@@ -271,7 +271,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHp: 100
-  mastery: 0
+  mastery: 10
   movementSpeed: 0
   critChance: 0
   isStunned: 0

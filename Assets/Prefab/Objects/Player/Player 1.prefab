@@ -242,7 +242,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spells:
-  - {fileID: 11400000, guid: 8174ae165a1091a41b8595498a7d8729, type: 2}
+  - {fileID: 0}
   - {fileID: 0}
   direction: {x: 0, y: 0, z: 0}
   enemies: []
@@ -292,7 +292,8 @@ MonoBehaviour:
   movementSpeed: 10
   critChance: 0.02
   isStunned: 0
-  team: 
+  team: Player
+  _statuses: []
 --- !u!1 &1521126402640143594
 GameObject:
   m_ObjectHideFlags: 0

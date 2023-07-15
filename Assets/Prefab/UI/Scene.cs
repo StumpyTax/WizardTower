@@ -10,7 +10,7 @@ public class Scene : MonoBehaviour
         
         GameManager.instance.curPlayer=null;
         Destroy(GameObject.FindGameObjectWithTag("Player"));
-        Destroy(GameManager.instance);
+        Destroy(GameManager.instance.gameObject);
         SceneManager.LoadScene("MainMenu");
     }
 

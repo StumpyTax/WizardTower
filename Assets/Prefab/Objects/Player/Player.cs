@@ -90,9 +90,35 @@ public class Player : MonoBehaviour
         
 
         
-        SpellShowUIContract();
-        //_diceThrower.OnSpellsChanged.Invoke(caster.spells[0], caster.spells[1]);
+/*        SpellShowUIContract();
+*/        //_diceThrower.OnSpellsChanged.Invoke(caster.spells[0], caster.spells[1]);
     }
+
+    void Update()
+    {
+        var animator = GetComponent<Animator>();
+        var dir = (GetMousePosition() - transform.position).normalized;
+        var angle = Mathf.Atan2(dir.y, dir.x) * 180 / Mathf.PI;
+
+        var angleRight = 60;
+        var angleLeft = 60;
+
+        if (angle >= -angleRight / 2 && angle < angleRight / 2)
+            dir = new Vector3(1, 0, 0);
+        else if (angle > angleRight / 2 && angle <= 180 - angleLeft / 2)
+            dir = new Vector3(0, 1, 0);
+        else if (angle > angleLeft / 2 || angle < -180 + angleLeft / 2)
+            dir = new Vector3(-1, 0, 0);
+        else
+            dir = new Vector3(0, -1, 0);
+
+        if (animator is not null)
+        {
+            animator.SetFloat("Vertical", dir.y);
+            animator.SetFloat("Horizontal", dir.x);
+        }
+    }
+
     private void OnDeath() 
     {
         entity.isStunned = true;
@@ -149,12 +175,12 @@ public class Player : MonoBehaviour
         edge = null;
     }
 
-    private void SpellShowUIContract()
+   /* private void SpellShowUIContract()
     {
         _diceThrower.OnSpellsChanged += (spell1, spell2) =>
         {
             uiManager.spell1 = spell1;
             uiManager.spell2 = spell2;
         };
-    }
+    }*/
 }

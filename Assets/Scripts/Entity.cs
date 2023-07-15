@@ -6,18 +6,19 @@ public class Entity : MonoBehaviour
 {
     public float maxHp=100;
     private float _hp;
+    private bool isAlive=true;
 
     public float Hp
     {
         get => _hp;
         set
         {
-            Debug.Log(Hp);
             if (value < _hp)
             {
                 _hp = value;
-                if (_hp <= 0)
+                if (_hp <= 0 && isAlive)
                 {
+                    isAlive = false;
                     if (OnDeath != null) 
                         OnDeath.Invoke();
                     return;
@@ -25,7 +26,7 @@ public class Entity : MonoBehaviour
                 if (OnDamageTaken != null)
                 OnDamageTaken.Invoke();   
             }
-
+            Debug.Log(Hp);
             if (value > _hp)
             {
                 _hp = value;

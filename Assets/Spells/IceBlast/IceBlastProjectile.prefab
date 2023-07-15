@@ -95,7 +95,7 @@ Animator:
   m_GameObject: {fileID: 4267316020594419624}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 528e1605b5883ae438b2afb72b34893f, type: 2}
+  m_Controller: {fileID: 9100000, guid: c32b94f9b366b4544bfaa0965a52f3a1, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -134,8 +134,8 @@ MonoBehaviour:
   speed: 15
   range: 5
   pushForce: 0
-  start: {x: -1.2891887, y: -0.16856118, z: -0.00000011920928}
-  direction: {x: -0.9900842, y: -0.14047499, z: 0}
+  start: {x: 1.0353631, y: 0.3853395, z: -0.00000011920928}
+  direction: {x: 0.9470422, y: 0.32110888, z: 0}
   spell: {fileID: 0}
   statuses:
   - {fileID: 11400000, guid: b6ecadd2f105bc847a7eb0b6a5c397c4, type: 2}

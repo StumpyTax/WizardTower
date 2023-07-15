@@ -20,26 +20,7 @@ public class MovementControl : MonoBehaviour
         if (TryGetComponent<Animator>(out animator)) rb=GetComponent<Rigidbody>();
     }
 
-    void Update()
-    {
-    //     var dir = (GetMousePosition()-transform.position).normalized;
-    //     var angle =Mathf.Atan2(dir.y,dir.x)*180/Mathf.PI;
-    //
-    //     if (angle >= -angleRight / 2 && angle < angleRight / 2)
-    //         dir = new Vector3(1, 0, 0);
-    //     else if (angle > angleRight / 2 && angle <= 180 - angleLeft / 2)
-    //         dir = new Vector3(0, 1, 0);
-    //     else if (angle > angleLeft / 2 || angle < -180 + angleLeft / 2)
-    //         dir = new Vector3(-1, 0, 0);
-    //     else
-    //         dir = new Vector3(0, -1, 0);
-    //
-    //     if (animator is not null)
-    //     {
-    //         animator.SetFloat("Vertical", dir.y);
-    //         animator.SetFloat("Horizontal", dir.x);   
-    //     }
-    }
+    
     public void FixedUpdate() 
     {
         FrictionLogic();
