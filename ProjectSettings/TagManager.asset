@@ -17,6 +17,7 @@ TagManager:
   - GameManager
   - item
   - Menu
+  - DiceThrow
   layers:
   - Default
   - TransparentFX

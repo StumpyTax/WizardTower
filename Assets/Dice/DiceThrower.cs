@@ -22,7 +22,7 @@ public class DiceThrower : MonoBehaviour
         _diceThrowScript = diceThrowGameObject.GetComponent<DiceThrowScript>();
         _diceChoose = diceThrowGameObject.GetComponentInChildren<DiceChoose>();
 
-        //playerInput.DiceChoose.confirm.performed += x => _diceChoose.Confirm();
+        playerInput.actions["confirm"].performed += x => _diceChoose.Confirm();
     }
     public void Choose(Edge edge)
     {
@@ -33,7 +33,7 @@ public class DiceThrower : MonoBehaviour
     
     public async void Roll(InputAction.CallbackContext action)
     {
-        if (action.performed)
+        if (action.performed && _diceThrowScript.isEdgeValid())
         {
             _diceThrowScript.ThrowDice();
             while (!_diceThrowScript.isEdgeValid())

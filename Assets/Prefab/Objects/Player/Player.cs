@@ -64,7 +64,7 @@ public class Player : MonoBehaviour
         {
             _diceThrower._diceChoose.enabled = false;
             _diceThrower._diceThrowScript.enabled = true;
-            _playerInput.SwitchCurrentActionMap("DiceChoose");
+            _playerInput.SwitchCurrentActionMap("Player");
             uiManager.HideDiceChooseWindow();
         };
         
@@ -185,7 +185,7 @@ public class Player : MonoBehaviour
         _diceThrower.Choose(edge.edge);
         _diceThrower._diceChoose.enabled = true;
         _diceThrower._diceThrowScript.enabled = false;
-        _playerInput.SwitchCurrentActionMap("Player");
+        _playerInput.SwitchCurrentActionMap("DiceChoose");
         uiManager.ShowDiceChooseWindow();
         edge = null;
     }
