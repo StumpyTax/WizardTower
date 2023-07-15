@@ -42,6 +42,7 @@ public class DiceThrower : MonoBehaviour
         if (action.performed && _diceThrowScript.isEdgeValid())
         {
             _diceThrowScript.ThrowDice();
+            await Task.Delay(300);
             while (!_diceThrowScript.isEdgeValid())
             {
                 Debug.Log("await");
