@@ -1,4 +1,6 @@
 
+using UnityEngine;
+
 public class SpeedUp : Spell
 {
     public void Start()

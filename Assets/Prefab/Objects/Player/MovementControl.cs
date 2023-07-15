@@ -10,11 +10,15 @@ public class MovementControl : MonoBehaviour
     public float FrictionForce = 0.5f;
     public Animator animator;
 
+    private AudioSource _source;
+
+
     public bool isEnable;
     [SerializeField]private Rigidbody rb;
 
     void Start()
     {
+        _source = GetComponent<AudioSource>();
         isEnable = true;
         entity = GetComponent<Entity>();
         if (TryGetComponent<Animator>(out animator)) rb=GetComponent<Rigidbody>();

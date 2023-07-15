@@ -23,8 +23,11 @@ public class Player : MonoBehaviour
     private SpriteRenderer _rend;
     private Material _defMat;
     private Material _blinkMat;
+    private Rigidbody _rb;
+    private AudioSource _source;
 
 
+    private bool isWalking;
     private void Start()
     {
         entity = GetComponent<Entity>();
@@ -32,7 +35,7 @@ public class Player : MonoBehaviour
         uiManager = GameObject.FindWithTag("UIManager").GetComponent<UIManager>();
 
         _playerInput = GetComponent<PlayerInput>();
-        
+        _rb = GetComponent<Rigidbody>();
         caster = GetComponent<Caster>();
         caster.isEnable = true;
         movementControl = GetComponent<MovementControl>();
@@ -87,7 +90,7 @@ public class Player : MonoBehaviour
 
         entity.OnDeath += OnDeath;
         entity.OnDamageTaken += OnDamageTaken;
-        
+        _source = GetComponent<AudioSource>();
 
         
 /*        SpellShowUIContract();
@@ -112,6 +115,18 @@ public class Player : MonoBehaviour
         else
             dir = new Vector3(0, -1, 0);
 
+        if (_rb.velocity.magnitude > 0.1 && !isWalking)
+        {
+            _source.Play();
+            isWalking = true;
+        }
+        else if (_rb.velocity.magnitude < 0.1)
+        {
+            _source.Stop();
+            isWalking = false;
+        }
+        else
+            _source.pitch = Random.Range(0.7f, 1.1f);
         if (animator is not null)
         {
             animator.SetFloat("Vertical", dir.y);

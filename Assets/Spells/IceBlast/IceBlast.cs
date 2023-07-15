@@ -10,7 +10,7 @@ public class IceBlast : Spell
     public float cd=0;
     public float range;
     public float indent;
-    
+
  /*   public GameObject debbuf;*/
     public IceBlastProjectile projectile;
 
@@ -22,10 +22,10 @@ public class IceBlast : Spell
         projectile.direction = (targetDir - casterEntity.transform.position);
         projectile.direction.z = 0;
         projectile.direction = projectile.direction.normalized;
-        Fire();
+        Ice();
         Destroy(gameObject);
     }
-    public void Fire()
+    public void Ice()
     {
         projectile.start = casterEntity.transform.position + projectile.direction * indent;
         projectile.start.z = casterEntity.transform.position.z;

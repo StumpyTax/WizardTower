@@ -58,4 +58,6 @@ MonoBehaviour:
   cd: 0
   range: 5
   indent: 1.2
+  start: {fileID: 8300000, guid: b2baf76079dece647bd4070313ebb575, type: 3}
+  end: {fileID: 8300000, guid: f59f62f2d44e4db4bb4595d96f57adb9, type: 3}
   projectile: {fileID: -3494586276501715814, guid: 618d30996c76fd7469d435891e9fdfa9, type: 3}
