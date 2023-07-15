@@ -1,10 +1,6 @@
-using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Serialization;
-using UnityEngine.SceneManagement;
-using UnityEngine.UIElements;
-using Image = UnityEngine.UI.Image;
+
 
 [RequireComponent(typeof(Entity))]
 public class Player : MonoBehaviour
@@ -34,9 +30,8 @@ public class Player : MonoBehaviour
         entity = GetComponent<Entity>();
         entity.team = "player";
         uiManager = GameObject.FindWithTag("UIManager").GetComponent<UIManager>();
-        
-        _playerInput = new PlayerInput();
-        _playerInput.Player.Enable();
+
+        _playerInput = GetComponent<PlayerInput>();
         
         caster = GetComponent<Caster>();
         caster.isEnable = true;
@@ -45,29 +40,28 @@ public class Player : MonoBehaviour
         _diceThrower = GetComponent<DiceThrower>();
         _diceThrower.playerInput = _playerInput;
         
-        _playerInput.Player.cast_spell_1.performed += x =>
+        _playerInput.actions["cast_spell_1"].performed += x =>
         {
             caster.direction = GetMousePosition();
             caster.Cast(caster.spells[0]);
         };
-        _playerInput.Player.cast_spell_2.performed += x =>
+        _playerInput.actions["cast_spell_2"].performed += x =>
         {
             caster.direction = GetMousePosition();
             caster.Cast(caster.spells[1]);
         };
-        _playerInput.Player.Pause.performed += x =>
+        _playerInput.actions["Pause"].performed += x =>
         {
             uiManager.ShowMenu();
         };
-            _playerInput.Player.pick_up.performed += PickUp;
-        _playerInput.Player.roll_dice.performed += _diceThrower.Roll;
+        _playerInput.actions["pick_up"].performed += PickUp;
+        _playerInput.actions["roll_dice"].performed += _diceThrower.Roll;
 
-        _playerInput.DiceChoose.confirm.performed += x =>
+        _playerInput.actions["confirm"].performed += x =>
         {
             _diceThrower._diceChoose.enabled = false;
             _diceThrower._diceThrowScript.enabled = true;
-            _playerInput.Player.Enable();
-            _playerInput.DiceChoose.Disable();
+            _playerInput.SwitchCurrentActionMap("DiceChoose");
             uiManager.HideDiceChooseWindow();
         };
         
@@ -97,7 +91,7 @@ public class Player : MonoBehaviour
 
         
         SpellShowUIContract();
-        _diceThrower.OnSpellsChanged.Invoke(caster.spells[0], caster.spells[1]);
+        //_diceThrower.OnSpellsChanged.Invoke(caster.spells[0], caster.spells[1]);
     }
     private void OnDeath() 
     {
@@ -125,16 +119,15 @@ public class Player : MonoBehaviour
 
     public void FixedUpdate()
     {
-        if (_playerInput.Player.enabled)
+        if (_playerInput == null) return;
+        if (_playerInput.enabled)
             movementControl.MoveTo(PlayerMoveDirection());
     }
 
     private Vector3 PlayerMoveDirection()
     {
-        return new Vector3( 
-            (_playerInput.Player.left.inProgress ? -1 : 0) + (_playerInput.Player.right.inProgress ? 1 : 0),
-            (_playerInput.Player.down.inProgress ? -1 : 0) + (_playerInput.Player.up.inProgress ? 1 : 0),
-            0);
+        Vector3 vector = _playerInput.actions["move"].ReadValue<Vector2>();
+        return vector;
     }
     
     public static Vector3 GetMousePosition()
@@ -155,8 +148,7 @@ public class Player : MonoBehaviour
         _diceThrower.Choose(edge.edge);
         _diceThrower._diceChoose.enabled = true;
         _diceThrower._diceThrowScript.enabled = false;
-        _playerInput.Player.Disable();
-        _playerInput.DiceChoose.Enable();
+        _playerInput.SwitchCurrentActionMap("Player");
         uiManager.ShowDiceChooseWindow();
         edge = null;
     }

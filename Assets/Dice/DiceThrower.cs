@@ -8,7 +8,7 @@ using UnityEngine.Serialization;
 
 public class DiceThrower : MonoBehaviour
 {
-    public Action<Spell, Spell> OnSpellsChanged;
+    public Action<SpellStorable, SpellStorable> OnSpellsChanged;
     
     public GameObject diceThrowGameObject;
     public PlayerInput playerInput;
@@ -23,7 +23,7 @@ public class DiceThrower : MonoBehaviour
         _diceThrowScript = diceThrowGameObject.GetComponent<DiceThrowScript>();
         _diceChoose = diceThrowGameObject.GetComponentInChildren<DiceChoose>();
 
-        playerInput.DiceChoose.confirm.performed += x => _diceChoose.Confirm();
+        //playerInput.DiceChoose.confirm.performed += x => _diceChoose.Confirm();
     }
     public void Choose(Edge edge)
     {
@@ -44,7 +44,7 @@ public class DiceThrower : MonoBehaviour
             }
             Debug.Log(_diceThrowScript.topEdge().GetComponent<Edge>().spell);
             _caster.spells[1] = _caster.spells[0];
-            _caster.spells[0] = _diceThrowScript.topEdge().GetComponent<Edge>().spell;
+            _caster.spells[0] = _diceThrowScript.topEdge().GetComponent<Edge>().spell.Get();
             OnSpellsChanged.Invoke(_caster.spells[0], _caster.spells[1]);
         }
     }

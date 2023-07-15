@@ -31,7 +31,6 @@ public class Enemy : MonoBehaviour
     {
         player.devour.targetEntity = entity;
         player.devour.casterEntity = player.entity;
-        player.devour = Instantiate(player.devour);
-        player.devour.Start();
+        Instantiate(player.devour).Start();
     }
 }

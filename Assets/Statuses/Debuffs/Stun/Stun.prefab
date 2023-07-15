@@ -45,6 +45,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   curDur: 0
-  dmgInTick: 0
-  healInTick: 0
-  intervalBetweenTicks: 0
+  status: {fileID: 11400000, guid: 5995327be8a77644eb02b7fcfe0473ee, type: 2}

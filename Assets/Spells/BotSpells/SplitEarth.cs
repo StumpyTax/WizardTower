@@ -1,11 +1,11 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class SplitEarth : Spell
 {
     private void Start()
     {
-        statuses.Add(new Stun(0.5f));
         transform.position = casterEntity.transform.position;
         StartCoroutine(DestroyRoutine());
     }

@@ -60,4 +60,4 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   statuses:
-  - {fileID: 7718171042537424080, guid: 1969475cdc8a133499210dbd216e24b2, type: 3}
+  - {fileID: 11400000, guid: d0740a8db1c465a4cb8b40421ce5a0d3, type: 2}

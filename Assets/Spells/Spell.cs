@@ -20,10 +20,12 @@ public class Spell : MonoBehaviour
 
     public List<Entity> targets;
     
-    public List<Status> statuses;
+    [SerializeField]
+    public List<StatusStorable> statuses;
 
     public async void Cooldown()
     {
+        Instantiate(this);
         curCooldown = cooldown;
         while (curCooldown > 0)
         {

@@ -1,19 +1,20 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    public Spell spell1;
-    public Spell spell2;
+    public SpellStorable spell1;
+    public SpellStorable spell2;
     
     public GameObject spell1Window;
     public GameObject spell2Window;
+    public GameObject spell1WindowBackground;
+    public GameObject spell2WindowBackground;
     
     public Image Spell1WindowImage;
     public Image Spell2WindowImage;
+    public Image Spell1WindowImageBackground;
+    public Image Spell2WindowImageBackground;
     
     public GameObject devourWindow;
     public GameObject diceMiniWindow;
@@ -32,8 +33,12 @@ public class UIManager : MonoBehaviour
         Spell1WindowImage.fillMethod = Image.FillMethod.Vertical;
         Spell2WindowImage.fillMethod = Image.FillMethod.Vertical;
         
+        Spell1WindowImageBackground = spell1WindowBackground.GetComponent<Image>();
+        Spell2WindowImageBackground = spell2WindowBackground.GetComponent<Image>();
+        Spell1WindowImageBackground.color = new Color(1, 1, 1, 0.25f);
+        Spell2WindowImageBackground.color = new Color(1, 1, 1, 0.25f);
+        
         var player = GameManager.instance
-            .GetComponent<GameManager>()
             .curPlayer
             .GetComponent<Player>();
         player.uiManager = this;
@@ -48,6 +53,10 @@ public class UIManager : MonoBehaviour
         Spell2WindowImage.sprite = spell2.icon;
         Spell1WindowImage.fillAmount = 1 - (spell1.curCooldown / spell1.cooldown);
         Spell2WindowImage.fillAmount = 1 - (spell2.curCooldown / spell2.cooldown);
+        
+        Spell1WindowImageBackground.sprite = spell1.icon;
+        Spell2WindowImageBackground.sprite = spell2.icon;
+
     }
 
     public void ShowDiceChooseWindow()

@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
         {
             var room = rooms[Random.Range(0,rooms.Count)];
             roomsQueue.Enqueue(room);
-            Debug.Log(room);
+            //Debug.Log(room);
         }
     }
     public string GetNextRoom()
@@ -87,7 +87,7 @@ public class GameManager : MonoBehaviour
     }
     private void Update()
     {
-        Debug.Log(curPlayer == null);
+        //Debug.Log(curPlayer == null);
         if (GameObject.FindGameObjectsWithTag("Enemy").Length > 0)
             roomIsClear = false;
         else

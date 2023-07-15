@@ -1,14 +1,9 @@
-
 using System.Collections;
-using System.Threading.Tasks;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Stun : Status
 {
-    public Stun(float duration) : base(duration, 0, 0, 0)
-    {
-    }
-
     public override void Init()
     {
         OnGet += (entity) =>
@@ -26,7 +21,8 @@ public class Stun : Status
                 player.movementControl.isEnable = false;
             }
 
-            Wait(entity);
+            //Wait(entity);
+            StartCoroutine(Routine(entity));
         };
         OnEnd += entity => 
         {
@@ -45,13 +41,19 @@ public class Stun : Status
         };
     }
 
-    public async void Wait(Entity e)
+    public void Wait(Entity e)
     {
-        while (curDur < duration)
+        
+        //TimeManager.instance.AddAction(() => {status.OnEnd.Invoke(e);}, status.duration);
+    }
+
+    public IEnumerator Routine(Entity entity)
+    {
+        while (curDur < status.duration)
         {
             curDur += Time.deltaTime;
-            await Task.Yield();
+            yield return null;
         }
-        OnEnd.Invoke(e);
+        OnEnd.Invoke(entity);
     }
 }

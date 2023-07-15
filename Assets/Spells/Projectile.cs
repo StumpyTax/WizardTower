@@ -16,7 +16,7 @@ public class Projectile : MonoBehaviour
     private Collider collider;
     
     public Spell spell;
-    public List<Status> statuses;
+    public List<StatusStorable> statuses;
 
 
     public void Start()

@@ -4,34 +4,37 @@ using UnityEngine;
 
 public class Fire : Status
 {
-    public Fire() : base(10, 10, 0, 2)
-    {
-    }
-    
-    
     public override void Init()
     {
-        OnTick += (entity) => { 
-            entity.Hp -= dmgInTick;
-         };
-        OnGet += (entity) => Burning(entity);
+        // status.OnTick += (entity) => { 
+        //     entity.Hp -= dmgInTick;
+        //  };
+        // status.OnGet += (entity) => Burning(entity);
     }
 
     public async void Burning(Entity entity)
     {
-        while (curDur < duration)
-        {
-            var t = 0f;
-            while (t < intervalBetweenTicks)
-            {
-                t += Time.deltaTime;
-                await Task.Yield();
-            }
-            t = 0f;
-            OnTick.Invoke(entity);
-            curDur += intervalBetweenTicks + Time.deltaTime;
-        }
-        OnEnd.Invoke(entity);
+        // bool flg = true;
+        // TimeManager.instance.AddAction(
+        //     () =>
+        //     {
+        //         flg = false;
+        //     },
+        //     status.duration);
+        // while (flg)
+        // {
+        //     bool flg2 = true;
+        //     TimeManager.instance.AddAction(
+        //         () =>
+        //         {
+        //             flg2 = false;
+        //             status.OnTick.Invoke(entity);
+        //             Debug.Log("TICK");
+        //         },
+        //         status.intervalBetweenTicks);
+        //     while (flg2) Task.Yield();
+        // } 
+        // status.OnEnd.Invoke(entity);
     }
     
     // public void Fire()

@@ -46,10 +46,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2dd76745070dbc42887e418bd624945, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  icon: {fileID: 0}
   dmg: 10
+  cooldown: 0
+  curCooldown: 0
   targetDir: {x: 0, y: 0, z: 0}
   casterEntity: {fileID: 0}
-  statuses: []
+  targetEntity: {fileID: 0}
+  targets: []
+  statuses:
+  - {fileID: 11400000, guid: 5995327be8a77644eb02b7fcfe0473ee, type: 2}
 --- !u!135 &1048981087503484576
 SphereCollider:
   m_ObjectHideFlags: 0

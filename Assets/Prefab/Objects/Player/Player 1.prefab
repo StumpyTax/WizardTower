@@ -77,7 +77,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Actions: {fileID: -944628639613478452, guid: a0105f16e65116948ad5bf3c959cacb2, type: 3}
-  m_NotificationBehavior: 3
+  m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
     m_PersistentCalls:
@@ -88,7 +88,35 @@ MonoBehaviour:
   m_ControlsChangedEvent:
     m_PersistentCalls:
       m_Calls: []
-  m_ActionEvents: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: aa6bb5eb-a5b0-49ba-9e2f-7d851b43ced5
+    m_ActionName: Player/cast_spell_1[/Keyboard/q]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 09d4afa6-c06e-4964-8746-3ca01b062020
+    m_ActionName: Player/cast_spell_2[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0138c207-822a-4fa5-800c-653b944c114c
+    m_ActionName: Player/roll_dice[/Keyboard/r]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0ab4ff4b-3261-4cf2-b241-7db8d578dac2
+    m_ActionName: Player/pick_up[/Keyboard/f]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7aa11f86-88f2-4018-8bd8-52c84390641a
+    m_ActionName: Player/Pause[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0ae30314-08ef-4cee-b702-7fe41cba24d9
+    m_ActionName: DiceChoose/confirm[/Keyboard/enter]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 4bda9000-8f54-4084-9839-53e39cffcec1
+    m_ActionName: Player/move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -214,7 +242,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spells:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 8174ae165a1091a41b8595498a7d8729, type: 2}
   - {fileID: 0}
   direction: {x: 0, y: 0, z: 0}
   enemies: []
@@ -233,6 +261,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   diceThrowGameObject: {fileID: 1721841593789267419, guid: 231b5d0d9dd432447bc8d16df09be56a, type: 3}
+  playerInput: {fileID: 0}
 --- !u!114 &1129041660194903262
 MonoBehaviour:
   m_ObjectHideFlags: 0

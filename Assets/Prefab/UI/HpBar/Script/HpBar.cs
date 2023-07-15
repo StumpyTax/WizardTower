@@ -20,6 +20,6 @@ public class HpBar : MonoBehaviour
     {
         var entity = gameManager.curPlayer.GetComponent<Entity>();
         bar.fillAmount = entity.Hp / entity.maxHp;
-        Debug.Log(bar.fillAmount);
+        //Debug.Log(bar.fillAmount);
     }
 }

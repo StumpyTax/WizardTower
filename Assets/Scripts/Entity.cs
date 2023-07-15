@@ -1,8 +1,6 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEngine.EventSystems.EventTrigger;
 
 public class Entity : MonoBehaviour
 {
@@ -45,27 +43,29 @@ public class Entity : MonoBehaviour
     public Action OnHeal;
     public Action OnDeath;
     public Action OnDamageTaken;
+    public Action OnGetStatus;
 
     public string team;
 
-    private List<Status> _statuses = new List<Status>();
+    [SerializeField] public List<Status> _statuses;
     private void Start()
     {
         _hp = maxHp;
     }
-    public void AddNewStatus(Status status)
+    public void AddNewStatus(StatusStorable statusStorable)
     {
-        Debug.Log("new status");
+        var status = Instantiate(statusStorable.status);
         status.Init();
         status.OnEnd += (entity) =>
         {
             Debug.Log("removed");
             _statuses.Remove(status);
+            Destroy(status.gameObject);
         };
         _statuses.Add(status);
-        status.OnGet.Invoke(this);
+        status.OnGet?.Invoke(this);
     }
-    public void AddNewStatuses(IEnumerable<Status> statuses)
+    public void AddNewStatuses(IEnumerable<StatusStorable> statuses)
     {
         foreach (var status in statuses)
         {

@@ -1,13 +1,14 @@
-using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class Caster : MonoBehaviour
 {
+    //Мы должны хранить геймобджекты спеллов
     private Spell _spell;
-
-
-    public Spell[] spells;
+    public List<SpellStorable> spells;
+    
     public Vector3 direction;
     public List<Entity> enemies;
     public Entity casterEntity;
@@ -29,15 +30,34 @@ public class Caster : MonoBehaviour
         Instantiate(_spell);
         _spell.Cooldown();
     }
-    public void Cast(Spell spell)
+
+    public void Cooldown(SpellStorable spell)
     {
-        if (!isEnable || !spell.isReady())
+        var index = spells.IndexOf(spell);
+        spell = Instantiate(spell);
+        spells[index] = spell;
+        spell.curCooldown = spell.cooldown;
+
+        IEnumerator Routine()
         {
-            Debug.Log(spell.curCooldown);
-            return;
+            while (spell.curCooldown > 0)
+            {
+                spell.curCooldown -= Time.deltaTime;
+                yield return null;
+            }
         }
-        _spell = spell;
-        GetComponent<Animator>().SetBool("Cast", true);
+        StartCoroutine(Routine());
     }
-  
+    public void Cast(SpellStorable spell)
+    {
+        Debug.Log(spell.curCooldown);
+        var spell1 = spell.Cast();
+        if (spell1 == null) return;
+        spell1.targetDir = direction;
+        spell1.targetDir.z = 0;
+        spell1.casterEntity = casterEntity;
+        Cooldown(spell);
+        // GetComponent<Animator>().SetBool("Cast", true);
+        // OnCastEnd();
+    }
 }

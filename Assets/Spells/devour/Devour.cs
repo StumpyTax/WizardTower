@@ -6,9 +6,6 @@ public class Devour : Spell
 {
     public void Start()
     {
-        statuses = new List<Status>(new[] { new Stun(4) });
-        casterEntity.AddNewStatuses(statuses);
-        targetEntity.AddNewStatuses(statuses);
         StartCoroutine(SimpleRoutine());
     }
 

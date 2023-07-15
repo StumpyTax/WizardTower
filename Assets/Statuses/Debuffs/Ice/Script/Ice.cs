@@ -7,10 +7,6 @@ public class Ice : Status
 {
 
     public float slowDown;
-    public Ice() : base(10, 10, 0, 2)
-    {
-        slowDown = 0;
-    }
 
 
     public override void Init()
@@ -23,11 +19,11 @@ public class Ice : Status
     public async void Slow(Entity entity)
     {
         entity.movementSpeed *= slowDown;
-        while (curDur < duration)
-        {
-            curDur += intervalBetweenTicks + Time.deltaTime;
-            await Task.Yield();
-        }
+        // while (curDur < duration)
+        // {
+        //     curDur += intervalBetweenTicks + Time.deltaTime;
+        //     await Task.Yield();
+        // }
         OnEnd.Invoke(entity);
     }
 }

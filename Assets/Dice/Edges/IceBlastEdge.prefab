@@ -97,5 +97,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c954e54f96d0486788c15fc03b18bb86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spell: {fileID: 1955623938784442498, guid: 1fe1a15dd6853454cb527e32ed49d9d1, type: 3}
+  spell: {fileID: 11400000, guid: 69d23e74d42228f4f9f27fcc05ca7562, type: 2}
   edgeItem: {fileID: 8037582439298235511, guid: 5e4aaeb0c9bd9354a9e0fb2372f24e08, type: 3}
