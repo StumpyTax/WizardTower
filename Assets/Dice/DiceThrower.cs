@@ -22,7 +22,7 @@ public class DiceThrower : MonoBehaviour
         _diceThrowScript = diceThrowGameObject.GetComponent<DiceThrowScript>();
         _diceChoose = diceThrowGameObject.GetComponentInChildren<DiceChoose>();
 
-        //playerInput.DiceChoose.confirm.performed += x => _diceChoose.Confirm();
+        playerInput.actions["confirm"].performed += x => _diceChoose.Confirm();
     }
     public void Choose(Edge edge)
     {
