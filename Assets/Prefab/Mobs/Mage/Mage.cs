@@ -20,6 +20,7 @@ public class Mage : Enemy
 
     public void Start()
     {
+        base.Start();
         _attackTrigger = Instantiate(_attackTrigger, gameObject.transform, false);
         _attackTrigger.name = "triggerRange";
         var script = _attackTrigger.GetComponent<AttackTrigger>();

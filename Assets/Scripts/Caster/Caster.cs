@@ -18,6 +18,7 @@ public class Caster : MonoBehaviour
     {
         isEnable = true;
         casterEntity = GetComponent<Entity>();
+        spells[0] = Instantiate(spells[0]);
     }
     public void OnCastEnd()
     {
@@ -33,9 +34,10 @@ public class Caster : MonoBehaviour
 
     public void Cooldown(SpellStorable spell)
     {
-        var index = spells.IndexOf(spell);
-        spell = Instantiate(spell);
-        spells[index] = spell;
+        // var index = spells.IndexOf(spell);
+        // spell = Instantiate(spell);
+        // spells[index] = spell;
+        
         spell.curCooldown = spell.cooldown;
 
         IEnumerator Routine()
@@ -56,6 +58,7 @@ public class Caster : MonoBehaviour
         spell1.targetDir = direction;
         spell1.targetDir.z = 0;
         spell1.casterEntity = casterEntity;
+        spell1.targets = enemies;
         Cooldown(spell);
         // GetComponent<Animator>().SetBool("Cast", true);
         // OnCastEnd();
