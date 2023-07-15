@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b14992dd656f2e147a7846a59431287a, type: 3}
   m_Name: Blast
   m_EditorClassIdentifier: 
-  icon: {fileID: 1714050081, guid: c1ddd509a2608894bbecb478cf62a79d, type: 3}
+  icon: {fileID: -506129863, guid: c1ddd509a2608894bbecb478cf62a79d, type: 3}
   dmg: 0
   cooldown: 3
   curCooldown: 0
