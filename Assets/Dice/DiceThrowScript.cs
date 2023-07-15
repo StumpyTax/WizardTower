@@ -24,9 +24,10 @@ public class DiceThrowScript : MonoBehaviour
     {
         DontDestroyOnLoad(gameObject);
 
-        dice = Instantiate(dice, gameObject.transform, true);
+        dice = Instantiate(dice, gameObject.transform, false);
+        dice.transform.localPosition = new Vector3(0, 0, -1);
 
-        camera = Instantiate(camera, gameObject.transform, true);
+        camera = Instantiate(camera, gameObject.transform, false);
         camera.GetComponent<CameraTrack>().trackedO = dice;
 
         _diceRb = dice.GetComponent<Rigidbody>();
@@ -36,7 +37,6 @@ public class DiceThrowScript : MonoBehaviour
     public void Start()
     {
         _diceRb = dice.GetComponent<Rigidbody>();
-        SetDiceAtStartPosition();
     }
 
     public void ThrowDice()
