@@ -51,7 +51,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: cd907577c2a1c8948bef5e2d8195b714, type: 2}
+  m_Motion: {fileID: 7400000, guid: 4e4eff65feb042a4896c0857d74ffeff, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -104,7 +104,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 540a9a9abe721d742822ccb61bcfc0a1, type: 2}
+  m_Motion: {fileID: 7400000, guid: 63d027f89c2cc5d43a591d4a1923181c, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -163,7 +163,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: FireBallProjectile
+  m_Name: IceBlastProjectile
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: MaxRange
@@ -211,7 +211,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: d2b670d1fd2fead489633926bb1c044c, type: 2}
+  m_Motion: {fileID: 7400000, guid: 7d1d8ec9a7a41ee468b8e62894be559c, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -238,7 +238,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 3b42c9d98a286db40a9ec3549747df53, type: 2}
+  m_Motion: {fileID: 7400000, guid: 2d12e7f213108f84b81c6e5d7581c673, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

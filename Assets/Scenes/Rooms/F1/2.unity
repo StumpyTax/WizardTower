@@ -3606,6 +3606,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4414196481722520707, guid: a66d304fd0f589d4389a0619ad0f49b0, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4414196481722520707, guid: a66d304fd0f589d4389a0619ad0f49b0, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -3622,6 +3626,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6319959274756489936, guid: a66d304fd0f589d4389a0619ad0f49b0, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6319959274756489936, guid: a66d304fd0f589d4389a0619ad0f49b0, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -3638,6 +3646,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7062073401947452401, guid: a66d304fd0f589d4389a0619ad0f49b0, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062073401947452401, guid: a66d304fd0f589d4389a0619ad0f49b0, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -3651,6 +3663,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8036364991197065994, guid: a66d304fd0f589d4389a0619ad0f49b0, type: 3}
       propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8036364991197065994, guid: a66d304fd0f589d4389a0619ad0f49b0, type: 3}
+      propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8036364991197065994, guid: a66d304fd0f589d4389a0619ad0f49b0, type: 3}
@@ -7038,8 +7054,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 20.987415, y: 11.805647, z: 1}
-  m_Center: {x: -0.07723999, y: 0.6358528, z: 0}
+  m_Size: {x: 29.061424, y: 17.558376, z: 1}
+  m_Center: {x: 0.29281807, y: 0.48446512, z: 0}
 --- !u!65 &1682064505
 BoxCollider:
   m_ObjectHideFlags: 0

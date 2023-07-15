@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: IceBlast
   m_EditorClassIdentifier: 
   icon: {fileID: 164025166, guid: c1ddd509a2608894bbecb478cf62a79d, type: 3}
-  dmg: 0
+  dmg: 1
   cooldown: 5
   curCooldown: 0
   spell: {fileID: 1955623938784442498, guid: 1fe1a15dd6853454cb527e32ed49d9d1, type: 3}

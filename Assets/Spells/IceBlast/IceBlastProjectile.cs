@@ -28,7 +28,7 @@ public class IceBlastProjectile : Projectile
     private void OnTriggerEnter(Collider other)
     {
         Entity entity;
-        if (other.TryGetComponent<Entity>(out entity))
+        if (other.TryGetComponent(out entity))
         {
             if (entity.team != this.spell.casterEntity.team)
             {
@@ -43,7 +43,11 @@ public class IceBlastProjectile : Projectile
                 }
             }
         }
-        if (other.tag == "Wall" && spell.casterEntity.tag != other.tag)
+        var team = spell.casterEntity.team;
+        if (entity != null)
+            team = entity.team;
+      
+        if (other.tag == "Wall" || team != spell.casterEntity.team)
         {
             rb.velocity = Vector3.zero;
             GetComponent<Animator>().SetTrigger("Hit");

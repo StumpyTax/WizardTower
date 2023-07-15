@@ -45,7 +45,7 @@ public class Mage : Enemy
     {
         _movementControl.FixedUpdate();
         if (isReady)
-            if (isEnemyClose)
+            if (isEnemyClose && _caster.spells[0].curCooldown <= 0)
                 Attack();
     }
 

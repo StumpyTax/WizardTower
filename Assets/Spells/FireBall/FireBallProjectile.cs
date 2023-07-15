@@ -32,6 +32,7 @@ public class FireBallProjectile : Projectile
         {
             if (entity.team != this.spell.casterEntity.team)
             {
+
                 var victim = other.GetComponent<Entity>();
                 if (victim != null)
                 {
@@ -43,10 +44,9 @@ public class FireBallProjectile : Projectile
                 }
             }
         }
-        if (other.tag == "Wall"
-            //|| entity.team != spell.casterEntity.team
-            )
+        if (other.tag == "Wall" || entity.team != spell.casterEntity.team)
         {
+            
             rb.velocity = Vector3.zero;
             GetComponent<Animator>().SetTrigger("Hit");
         }
