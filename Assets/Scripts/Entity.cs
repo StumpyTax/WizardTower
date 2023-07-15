@@ -24,7 +24,7 @@ public class Entity : MonoBehaviour
                     return;
                 }
                 if (OnDamageTaken != null)
-                OnDamageTaken.Invoke();   
+                    OnDamageTaken.Invoke();   
             }
             Debug.Log(Hp);
             if (value > _hp)
