@@ -53,7 +53,7 @@ MonoBehaviour:
   targetEntity: {fileID: 0}
   targets: []
   statuses:
-  - {fileID: 8168346255949364939, guid: fa40301c7e077514b872ec7cb37d4a0c, type: 3}
+  - {fileID: 11400000, guid: b6ecadd2f105bc847a7eb0b6a5c397c4, type: 2}
   speed: 15
   cd: 0
   range: 5

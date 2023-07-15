@@ -44,10 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1a9c823b9da3764784ea7001332779f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 0
   curDur: 0
-  dmgInTick: 0
-  healInTick: 0
-  intervalBetweenTicks: 0
-  status: {fileID: 0}
-  speedBonus: 2
+  status: {fileID: 11400000, guid: d0740a8db1c465a4cb8b40421ce5a0d3, type: 2}

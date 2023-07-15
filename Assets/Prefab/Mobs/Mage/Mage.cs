@@ -50,7 +50,7 @@ public class Mage : Enemy
 
     public void Attack()
     {
-        _animator.SetTrigger("Attack");   
+        _animator.SetTrigger("Attack");
     }
     private void AttackRoutine()
     {

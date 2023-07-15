@@ -17,4 +17,5 @@ MonoBehaviour:
   dmgInTick: 0.1
   healInTick: 0
   intervalBetweenTicks: 0.2
-  status: {fileID: 0}
+  msChange: 0
+  status: {fileID: 2548204954759030217, guid: 2c3f39d0609d85e4bbd10ecc09556342, type: 3}

@@ -1,29 +1,20 @@
 using System.Collections;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using UnityEngine;
 
 public class Ice : Status
 {
 
-    public float slowDown;
-
-
     public override void Init()
     {
         
-        OnGet += (entity) => Slow(entity);
-        OnEnd += (entity) => entity.movementSpeed/=slowDown;
+        OnGet += (entity) => StartCoroutine(Slow(entity));
+        OnEnd += (entity) => entity.movementSpeed/=status.msChange;
     }
 
-    public async void Slow(Entity entity)
+    public IEnumerator Slow(Entity entity)
     {
-        entity.movementSpeed *= slowDown;
-        // while (curDur < duration)
-        // {
-        //     curDur += intervalBetweenTicks + Time.deltaTime;
-        //     await Task.Yield();
-        // }
+        entity.movementSpeed *= status.msChange;
+        yield return new WaitForSeconds(status.duration);
         OnEnd.Invoke(entity);
     }
 }

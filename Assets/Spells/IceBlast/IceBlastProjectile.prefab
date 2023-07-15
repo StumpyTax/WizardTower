@@ -131,13 +131,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7648c0525d65abb4ba61034f2b44e3f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  range: 0
+  speed: 15
+  range: 5
   pushForce: 0
-  start: {x: 0, y: 0, z: 0}
-  direction: {x: 0, y: 0, z: 0}
+  start: {x: -1.2891887, y: -0.16856118, z: -0.00000011920928}
+  direction: {x: -0.9900842, y: -0.14047499, z: 0}
   spell: {fileID: 0}
-  statuses: []
+  statuses:
+  - {fileID: 11400000, guid: b6ecadd2f105bc847a7eb0b6a5c397c4, type: 2}
 --- !u!1 &8975815398559663131
 GameObject:
   m_ObjectHideFlags: 0

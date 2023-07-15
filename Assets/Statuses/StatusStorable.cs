@@ -13,5 +13,7 @@ public class StatusStorable : ScriptableObject
     public float healInTick;
     public float intervalBetweenTicks;
 
+    public float msChange;
+
     public Status status;
 }

@@ -112,10 +112,6 @@ public class Player : MonoBehaviour
     {
         _rend.material = _defMat;
     }
-    private void OnDmgTakenEnd()
-    {
-
-    }
 
     public void FixedUpdate()
     {
