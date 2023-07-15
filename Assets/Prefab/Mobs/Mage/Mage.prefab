@@ -238,6 +238,7 @@ MonoBehaviour:
   direction: {x: 0, y: 0, z: 0}
   enemies: []
   casterEntity: {fileID: 0}
+  targetEntity: {fileID: 0}
   isEnable: 0
 --- !u!114 &6461680215679657114
 MonoBehaviour:
@@ -255,6 +256,11 @@ MonoBehaviour:
   player: {fileID: 0}
   edges:
   - {fileID: 777138256941889330, guid: b81b24d3de5b81d47928912a1a7515f6, type: 3}
+  - {fileID: 777138256941889330, guid: 8f162c9eddb0bd54e836bc23a2e83bbe, type: 3}
+  - {fileID: 777138256941889330, guid: 21cad2d6761b1c048a04007ad85a710a, type: 3}
+  - {fileID: 777138256941889330, guid: 8e1947d7e4a2754458cfe896dfb6bfc0, type: 3}
+  - {fileID: 777138256941889330, guid: 3079cc2989174c84e8857476ac5e7d79, type: 3}
+  - {fileID: 777138256941889330, guid: 9420d3eb6228cd0438d90845ce959e32, type: 3}
   attackRange: 0
   attackTriggerRange: 4
   _attackTrigger: {fileID: 6504002156584673631, guid: 799ab8986322641489f40767a0d41a6f, type: 3}

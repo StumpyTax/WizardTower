@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b14992dd656f2e147a7846a59431287a, type: 3}
-  m_Name: SplitEarth
+  m_Name: devour
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 1d2dc91a60808c74993651e6af0c5760, type: 3}
   dmg: 0
-  cooldown: 2
+  cooldown: 20
   curCooldown: 0
-  spell: {fileID: 8958739219701735123, guid: bad2c93a667fc264fb1232052cabdf5a, type: 3}
+  spell: {fileID: -3201135122281929436, guid: 59f490c3e29a5bc4091ff4023a11a6ec, type: 3}

@@ -63,4 +63,9 @@ public class DiceThrowScript : MonoBehaviour
         _diceRb.transform.localPosition = new Vector3(0, 0, -3f);
         _diceRb.constraints = RigidbodyConstraints.FreezePosition;
     }
+
+    public void ResetDice()
+    {
+        _diceRb.transform.localPosition = new Vector3(0, 0, -0.5f);
+    }
 }

@@ -1,6 +1,9 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
+
 [RequireComponent(typeof(Entity))]
 public class Enemy : MonoBehaviour
 {
@@ -22,15 +25,14 @@ public class Enemy : MonoBehaviour
         Debug.Log("drop edge");
         if (edges.Count > 0)
         {
-            var edge = edges[0];
+            var edge = edges[Random.Range(0, edges.Count)];
             Instantiate(edge.edgeItem, entity.transform.position, entity.transform.rotation);
         }
     }
     
     public void OnMouseDown()
     {
-        player.devour.targetEntity = entity;
-        player.devour.casterEntity = player.entity;
-        Instantiate(player.devour).Start();
+        player.caster.targetEntity = entity;
+        player.caster.Cast(player.caster.spells[2]);
     }
 }

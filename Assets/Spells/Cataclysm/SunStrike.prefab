@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5333994488857390251}
   - component: {fileID: 8125913030226831503}
   - component: {fileID: -2643997926960433767}
+  - component: {fileID: 3979223683051528413}
   m_Layer: 0
   m_Name: SunStrike
   m_TagString: Untagged
@@ -45,7 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 995030971027f8b498d84e518dc81869, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dmg: 0
+  icon: {fileID: 0}
+  dmg: 2
   cooldown: 0
   curCooldown: 0
   targetDir: {x: 0, y: 0, z: 0}
@@ -106,3 +108,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!135 &3979223683051528413
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4363751846701509598}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}

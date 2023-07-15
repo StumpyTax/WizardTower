@@ -13,7 +13,7 @@ public class DiceThrower : MonoBehaviour
     public PlayerInput playerInput;
     private Caster _caster;
     public DiceThrowScript _diceThrowScript { get; private set; }
-    public DiceChoose _diceChoose { get; private set; }
+    public DiceChoose   _diceChoose { get; private set; }
 
     private void Start()
     {

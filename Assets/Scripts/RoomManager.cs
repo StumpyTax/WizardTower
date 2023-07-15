@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class RoomManager : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class RoomManager : MonoBehaviour
     private List<Transform> enemySpawnPoints;
     private GameManager _gameManager;
 
+    public List<Edge> edges;
 
     public Action OnWavesEnd;
     private int _currentWaveIndex = -1;
@@ -25,9 +27,9 @@ public class RoomManager : MonoBehaviour
     private void SpawnNextWave()
     {
         _currentWaveIndex++;
-        if (_currentWaveIndex < 0 && enemiesWaves.Count <= _currentWaveIndex)
+        if (_currentWaveIndex < 0 || enemiesWaves.Count <= _currentWaveIndex)
         {
-            OnWavesEnd.Invoke();
+            OnWavesEnd?.Invoke();
             return;
         }
 
@@ -39,6 +41,15 @@ public class RoomManager : MonoBehaviour
 
     private void Start()
     {
+        OnWavesEnd += () =>
+        {
+            if (edges.Count > 0)
+            {
+                var edge = edges[Random.Range(0, edges.Count)];
+                var spawnpoint = enemySpawnPoints[Random.Range(0, enemySpawnPoints.Count)];
+                Instantiate(edge.edgeItem, spawnpoint.position, spawnpoint.rotation);
+            }
+        };
         _gameManager = GameManager.instance;
         enemySpawnPoints = new List<Transform>();
         for (var i = 0; i < transform.childCount; i++)
@@ -47,5 +58,6 @@ public class RoomManager : MonoBehaviour
             if (children.tag == "SpawnPoint Enemy") this.enemySpawnPoints.Add(children);
         }
         SpawnNextWave();
+        
     }
 }

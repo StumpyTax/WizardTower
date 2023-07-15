@@ -195,7 +195,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entity: {fileID: 0}
   player: {fileID: 0}
-  edges: []
+  edges:
+  - {fileID: 777138256941889330, guid: 21cad2d6761b1c048a04007ad85a710a, type: 3}
+  - {fileID: 777138256941889330, guid: b81b24d3de5b81d47928912a1a7515f6, type: 3}
+  - {fileID: 777138256941889330, guid: 8f162c9eddb0bd54e836bc23a2e83bbe, type: 3}
+  - {fileID: 777138256941889330, guid: 8e1947d7e4a2754458cfe896dfb6bfc0, type: 3}
+  - {fileID: 777138256941889330, guid: 3079cc2989174c84e8857476ac5e7d79, type: 3}
+  - {fileID: 777138256941889330, guid: 9420d3eb6228cd0438d90845ce959e32, type: 3}
   attackRange: 2
   attackTriggerRange: 1
   _attackTrigger: {fileID: 6504002156584673631, guid: ffd4f15d7c4791d4aa05d443183fbb39, type: 3}
@@ -256,6 +262,7 @@ MonoBehaviour:
   direction: {x: 0, y: 0, z: 0}
   enemies: []
   casterEntity: {fileID: 0}
+  targetEntity: {fileID: 0}
   isEnable: 0
 --- !u!114 &6949336468567467851
 MonoBehaviour:
@@ -275,6 +282,7 @@ MonoBehaviour:
   critChance: 0
   isStunned: 0
   team: 
+  _statuses: []
 --- !u!114 &6655980445859751384
 MonoBehaviour:
   m_ObjectHideFlags: 0

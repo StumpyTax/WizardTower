@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
     public float pickUpRange;
     public GameObject rangeTrigger;
 
-    public Devour devour;
+    public SpellStorable devour;
     private EdgeCracked edge = null;
 
 
@@ -61,6 +61,7 @@ public class Player : MonoBehaviour
         {
             _diceThrower._diceChoose.enabled = false;
             _diceThrower._diceThrowScript.enabled = true;
+            _diceThrower._diceThrowScript.ResetDice();
             _playerInput.SwitchCurrentActionMap("Player");
             uiManager.HideDiceChooseWindow();
         };
@@ -87,11 +88,12 @@ public class Player : MonoBehaviour
 
         entity.OnDeath += OnDeath;
         entity.OnDamageTaken += OnDamageTaken;
-        
 
-        
+
+        devour = Instantiate(devour);
+
 /*        SpellShowUIContract();
-*/        //_diceThrower.OnSpellsChanged.Invoke(caster.spells[0], caster.spells[1]);
+*/ //_diceThrower.OnSpellsChanged.Invoke(caster.spells[0], caster.spells[1]);
     }
 
     void Update()

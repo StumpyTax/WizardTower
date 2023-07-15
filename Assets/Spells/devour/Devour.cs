@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 public class Devour : Spell
 {
@@ -11,6 +10,8 @@ public class Devour : Spell
 
     public IEnumerator SimpleRoutine()
     {
+        casterEntity.AddNewStatuses(statuses);
+        targetEntity.AddNewStatuses(statuses);
         yield return new WaitForSeconds(4);
         Enemy enemy;
         if (targetEntity.TryGetComponent<Enemy>(out enemy))
