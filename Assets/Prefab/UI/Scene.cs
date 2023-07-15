@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Scene : MonoBehaviour
 {
+    public AudioSource audio;
     public static void ToMainMenu()
     {
         
@@ -17,10 +18,12 @@ public class Scene : MonoBehaviour
 
     public void LetsStart()
     {
+        audio.Play();
         SceneManager.LoadScene("Start");
     }
     public void GG()
     {
+        audio.Play();
         Application.Quit();
     }
 }

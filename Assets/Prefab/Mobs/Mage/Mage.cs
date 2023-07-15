@@ -60,6 +60,7 @@ public class Mage : Enemy
     }
     private void OnDeath()
     {
+        GetComponent<AudioSource>().Play();
         _animator.SetTrigger("Death");
     }
     private void Death()

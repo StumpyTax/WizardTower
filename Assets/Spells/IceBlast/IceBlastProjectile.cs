@@ -7,12 +7,17 @@ using UnityEngine;
 public class IceBlastProjectile : Projectile
 {
     private Vector3 _end;
+    public AudioClip startClip;
+    public AudioClip endClip;
+    private AudioSource _audioSource;
     void Start()
     {
         // statuses = new List<Status>();
         // statuses.Add(new Ice());
         rb=GetComponent<Rigidbody>();
-
+        _audioSource = GetComponent<AudioSource>();
+        _audioSource.clip = startClip;
+        _audioSource.Play();
         rb.AddForce(direction*speed, ForceMode.VelocityChange);
         _end = direction * range;
     }
@@ -49,6 +54,9 @@ public class IceBlastProjectile : Projectile
       
         if (other.tag == "Wall" || team != spell.casterEntity.team)
         {
+
+            _audioSource.clip = endClip;
+            _audioSource.Play();
             rb.velocity = Vector3.zero;
             GetComponent<Animator>().SetTrigger("Hit");
         }

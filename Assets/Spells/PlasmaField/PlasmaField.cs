@@ -12,10 +12,14 @@ public class PlasmaField : Spell
     public float range;
 
     private Animator _animator;
-
+    private AudioSource _audioSource;
     private void Start()
     {
+        _audioSource = GetComponent<AudioSource>();
+        _audioSource.Play();
+
         _animator = GetComponent<Animator>();
+
          StartCoroutine(Spreading());
     }
 
