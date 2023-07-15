@@ -18,9 +18,9 @@ public class Caster : MonoBehaviour
     {
         isEnable = true;
         casterEntity = GetComponent<Entity>();
-        if (spells[0] != null) spells[0] = Instantiate(spells[0]);
-        if (spells[1] != null) spells[1] = Instantiate(spells[1]);
-        if (spells[2] != null) spells[2] = Instantiate(spells[2]);
+        if (spells.Count > 0 && spells[0] != null) spells[0] = Instantiate(spells[0]);
+        if (spells.Count > 1 &&spells[1] != null) spells[1] = Instantiate(spells[1]);
+        if (spells.Count > 2 &&spells[2] != null) spells[2] = Instantiate(spells[2]);
     }
     public void OnCastEnd()
     {
@@ -54,6 +54,7 @@ public class Caster : MonoBehaviour
     }
     public void Cast(SpellStorable spell)
     {
+        if (spell == null) return;
         Debug.Log(spell.curCooldown);
         var spell1 = spell.Cast();
         if (spell1 == null) return;

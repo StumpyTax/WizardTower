@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class MovementControl : MonoBehaviour
@@ -14,21 +15,27 @@ public class MovementControl : MonoBehaviour
 
 
     public bool isEnable;
-    [SerializeField]private Rigidbody rb;
+    private Rigidbody rb;
+
+    public void Awake()
+    {
+        rb=GetComponent<Rigidbody>();
+    }
 
     void Start()
     {
+        rb=GetComponent<Rigidbody>();
         _source = GetComponent<AudioSource>();
         isEnable = true;
         entity = GetComponent<Entity>();
-        if (TryGetComponent<Animator>(out animator)) rb=GetComponent<Rigidbody>();
+        TryGetComponent<Animator>(out animator);
     }
 
     
     public void FixedUpdate() 
     {
         FrictionLogic();
-        if (animator is not null)
+        if (animator != null)
         {
             animator?.SetFloat("Speed", rb.velocity.magnitude);
         }

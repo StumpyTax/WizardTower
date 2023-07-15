@@ -206,6 +206,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c05e06ac8b556f4eb7b1469068af993, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerInputActionMap:
+    m_Name: Player Input
+    m_Id: a1f2fb00-5984-40e9-aaa5-177251501d30
+    m_Asset: {fileID: 0}
+    m_Actions:
+    - m_Name: zd
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: 47af9b0f-3ac7-4c3c-b8e7-cbe245a9d3db
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Bindings: []
   entity: {fileID: 0}
   pickUpRange: 1
   rangeTrigger: {fileID: 5037496766079324694, guid: dbbf5c643dcad43479b526ee4906d037, type: 3}
@@ -230,7 +244,6 @@ MonoBehaviour:
   FrictionForce: 0.5
   animator: {fileID: 0}
   isEnable: 0
-  rb: {fileID: 0}
 --- !u!114 &-1566699854417921961
 MonoBehaviour:
   m_ObjectHideFlags: 0

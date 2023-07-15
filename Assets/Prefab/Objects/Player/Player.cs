@@ -28,8 +28,10 @@ public class Player : MonoBehaviour
     public AudioClip walk;
 
     private bool isWalking;
+
     private void Start()
     {
+
         entity = GetComponent<Entity>();
         entity.team = "player";
         uiManager = GameObject.FindWithTag("UIManager").GetComponent<UIManager>();
@@ -42,26 +44,32 @@ public class Player : MonoBehaviour
         movementControl.isEnable = true;
         _diceThrower = GetComponent<DiceThrower>();
         _diceThrower.playerInput = _playerInput;
-        
+
         _playerInput.actions["cast_spell_1"].performed += x =>
         {
+            Debug.Log("cast_spell_1");
             caster.direction = GetMousePosition();
             caster.Cast(caster.spells[0]);
         };
         _playerInput.actions["cast_spell_2"].performed += x =>
         {
+            Debug.Log("cast_spell_2");
             caster.direction = GetMousePosition();
             caster.Cast(caster.spells[1]);
         };
         _playerInput.actions["Pause"].performed += x =>
         {
+            Debug.Log("Pause");
             uiManager.ShowMenu();
         };
+        _playerInput.actions["pick_up"].performed += (x) => { Debug.Log("Pause"); };
         _playerInput.actions["pick_up"].performed += PickUp;
-        _playerInput.actions["roll_dice"].performed += _diceThrower.Roll;
 
-        _playerInput.actions["confirm"].performed += x =>
+        _playerInput.actions["roll_dice"].performed += (x) => { StartCoroutine(_diceThrower.Roll(x)); };
+
+    _playerInput.actions["confirm"].performed += x =>
         {
+            Debug.Log("confirm");
             _diceThrower._diceChoose.enabled = false;
             _diceThrower._diceThrowScript.enabled = true;
             _diceThrower._diceThrowScript.ResetDice();
@@ -93,8 +101,6 @@ public class Player : MonoBehaviour
         entity.OnDamageTaken += OnDamageTaken;
         _source = GetComponent<AudioSource>();
 
-
-        devour = Instantiate(devour);
 
 /*        SpellShowUIContract();
 */ //_diceThrower.OnSpellsChanged.Invoke(caster.spells[0], caster.spells[1]);
