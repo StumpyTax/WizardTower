@@ -277,10 +277,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3df9f5c2db276a5489e699816436c38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHp: 100
-  mastery: 10
+  maxHp: 60
+  mastery: 15
   movementSpeed: 0
-  critChance: 0
+  critChance: 0.1
   isStunned: 0
   team: 
   _statuses: []

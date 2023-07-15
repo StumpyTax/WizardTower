@@ -52,7 +52,6 @@ MonoBehaviour:
   f1End: Boss
   f1_rooms:
   - 1
-  - 2
   - 3
   - 4
   - 5
@@ -60,7 +59,7 @@ MonoBehaviour:
   - 7
   - 8
   - 9
-  floorSize: 1
+  floorSize: 7
   roomIsClear: 1
 --- !u!82 &7360132092766303611
 AudioSource:
@@ -80,7 +79,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 10
+  Priority: 256
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500

@@ -14,6 +14,7 @@ public class DiceThrower : MonoBehaviour
     private Caster _caster;
     public DiceThrowScript _diceThrowScript { get; private set; }
     public DiceChoose   _diceChoose { get; private set; }
+    public AudioClip invoke;
 
     private void Start()
     {
@@ -33,6 +34,11 @@ public class DiceThrower : MonoBehaviour
     
     public async void Roll(InputAction.CallbackContext action)
     {
+        var source = GetComponent<AudioSource>();
+        source.clip = invoke;
+        source.loop = false;
+        source.Play();
+
         if (action.performed && _diceThrowScript.isEdgeValid())
         {
             _diceThrowScript.ThrowDice();

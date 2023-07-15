@@ -117,7 +117,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 96, y: 0}
+  m_SizeDelta: {x: 56, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &4348315340966386009
 Canvas:
@@ -261,7 +261,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 96, y: 0}
+  m_SizeDelta: {x: 56, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &7186751936217595486
 Canvas:
@@ -402,8 +402,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 100}
-  m_SizeDelta: {x: -200, y: 96}
+  m_AnchoredPosition: {x: -201.57031, y: 80.03616}
+  m_SizeDelta: {x: -603.1406, y: 56.0723}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4094867645326940538
 MonoBehaviour:
@@ -472,7 +472,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 96, y: 0}
+  m_SizeDelta: {x: 56, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &1457843879656776075
 Canvas:
@@ -871,10 +871,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 1d2dc91a60808c74993651e6af0c5760, type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 1
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
@@ -1017,7 +1017,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 96, y: 0}
+  m_SizeDelta: {x: 56, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2264974436299206375
 CanvasRenderer:
@@ -1244,8 +1244,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -16, y: -16}
+  m_AnchoredPosition: {x: 0.20689964, y: -0.6569004}
+  m_SizeDelta: {x: 11.7861, y: 7.6603}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7542755136544067439
 CanvasRenderer:
@@ -1530,8 +1530,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0224cdc78585a5a4ba144a2dd246ad21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spell1: {fileID: 0}
-  spell2: {fileID: 0}
   spell1Window: {fileID: 5875266421152396389}
   spell2Window: {fileID: 2855047274198012515}
   spell1WindowBackground: {fileID: 3967606639248173548}

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   duration: 2
   curDur: 0
-  dmgInTick: 0.1
+  dmgInTick: 1
   healInTick: 0
   intervalBetweenTicks: 0.2
   msChange: 0

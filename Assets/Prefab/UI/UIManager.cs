@@ -66,7 +66,9 @@ public class UIManager : MonoBehaviour
             UpdateSpell(0);
         if (spell2 != null)
             UpdateSpell(1);
-        
+
+        devourWindow.GetComponent<Image>().fillAmount = 1-(_player.caster.spells[2].curCooldown / 
+                                                            _player.caster.spells[2].cooldown);
 
        /* Spell1WindowImage.sprite = spell1.icon;
         Spell2WindowImage.sprite = spell2.icon;

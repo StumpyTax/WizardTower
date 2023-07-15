@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   icon: {fileID: -506129863, guid: c1ddd509a2608894bbecb478cf62a79d, type: 3}
-  dmg: 0.6
+  dmg: 0.7
   cooldown: 11
   curCooldown: 0
   targetDir: {x: -0.5231349, y: -0.16695857, z: 0}
@@ -53,8 +53,8 @@ MonoBehaviour:
   targetEntity: {fileID: 0}
   targets: []
   statuses: []
-  blastWaves: 24
+  blastWaves: 12
   speed: 150
   indent: 1.2
-  range: 10
+  range: 15
   blastWave: {fileID: 2406603467124560515, guid: b01ffb555807bd4428fef8906042e26f, type: 3}

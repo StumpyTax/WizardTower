@@ -211,6 +211,7 @@ MonoBehaviour:
   rangeTrigger: {fileID: 5037496766079324694, guid: dbbf5c643dcad43479b526ee4906d037, type: 3}
   devour: {fileID: 0}
   uiManager: {fileID: 0}
+  walk: {fileID: 8300000, guid: da5a432e714d669438748d0f7b165bb9, type: 3}
 --- !u!114 &-5482528712974708280
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -265,6 +266,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   diceThrowGameObject: {fileID: 1721841593789267419, guid: 231b5d0d9dd432447bc8d16df09be56a, type: 3}
   playerInput: {fileID: 0}
+  invoke: {fileID: 8300000, guid: 3f1e37f4c0905634bb80683290aa553d, type: 3}
 --- !u!114 &1129041660194903262
 MonoBehaviour:
   m_ObjectHideFlags: 0

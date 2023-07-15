@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   icon: {fileID: 664066701, guid: c1ddd509a2608894bbecb478cf62a79d, type: 3}
-  dmg: 2
+  dmg: 1
   cooldown: 20
   curCooldown: 0
   targetDir: {x: 5.279258, y: 0.4317701, z: 0}

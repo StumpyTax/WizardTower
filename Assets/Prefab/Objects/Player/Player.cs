@@ -25,7 +25,7 @@ public class Player : MonoBehaviour
     private Material _blinkMat;
     private Rigidbody _rb;
     private AudioSource _source;
-
+    public AudioClip walk;
 
     private bool isWalking;
     private void Start()
@@ -120,6 +120,8 @@ public class Player : MonoBehaviour
 
         if (_rb.velocity.magnitude > 0.1 && !isWalking)
         {
+            _source.clip = walk;
+            _source.loop = true;
             _source.Play();
             isWalking = true;
         }

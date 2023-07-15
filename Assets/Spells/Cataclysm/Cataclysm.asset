@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Cataclysm
   m_EditorClassIdentifier: 
   icon: {fileID: 664066701, guid: c1ddd509a2608894bbecb478cf62a79d, type: 3}
-  dmg: 0
+  dmg: 1
   cooldown: 10
   curCooldown: 0
   spell: {fileID: 5520600695835699019, guid: d3069c57e99c8924b84065bc0c3bb160, type: 3}

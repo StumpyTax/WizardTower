@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Blast
   m_EditorClassIdentifier: 
   icon: {fileID: -506129863, guid: c1ddd509a2608894bbecb478cf62a79d, type: 3}
-  dmg: 0
-  cooldown: 3
+  dmg: 0.7
+  cooldown: 7
   curCooldown: 0
   spell: {fileID: 7827510181887057368, guid: 4948c66bd4453b14b8742dc2bed4a6af, type: 3}
