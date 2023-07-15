@@ -44,9 +44,12 @@ public class FireBallProjectile : Projectile
                 }
             }
         }
-        if (other.tag == "Wall" || entity.team != spell.casterEntity.team)
+        var team = spell.casterEntity.team;
+        if (entity != null)
+            team = entity.team;
+
+        if (other.tag == "Wall" || team != spell.casterEntity.team)
         {
-            
             rb.velocity = Vector3.zero;
             GetComponent<Animator>().SetTrigger("Hit");
         }
